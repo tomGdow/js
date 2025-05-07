@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>[PAGE TITLE]</title><!-- Use JavaScript (constants_variables.js)-->
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta name="keywords" content="TO,DO">
+  <meta name="description" content="TO DO">
+  <meta name="google" content="notranslate">
+  <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+
+  <link rel="stylesheet" href="./css/main.css"><!-- EXTERNAL STYLESHEET -->
+
+  <style>
+    @import url("./css/counters.css");
+
+    main {
+      min-height: 70vh;
+      grid-template-areas: "a" "b" "b" "b" "b";
+      grid-template-columns: 1fr;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    main>header {
+      grid-area: a;
+    }
+
+    main>article {
+      grid-area: b;
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid-container">
+      <header class="main_header">
+        <div class="banner">
+
+          <div class="banner-item-1">
+            <a href="https://tomgdow.com">
+              <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                alt="gravatar image of tomgdow">
+            </a>
+          </div>
+          <div class="banner-item-2"><!-- [JavaScript automatically inserts] --></div>
+          <div class="banner-item-3-alt"><!--pageNumbers. JavaScript automatically inserts --></div>
+          <div class="banner-item-3"><!-- [Use JavaScript (constants_variables.js)] --></div>
+
+        </div><!-- banner-->
+      </header>
+
+      <nav>
+        <a href="../index.html" accesskey="h">home</a>
+        <a href="PREV.html" id="prevPage" accesskey="p">prev</a>
+        <a href="NEXT.html" id="nextPage" accesskey="n">next</a>
+        <a href="../html/search.html" accesskey="s">search</a>
+      </nav>
+
+      <div class="aside-right">
+        <div class="right-aside-icon">&raquo;</div>
+      </div>
+
+      <main>
+
+        <header>
+          <h1>Title</h1>
+          <h2>Sub Title</h2>
+        </header>
+
+        <article>
+          <h1 class="align-left">Contents</h1>
+          <div id="myindex"></div>
+        </article>
+
+      </main>
+
+      <div class="aside-left">
+        <div class="left-aside-icon">&laquo;</div>
+      </div>
+
+      <footer>
+
+        <div class="footer-item-1">
+          <a href="https://tomgdow.com">
+            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+              alt="gravatar image of tomgdow">
+          </a>
+        </div>
+
+        <div class="footer-item-2">
+          <span id="page_number"></span> of <span id="total_pages"></span>
+        </div>
+
+        <div class="footer-item-3">[Footer-3]</div><!-- [JavaScript automatically inserts] -->
+
+      </footer>
+
+    </div><!-- grid-container -->
+
+  </div><!--container-->
+
+  <script src="./js/functions.js"></script><!-- JS Functions-->
+  <script src="./js/constants_variables.js"></script><!-- JS Constants_variables -->
+
+  <script>
+
+    // page title
+    document.title = getPageTitle(pageTitleArr, pageArr, baseFileName);
+
+    // banner-second-part
+    document.getElementsByClassName("banner-item-2")[0].innerHTML = splitAndCapitalize(baseFileName);
+
+    // banner-third-part
+    document.getElementsByClassName("banner-item-3")[0].innerHTML = "&nbsp;" + bannerThirdPart;
+
+    // footer-third-part
+    document.getElementsByClassName("footer-item-3")[0].innerHTML = "&nbsp;" + baseFileName;
+
+    // next page
+    nextPage.setAttribute("href", nextPageURL(baseFileName, pageArr, "./html/"));
+
+    // previous page
+    prevPage.setAttribute("href", prevPageURLfromIndex(baseFileName));
+
+    // Create index (TOC)
+    var parent = createIndexDivs('myindex', pageArr);
+
+    // aside-right event listeners
+    document.getElementsByClassName("aside-right")[0].addEventListener('click', function () {
+      window.location.href = nextPageURL(baseFileName, pageArr, "./html/");
+      setBackgroundColor(this.className, "lightblue", 0);
+    });
+
+    document.getElementsByClassName("aside-right")[0].addEventListener('mouseover', function () {
+      displayBlock("right-aside-icon");
+      setBackgroundColor(this.className, "#8cc8dc", 0);
+    });
+
+    document.getElementsByClassName("aside-right")[0].addEventListener('mouseout', function () {
+      displayNone("right-aside-icon");
+      setBackgroundColor(this.className, "lightblue", 0)
+    });
+
+    // aside-left event listeners
+    document.getElementsByClassName("aside-left")[0].addEventListener('click', function () {
+      window.location.href = prevPageURLfromIndex(baseFileName);
+      setBackgroundColor(this.className, "lightblue", 0)
+    });
+
+    document.getElementsByClassName("aside-left")[0].addEventListener('mouseover', function () {
+      displayBlock("left-aside-icon");
+      setBackgroundColor(this.className, "#8cc8dc", 0)
+    });
+
+    document.getElementsByClassName("aside-left")[0].addEventListener('mouseout', function () {
+      displayNone("left-aside-icon");
+      setBackgroundColor(this.className, "lightblue", 0)
+    });
+
+  </script>
+  <script src="./js/main.js"></script><!-- Main JS file -->
+</body>
+
+</html>
