@@ -7,6 +7,19 @@ div.container {
     counter-reset: mainCounter 0 refCounter 0 indexCounter 1;
 }
 
+div.container>article {
+    counter-reset: examCounter;
+}
+
+article .xcount {
+    counter-increment: examCounter;
+
+}
+
+article .xcount::before {
+    content: counter(mainCounter) ". " counter(examCounter) ".  ";
+}
+
 div.container .count {
     counter-increment: mainCounter;
 }
