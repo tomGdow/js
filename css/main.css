@@ -170,6 +170,10 @@ article code {
   font-size: 1rem;
 }
 
+dl {
+  font-size: 1.6rem;
+}
+
 .ref {
   /* padding-left: 2em; */
   padding-bottom: 0.5em;
@@ -249,6 +253,7 @@ article code {
 .ref-container {
   background-color: revert;
   margin-bottom: 2em;
+  flex-direction: column;
 }
 
 .details-refs-summary {
