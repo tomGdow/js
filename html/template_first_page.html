@@ -181,7 +181,7 @@ clang helloworld.c -o helloworld.o
         nextPage.setAttribute("href", nextPageURL(baseFileName, pageArr));
 
         // previous page
-        prevPage.setAttribute("href", prevPageURL(baseFileName, pageArr, "./"));
+        prevPage.setAttribute("href", prevPageURL(baseFileName, pageArr, "../"));
         // prevPage.setAttribute("href", prevPageURL(baseFileName, pageArr));[template-second-page-CHANGE]
 
         // aside-right event listeners
@@ -202,7 +202,7 @@ clang helloworld.c -o helloworld.o
 
         // aside-left event listeners
         document.getElementsByClassName("aside-left")[0].addEventListener('click', function () {
-            window.location.href = prevPageURL(baseFileName, pageArr, "./");
+            window.location.href = prevPageURL(baseFileName, pageArr, "../");
             // window.location.href = prevPageURL(baseFileName, pageArr, "./");[Template-seond-page-CHANGE]
             setBackgroundColor(this.className, "lightblue", 0);
         });
