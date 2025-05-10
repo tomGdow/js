@@ -497,9 +497,6 @@ A B C E
                 <article>
                     <h1 class="count">Notes</h1>
 
-                    <ol>
-                        <li>I am an item</li>
-                    </ol>
 
                 </article>
 
@@ -607,13 +604,18 @@ A B C E
         let condition = window.matchMedia("(max-width: 440px)");
         let conditionTwo = window.matchMedia("(min-width: 440px)");
         let targets = document.getElementsByTagName("details");
+
+        let arr = Array.from(Array(20).keys());
+        let oddsArr = arr.filter(el => el % 2 !== 0);
+        let evensArr = arr.filter(el => el % 2 == 0);
+
         window.addEventListener("load",
             function () {
 
                 // Use condition to REMOVE open attribute from 
                 // media with widths LESS THAN max-width (440px) (mobile)
 
-                for (const el in Array.from(Array(20).keys())) {
+                for (const el of arr) {
                     condRemoveAttribute(condition, "details", el, "open");
                     //[0,1,2,3, ...]
                 }
@@ -621,18 +623,18 @@ A B C E
                 // Use conditionTwo to REMOVE open attribute from 
                 // media with widths GREATER THAN min-width (440px)
 
-                for (const el of Array.from(Array(20).keys()).filter(el => el % 2 !== 0)) {
+                for (const el of oddsArr) {
                     condRemoveAttribute(conditionTwo, "details", el, "open");
                     //[1,3,5, ...]
                 }
 
                 // toggle innerHTML
-                for (const el of Array.from(Array(20).keys()).filter(el => el % 2 == 0)) {
+                for (const el of evensArr) {
                     toggleFirstChildInnerHTML(targets[el], "open", "", "Code");
                     //[0,2,4,6, ...]
                 }
 
-                for (const el of Array.from(Array(20).keys()).filter(el => el % 2 !== 0)) {
+                for (const el of oddsArr) {
                     toggleFirstChildInnerHTML(targets[el], "open", "", "Console");
                     //[1,3,5, ...]
                 }
@@ -640,12 +642,12 @@ A B C E
                 toggleFirstChildInnerHTML(targets[20], "open", "", "Bibliography");
 
                 // Toggle classes
-                for (const el of Array.from(Array(20).keys()).filter(elem => elem % 2 == 0)) {
+                for (const el of evensArr) {
                     toggleClass(targets[el], "open", "details-code-aclass", "details-code-bclass");
                     //[0,2,4, ...]
                 }
 
-                for (const el of Array.from(Array(20).keys()).filter(el => el % 2 !== 0)) {
+                for (const el of oddsArr) {
                     toggleClass(targets[el], "open", "details-console-aclass", "details-console-bclass");
                     //[1,3,5, ...]
                 }
@@ -656,7 +658,7 @@ A B C E
 
         // Event Listeners on Details tags 
         // 1) CODE
-        for (const el of Array.from(Array(20).keys()).filter(el => el % 2 == 0)) {
+        for (const el of evensArr) {
             //[0,1,3, ...]
             targets[el].addEventListener("toggle",
                 function () {
@@ -667,7 +669,7 @@ A B C E
         }
 
         // 2) CONSOLE
-        for (const el of Array.from(Array(20).keys()).filter(elem => elem % 2 !== 0)) {
+        for (const el of oddsArr) {
             targets[el].addEventListener("toggle",
                 function () {
                     toggleFirstChildInnerHTML(this, "open", "", "Console");
