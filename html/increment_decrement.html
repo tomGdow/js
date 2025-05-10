@@ -58,30 +58,28 @@
             <main>
                 <article>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            The increment (++) operator increments (adds one to) its operand and returns the value
+                            before or after the increment,
+                            depending on where the operator is placed
+                        <li>
+                            The decrement (--) operator decrements (subtracts one from) its operand and returns the
+                            value before or after the
+                            decrement, depending on where the operator is placed
+                    </ol>
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+let x = 3;
+const y = x++;
 
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+console.log(`x:${x}, y:${y}`); </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -89,31 +87,137 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+x:4, y:3 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+x:4, y:3 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let a = 3;
+const b = ++a;
+
+console.log(`a:${a}, b:${b}`); </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+a:4, b:4
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+a:4, b:4
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let x = 3;
+const y = x--;
+
+console.log(`x:${x}, y:${y}`); </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+x:2, y:3
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+x:2, y:3
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here1-->
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let a = 3;
+const b = --a;
+
+console.log(`a:${a}, b:${b}`); </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+a:2, b:2 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+a:2, b:2 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
                 <article>
                     <h1 class="count">Notes</h1>
 
-                    <ol>
-                        <li>I am an item</li>
-                    </ol>
+
+                    <pre class="details-code-aclass">
+for 
+    const y = x++;  
+WRITE AS
+    const (y = x)++ 
+And evaluate inside parenthesis FIRST 
+    (postfix decrement) </pre><!-- code content -->
+                    <br class="small-view">
+                    <br class="wide-view">
+                    <pre class="details-code-aclass">
+for 
+    const y = ++x 
+WRITE AS 
+    const (y = ++x)
+
+And evaluate prefix increment FIRST </pre><!-- code-content -->
+                    <br class="small-view">
+                    <br class="wide-view">
+                    <pre class="details-code-aclass">
+for 
+    const y = x-- 
+WRITE AS 
+    const (y = x)--
+
+And evaluate inside parentheses FIRST
+    (postfix decrement) </pre><!-- code-content -->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+                    <pre class="details-code-aclass">
+for 
+    const y = --x 
+WRITE AS 
+    const (y = --x)
+
+And evaluate prefix decrement FIRST </pre><!-- code-content -->
 
                 </article>
 
@@ -123,11 +227,15 @@ clang helloworld.c -o helloworld.o
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment">MDN:
+                                    Increment (++)</a>
                             </div>
 
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Decrement">MDN:
+                                    Decrement (--)</a>
                             </div>
 
                         </div>
@@ -164,7 +272,7 @@ clang helloworld.c -o helloworld.o
     <script src="../js/constants_variables.js"></script><!-- JS Constants_variables -->
 
     <script>
-
+        'use strict'
         // page title
         document.title = getPageTitle(pageTitleArr, pageArr, baseFileName);
 
@@ -221,50 +329,55 @@ clang helloworld.c -o helloworld.o
         let condition = window.matchMedia("(max-width: 440px)");
         let conditionTwo = window.matchMedia("(min-width: 440px)");
         let targets = document.getElementsByTagName("details");
+
+        let arr = Array.from(Array(8).keys());
+        let oddsArr = arr.filter(el => el % 2 !== 0);
+        let evensArr = arr.filter(el => el % 2 == 0);
+
         window.addEventListener("load",
             function () {
 
                 // Use condition to REMOVE open attribute from 
                 // media with widths LESS THAN max-width (440px) (mobile)
 
-                for (const el in [0, 1, 2]) {
+                for (const el of arr) {
                     condRemoveAttribute(condition, "details", el, "open");
                 }
 
                 // Use conditionTwo to REMOVE open attribute from 
                 // media with widths GREATER THAN min-width (440px)
 
-                for (const el of [1]) {
+                for (const el of oddsArr) {
                     condRemoveAttribute(conditionTwo, "details", el, "open");
                 }
 
                 // toggle innerHTML
-                for (const el of [0]) {
+                for (const el of evensArr) {
                     toggleFirstChildInnerHTML(targets[el], "open", "", "Code");
                 }
 
-                for (const el of [1]) {
+                for (const el of oddsArr) {
                     toggleFirstChildInnerHTML(targets[el], "open", "", "Console");
                 }
 
-                toggleFirstChildInnerHTML(targets[2], "open", "", "Bibliography");
+                toggleFirstChildInnerHTML(targets[8], "open", "", "Bibliography");
 
                 // Toggle classes
-                for (const el of [0]) {
+                for (const el of evensArr) {
                     toggleClass(targets[el], "open", "details-code-aclass", "details-code-bclass");
                 }
 
-                for (const el of [1]) {
+                for (const el of oddsArr) {
                     toggleClass(targets[el], "open", "details-console-aclass", "details-console-bclass");
                 }
 
-                toggleClass(targets[2], "open", "details-refs-aclass", "details-refs-bclass");
+                toggleClass(targets[8], "open", "details-refs-aclass", "details-refs-bclass");
             }
         );
 
         // Event Listeners on Details tags 
         // 1) CODE
-        for (const el of [0]) {
+        for (const el of evensArr) {
             targets[el].addEventListener("toggle",
                 function () {
                     toggleFirstChildInnerHTML(this, "open", "", "Code");
@@ -274,7 +387,7 @@ clang helloworld.c -o helloworld.o
         }
 
         // 2) CONSOLE
-        for (const el of [1]) {
+        for (const el of oddsArr) {
             targets[el].addEventListener("toggle",
                 function () {
                     toggleFirstChildInnerHTML(this, "open", "", "Console");
@@ -284,7 +397,7 @@ clang helloworld.c -o helloworld.o
         }
 
         // 3) BIBLIOGRAPHY
-        targets[2].addEventListener("toggle",
+        targets[8].addEventListener("toggle",
             function () {
                 toggleFirstChildInnerHTML(this, "open", "", "Bibliography");
                 toggleClass(this, "open", "details-refs-aclass", "details-refs-bclass");
