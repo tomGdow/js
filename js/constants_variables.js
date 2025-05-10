@@ -6,10 +6,10 @@ baseFileName = getBaseFileName(baseFileName);
 // }
 
 //Add New FileName(s)
-let pageArr = ["index", "exam_objectives", "assignment",  "increment_decrement"];
+let pageArr = ["index", "exam_objectives", "assignment",  "increment_decrement","domain_one_questions_part_one"];
 pageArr.push("search"); // 'search' should be the last term in pageArr
 
-let pageTitleArr = ["js-index", "js-exam-objectives", "assignment","incr-decr", "js-search"];
+let pageTitleArr = ["js-index", "js-exam-objectives", "assignment","incr-decr","d1Q", "js-search"];
 
 // Add banner third part
 const bannerThirdPart = "js";
