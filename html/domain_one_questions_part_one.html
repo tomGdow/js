@@ -37,7 +37,7 @@
                         </a>
                     </div>
 
-                    <div class="banner-item-2"><!-- [JavaScript automatically inserts] --></div>
+                    <div class="banner-item-2">[JavaScript automatically inserts]</div>
                     <div class="banner-item-3-alt"><!--pageNumbers. JavaScript auto inserts --></div>
                     <div class="banner-item-3"><!-- [Use JavaScript (constants_variables.js)] --></div>
 
@@ -496,8 +496,6 @@ A B C E
                 <!--herefinal-->
                 <article>
                     <h1 class="count">Notes</h1>
-
-
                 </article>
 
                 <article>
@@ -608,6 +606,7 @@ A B C E
         let arr = Array.from(Array(20).keys());
         let oddsArr = arr.filter(el => el % 2 !== 0);
         let evensArr = arr.filter(el => el % 2 == 0);
+        const biblioIndex = 20;
 
         window.addEventListener("load",
             function () {
@@ -639,7 +638,7 @@ A B C E
                     //[1,3,5, ...]
                 }
 
-                toggleFirstChildInnerHTML(targets[20], "open", "", "Bibliography");
+                toggleFirstChildInnerHTML(targets[biblioIndex], "open", "", "Bibliography");
 
                 // Toggle classes
                 for (const el of evensArr) {
@@ -652,7 +651,7 @@ A B C E
                     //[1,3,5, ...]
                 }
 
-                toggleClass(targets[20], "open", "details-refs-aclass", "details-refs-bclass");
+                toggleClass(targets[biblioIndex], "open", "details-refs-aclass", "details-refs-bclass");
             }
         );
 
@@ -679,7 +678,7 @@ A B C E
         }
 
         // 3) BIBLIOGRAPHY
-        targets[20].addEventListener("toggle",
+        targets[biblioIndex].addEventListener("toggle",
             function () {
                 toggleFirstChildInnerHTML(this, "open", "", "Bibliography");
                 toggleClass(this, "open", "details-refs-aclass", "details-refs-bclass");
