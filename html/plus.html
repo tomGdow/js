@@ -29,6 +29,10 @@
         ol ol {
             padding-left: 5%;
         }
+
+        dd ol {
+            padding-left: 5%
+        }
     </style>
 
 </head>
@@ -151,6 +155,11 @@ console.log(2 + true); </pre><!-- code-content -->
 3 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
 3 </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>true coerces to 1</dd>
+                        </dl>
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -174,6 +183,16 @@ console.log(1 + true + false + null) </pre><!-- code-content -->
 2 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
 2 </pre><!-- wide-view -->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>
+                                <ol>
+                                    <li>true coerces to 1
+                                    <li>false coerces to 0
+                                    <li>null coerces to 0
+                                </ol>
+                            </dd>
+                        </dl>
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -183,7 +202,9 @@ console.log(1 + true + false + null) </pre><!-- code-content -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-console.log(100 + "hello") </pre><!-- code-content -->
+console.log(100 + "hello") 
+console.log(100 - "hello")
+</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -194,9 +215,11 @@ console.log(100 + "hello") </pre><!-- code-content -->
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-100hello</pre><!-- small-view -->
+100hello
+NaN</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-100hello</pre><!-- wide-view -->
+100hello
+NaN</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -206,7 +229,10 @@ console.log(100 + "hello") </pre><!-- code-content -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE </pre><!-- code-content -->
+let x = "100" + 5;
+let y = "100" - 5;
+
+console.log(x, y)</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -217,27 +243,51 @@ INSERT CODE </pre><!-- code-content -->
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) </pre><!-- small-view -->
+1005 95 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) </pre><!-- wide-view -->
+1005 95</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
 
                 <article>
-                    <h1 class="count">Number Coercion</h1>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let a = "34" + true
+let b = "34" + false
+let x = "34" - true
+let y = "34" - false
 
-                    <ol>
-                        <li>Numbers are returned as-is
-                        <li>undefined turns into NaN
-                        <li>null turns into 0
-                        <li>true turns into 1
-                        <li>false turns into 0
-                        <li>Strings are converted by parsing them as if they contain a number literal
-                        <li>Parsing failure (strings) results in NaN
-                    </ol>
+console.log(a)
+console.log(b)
+console.log(x)
+console.log(y)</pre><!-- code-content -->
+                    </details><!--details CODE-->
 
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+34true
+34false
+33
+34
+                                </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+34true
+34false
+33
+34
+                                </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
                 </article>
+
 
                 <article>
                     <h1 class="count refs-heading">References</h1>
