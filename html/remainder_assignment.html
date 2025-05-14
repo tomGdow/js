@@ -58,10 +58,15 @@
             <main>
                 <article>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>The remainder assignment (%=) operator performs remainder on the two operands and assigns
+                            the
+                            result to the left
+                            operand
+
+                        <li><code>x %= y</code> is equivalent to <code>x = x % y</code>, except that the expression x is
+                            only evaluated once
+                    </ol>
                 </article>
 
                 <article>
@@ -75,13 +80,8 @@
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+let x = 102
+console.log(x %= 5)</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -89,22 +89,9 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+2</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+2</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -113,7 +100,8 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+let y = 102
+console.log(y %= 0)
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -125,11 +113,33 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+NaN</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+NaN</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let z = 102
+console.log(z %= "hello")</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+NaN</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+NaN</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -149,11 +159,9 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
-                            </div>
-
-                            <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder_assignment">MDN:
+                                    Remainder assignment (%=)</a>
                             </div>
 
                         </div>
