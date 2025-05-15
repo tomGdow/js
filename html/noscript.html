@@ -21,10 +21,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <style>
+        ol {
+            padding-left: 10%
+        }
 
-<noscript>
-  <link rel="stylesheet" href="../css/nojs.css">
-</noscript>
+        ol ol {
+            padding-left: 5%;
+        }
+    </style>
+
+    <noscript>
+        <link rel="stylesheet" href="../css/nojs.css">
+    </noscript>
 
 </head>
 
@@ -61,12 +70,44 @@
 
             <main>
                 <article>
-<noscript><span>This Web Site requires JavaScript!</span></noscript>
+                    <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            The HTML
+                            <strong><code>&lt;noscript&gt;</code></strong>
+                            element defines a section of HTML to be inserted if a script type
+                            is unsupported or if scripting is currently turned off
+
+                        <li>
+                            The <code>noscript</code> element represents nothing if scripting is enabled,
+                            and represents its children if scripting is disabled
+
+                        <li>
+                            It is used to present different markup to user agents that support scripting and those
+                            that don't support scripting, by affecting how the document is parsed
+                    </ol>
+
+                </article>
+                <article>
+                    <h1 class="count">Notes</h1>
+
+                    <ol>
+                        <li>
+                            In a
+                            <code>head</code> element, the
+                            <code>noscript</code> element must contain only the following elements:
+                            <ol>
+                                <li><code>link</code>
+                                <li><code>style</code>
+                                <li><code>meta</code>
+                            </ol>
+
+                        <li>A <code>noscript</code> tag appearing in the <code>head</code>
+                            cannot contain an <code> &lt;a href=""&gt;&lt;/a&gt; </code> element, for example.
+                            Doing so will cause validation to break
+
+                    </ol>
                 </article>
 
                 <article>
@@ -80,13 +121,12 @@
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+&lt;head&gt;
+  &lt;noscript&gt;
+    &lt;link rel="stylesheet" href="./css/nojs.css"&gt;
+  &lt;/noscript&gt;
+&lt;/head&gt;
+  </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +134,9 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+Note that nojs.css should be placed BELOW main.css</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+Note that nojs.css should be placed BELOW main.css</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,8 +145,11 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-  </pre><!-- code-content -->
+&lt;body&gt;
+  &lt;noscript&gt;
+    This Web Site requires JavaScript!
+  &lt;/noscript&gt;
+&lt;/body&gt; </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -130,21 +160,10 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+No comment </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+No comment </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
-
-                </article>
-
-                <article>
-                    <h1 class="count">Notes</h1>
-
-                    <ol>
-                        <li>I am an item</li>
-                    </ol>
 
                 </article>
 
@@ -154,11 +173,17 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://www.w3.org/TR/2011/WD-html5-20110405/scripting-1.html#the-noscript-element">W3C
+                                    noscript
+                                </a>
                             </div>
 
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript">
+                                    MDN noscript element
+                                </a>
                             </div>
 
                         </div>
@@ -286,7 +311,7 @@ INSERT CONSOLE OUTPUT (wide view)
 
                 for (const el of oddsArr) {
                     // for (const el of [1]) {
-                    toggleFirstChildInnerHTML(targets[el], "open", "", "Console");
+                    toggleFirstChildInnerHTML(targets[el], "open", "", "Comment");
                 }
 
                 toggleFirstChildInnerHTML(targets[biblioIndex], "open", "", "Bibliography");
@@ -323,7 +348,7 @@ INSERT CONSOLE OUTPUT (wide view)
             // for (const el of [1]) {
             targets[el].addEventListener("toggle",
                 function () {
-                    toggleFirstChildInnerHTML(this, "open", "", "Console");
+                    toggleFirstChildInnerHTML(this, "open", "", "Comment");
                     toggleClass(this, "open", "details-console-aclass", "details-console-bclass");
                 }
             );
