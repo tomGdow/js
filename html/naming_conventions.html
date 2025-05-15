@@ -22,6 +22,16 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -57,31 +67,71 @@
 
             <main>
                 <article>
-                    <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <h1 class="count">camelCase</h1>
+                    <ol>
+                        <li>Camel case is a way of writing phrases without spaces, where the first letter of each word
+                            is
+                            capitalized, except for
+                            the first letter of the entire compound word, which may be either upper or lower case
+
+
+                        <li>
+                            Camel casing is often used as a variable naming convention
+                        <li>
+                            The following variables are in camel case
+                            <ol>
+                                <li>console
+                                <li>encodeURIComponent
+                                <li>ArrayBuffer
+                                <li>HTMLElement
+                            </ol>
+                    </ol>
                 </article>
 
                 <article>
-                    <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
+                    <h1 class="count">Variable Naming</h1>
+
+                    <ol>
+                        <li>An identifier must start with
+
+                            <ol>
+                                <li>$
+                                <li>_ (underscore)
+                                <li>letter
+                                <li><strong>but not a digit</strong>
+                            </ol>
+
+                        <li>Rest of name can contain
+
+                            <ol>
+                                <li>letters
+                                <li>$
+                                <li>_ (underscore)
+                                <li>numbers
+                                <li>but <stront>NOT special characters</stront> (such as a space OR a '?')
+                            </ol>
+
+                        <li>An identifier cannot be a keyword <br>
+
+                            (<code>let let = 8</code>, for example, is not allowed)
+
+                        <li>An identifier is case-sensitive
+
+                    </ol>
+                </article>
+
+                <article>
+                    <h1>class="count">Code Example</h1>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+const arr = ["i", "my_variable", "myVariable1",
+             "_underscore", "$str"];
 
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+for (el of arr) {
+    console.log("%s is valid", el)
+} </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -89,22 +139,17 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+i is valid 
+my_variable is valid
+myVariable1 is valid
+_underscore is valid
+$str is valid </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+i is valid 
+my_variable is valid
+myVariable1 is valid
+_underscore is valid
+$str is valid </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -113,8 +158,11 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-  </pre><!-- code-content -->
+const arr = ["1my_variable", "myvariab?le", "let","typeof"];
+
+for (el of arr) {
+    console.log("%s is invalid", el)
+} </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -125,11 +173,14 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+1my_variable is invalid
+myvariab?le is invalid 
+let is invalid </pre>
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+1my_variable is invalid
+myvariab?le is invalid 
+let is invalid
+typeof is invalid</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -149,11 +200,8 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
-                            </div>
-
-                            <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Camel_case">MDN:
+                                    camelCase</a>
                             </div>
 
                         </div>
