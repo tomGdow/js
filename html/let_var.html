@@ -25,6 +25,15 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+    </style>
 
 </head>
 
@@ -63,30 +72,111 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
+                    <ol>
+                        <li>The <strong>let</strong> declaration declares <strong>re-assignable</strong>,
+                            <strong>block-scoped</strong> <strong>local variables</strong>, optionally
+                            <strong>initializing each to a value</strong>
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Comparison with var</h1>
+                    <ol>
+                        <li>
+                            <code>let</code> declarations are scoped to blocks as well as functions
+
+                        <li>
+                            <code>let</code> declarations can only be accessed after the place of declaration is reached
+                            (see temporal dead zone)
+                        <li>
+                            For this
+                            reason, let declarations are commonly regarded as <strong>non-hoisted</strong>
+                        <li>
+                            <code>let</code> declarations do not create properties on <strong>globalThis</strong> when
+                            declared at the top level of a script
+
+                        <li><code>let</code> declarations cannot be redeclared by any other declaration in the same
+                            scope
+
+                        <li>
+                            <code>let</code> begins declarations, not statements
+                            <ol>
+
+                                <li>
+                                    That means you cannot use a lone <code>let</code> declaration as
+                                    the body of a block
+                            </ol>
+                        <li>Note that <code>let</code> is allowed as an identifier name when declared with
+                            <strong>var</strong> or <strong>function</strong> in
+                            non-strict mode, but you should
+                            avoid using let as an identifier name to prevent unexpected syntax ambiguities
+
+                        <li>Many style guides (including MDN's) recommend using <strong>const</strong> over
+                            <code>let</code> whenever a variable is
+                            not reassigned in its scope
+
+                            <ol>
+                                <li>This makes the intent clear that a variable's type (or value, in the case of a
+                                    primitive)
+                                    can never change
+                                <li>Others may
+                                    prefer <code>let</code> for non-primitives that are mutated
+
+                            </ol>
+
+                        <li>
+                            The list that follows the let keyword is called a <strong>binding list</strong> and is
+                            separated by commas,
+                            where
+                            <ol>
+                                <li>the commas are not comma operators
+                                <li>the = signs are not assignment operators
+                                <li>initializers of later variables can refer to earlier variables in the list
+                            </ol>
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Scope</h1>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
+                        The scope of a variable declared with <code>let</code> is one of the following
+                        curly-brace-enclosed syntaxes that most closely
+                        contains the <code>let</code> declaration
                     </p>
+                    <ol>
+                        <li><strong>block</strong> statement
+                        <li><strong>switch</strong> statement
+                        <li><strong>try...catch</strong> statement
+                        <li>body of one of the <strong>for statements</strong>, if the <code>let</code> is in the header
+                            of the statement
+                        <li><strong>function body</strong>
+                        <li><strong>static initialization block</strong>
+                        <li>Or if none of the above applies
+                            <ol>
+                                <li>the <strong>current module</strong>, for code running in module mode
+                                <li>the <strong>global scope</strong>, for code running in script mode
+                            </ol>
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">Notes</h1>
+                    <ol>
+                        <li>
+                            A <code>let</code> declaration within a function's body cannot have the same name as a
+                            parameter
+                        <li>
+                            A <code>let</code> declaration within a catch
+                            block cannot have the same name as the catch-bound identifier
+                    </ol>
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+let foo;
+console.log(foo)</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +184,9 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+undefined</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+undefined</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +195,260 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+let foo = 2, bar = 20;
+
+console.log("%s: %d, %s: %d", 
+    "foo", foo, "bar", bar) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+foo: 2, bar: 20 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+foo: 2, bar: 20</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let foo = 2, bor, bar = 20;
+
+console.log("%s: %d, %s: %s(%d), %s: %d", 
+    "foo", foo, "bor", 
+    bor, bor,"bar", bar) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+foo: 2, 
+bor: undefined(0),  //Note!
+bar: 20</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+foo: 2, 
+bor: undefined(0),  //Note %s coerces!
+bar: 20</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+var let = 40
+console.log(let) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+40 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+40 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+'use strict'
+var let = 40;
+console.log(let)</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+    let is a reserved identifier </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+    let is a reserved identifier </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let foo = 40;
+foo = 50;
+console.log(foo) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+50</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+50</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+var foo = 40;
+let foo = 50;
+console.log(foo) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+    redeclaration of var foo </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+    redeclaration of var foo </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+var foo = 40;
+var foo = 50;
+console.log(foo) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+50 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+50 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let foo = 40;
+console.log(foo)
+
+{
+    let foo = 50;
+    console.log(foo);
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+40
+50 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+40
+50 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function myfn (arg) {
+    let arg = 10
+    return arg;
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+    redeclaration of formal 
+    parameter arg</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+    redeclaration of formal parameter arg</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const foo = undefined;
+
+if(foo) {
+    let foo = 100;
+    console.log(foo);
+} else {
+    let foo = 1000;
+    console.log(foo);
+}
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,14 +460,289 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+1000 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+1000 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+try {
+let foo = 1;
+
+} catch (err) {
+let err ="none";
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+    redeclaration of catch 
+    parameter err </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+    redeclaration of catch parameter err </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+for(let el of [1, "tom", 10]) {
+    let el = 100;
+    console.log(el);
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+100 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+100 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let x = 1;
+
+switch (x) {
+    case 0 :
+        let foo = 10;
+        break;
+    case 1 :
+        let foo = 20;
+        break;
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: redeclaration of let foo </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: redeclaration of let foo </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let x = 1;
+
+switch (x) {
+    case 0: {
+        let foo = 10;
+        console.log("%s: %d", 
+            "foo", foo);
+        break;
+    }
+    case 1: {
+        let foo = 20;
+        console.log("%s: %d", 
+            "foo", foo);
+        break;
+    }
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+foo: 20</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+foo: 20</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+
+function test() {
+    var foo = 33;
+    if (foo) {
+        console.log(foo)
+        let foo = foo + 55;
+    }
+}
+
+test(); </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught ReferenceError: 
+    can't access lexical declaration 
+    'foo' before initialization </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught ReferenceError: 
+    can't access lexical declaration 
+    'foo' before initialization </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function test() {
+    var foo = 33;
+    if (foo) {
+        console.log(foo)
+        let bar = foo + 55;
+        console.log(bar)
+    }
+}
+
+test(); </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+33
+88</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+33
+88 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+var myx= 10;
+let myy= 20;
+console.log(this.myx,this.myy)</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+10 undefined</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+10 undefined </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+INSERT CONSOLE OUTPUT TWO (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!-- here -->
 
                 <article>
                     <h1 class="count">Notes</h1>
@@ -154,11 +759,9 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
-                            </div>
-
-                            <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">MDN:
+                                    Let</a>
                             </div>
 
                         </div>
