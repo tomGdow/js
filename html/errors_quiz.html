@@ -74,8 +74,18 @@
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-</pre><!-- code-content -->
+Redeclaration
+
+For example
+
+  const a = 10;
+  let a = 20;
+  console.log(a)
+
+1) Reference Error
+2) Syntax Errror
+3) Type Error
+4) No Error </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -83,11 +93,11 @@ INSERT CODE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+SyntaxError:
+    redeclaration of const a </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+SyntaxError:
+    redeclaration of const a </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -97,8 +107,16 @@ INSERT CONSOLE OUTPUT (wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-</pre><!-- code-content -->
+Temporal Dead Zone
+
+For example
+  console.log(a)
+  const a = 10;
+
+1) Reference Error
+2) Syntax Errror
+3) Type Error 
+4) No Error </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -106,15 +124,13 @@ INSERT CODE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+Uncaught ReferenceError: 
+    can't access lexical declaration 
+    'a' before initialization </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
-                        <!--ususally inserted before details-console end tag-->
-                        <dl class="details-dl">
-                            <dt>Note</dt>
-                            <dd>INSERT TEXT</dd>
+Uncaught ReferenceError: 
+    can't access lexical declaration
+     'a' before initialization </pre><!-- wide-view -->
                         </dl>
                     </details><!--details CONSOLE -->
                 </article>
@@ -124,8 +140,16 @@ INSERT CONSOLE OUTPUT (wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-</pre><!-- code-content -->
+Const declared but not intiialized
+
+For example
+  const a;
+  console.log(a)
+
+1) Reference Error
+2) Syntax Errror
+3) Type Error
+4) No Error </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -133,11 +157,46 @@ INSERT CODE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+ Uncaught SyntaxError: 
+     missing = in const 
+     declaration
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+Uncaught SyntaxError: 
+    missing = in const declaration </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+                </article>
+
+                <article>
+                    <h1 class="count">Question</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-console-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+Re-initialize a declared constant
+
+For example
+
+  const a = 10;
+  a = 20;
+  console.log(a)
+
+1) Reference Error
+2) Synbtax Errror
+3) Type Error 
+4) No Error</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught TypeError: 
+    invalid assignment 
+    to const 'a'</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught TypeError: 
+    invalid assignment to const 'a'</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -146,8 +205,18 @@ INSERT CONSOLE OUTPUT (wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-</pre><!-- code-content -->
+Re-declaration
+
+For example
+
+let a = 10;
+let a = 20;
+console.log(a)
+
+ 1) Reference Error
+ 2) Syntax Errror
+ 3) Type Error
+ 4) No Error </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -155,11 +224,9 @@ INSERT CODE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+Uncaught SyntaxError: redeclaration of let a </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+Uncaught SyntaxError: redeclaration of let a </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -168,8 +235,18 @@ INSERT CONSOLE OUTPUT (wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-</pre><!-- code-content -->
+Re-declaration
+
+For example
+
+   var a = 10;
+   var a = 20;
+   console.log(a)
+
+1) Reference Error
+2) Syntax Errror
+3) Type Error
+4) No Error </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -177,33 +254,10 @@ INSERT CODE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+20
+  // No Error </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
-                    </details><!--details CONSOLE -->
-                </article>
-
-                <article>
-                    <h1 class="count">Question</h1>
-                    <details open><!--details CODE-->
-                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
-                        <pre class="details-code-aclass">
-INSERT CODE
-</pre><!-- code-content -->
-                    </details><!--details CODE-->
-
-                    <br class="small-view">
-                    <br class="wide-view">
-                    <details open><!--Details CONSOLE -->
-                        <summary class="details-console-summary">[JavaScript Inserts]</summary>
-                        <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
-                        <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+20 // No Error </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
