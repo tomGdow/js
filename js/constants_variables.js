@@ -6,10 +6,10 @@ baseFileName = getBaseFileName(baseFileName);
 // }
 
 //Add New FileName(s)
-let pageArr = ["index", "exam_objectives", "assignment", "increment_decrement", "plus", "minus", "multiply", "divide", "power", "modulus", "addition_assignment", "subtraction_assignment", "multiplication_assignment", "division_assignment", "remainder_assignment", "exponentiation_assignment", "coercion", "comments", "indentation", "naming_conventions", "noscript", "const","let_var","temporal_dead_zone", "domain_one_questions_part_one"];
+let pageArr = ["index", "exam_objectives", "assignment", "increment_decrement", "plus", "minus", "multiply", "divide", "power", "modulus", "addition_assignment", "subtraction_assignment", "multiplication_assignment", "division_assignment", "remainder_assignment", "exponentiation_assignment", "coercion", "comments", "indentation", "naming_conventions", "noscript", "const", "let_var", "temporal_dead_zone", "domain_one_questions_part_one", "errors_quiz"];
 pageArr.push("search"); // 'search' should be the last term in pageArr
 
-let pageTitleArr = ["js-index", "js-exam-objectives", "assignment", "incr-decr", "plus", "minus", "multiply", "divide", "power", "mod", "+assignment", "-assignment", "*assignment", "/assignment", "%assignment", "**exponentiation", "coercion", "comments", "indentation", "naming", "noscript", "const", "let_var","TDZ", "d1Q", "js-search"];
+let pageTitleArr = ["js-index", "js-exam-objectives", "assignment", "incr-decr", "plus", "minus", "multiply", "divide", "power", "mod", "+assignment", "-assignment", "*assignment", "/assignment", "%assignment", "**exponentiation", "coercion", "comments", "indentation", "naming", "noscript", "const", "let_var", "TDZ", "d1Q", "err_quiz", "js-search"];
 
 // Add banner third part
 const bannerThirdPart = "js";
