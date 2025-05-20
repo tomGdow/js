@@ -25,6 +25,15 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+    </style>
 
 </head>
 
@@ -62,11 +71,103 @@
             <main>
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
-                    <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <h1 class="count">Keywords</h1>
+
+                    <ol>
+                        <li><strong>Keywords</strong> are tokens that look like identifiers but have special meanings in
+                            JavaScript
+                        <li>
+                            For example, the keyword <strong>async</strong>
+                            before a function declaration indicates that the function is asynchronous
+
+                        <li>
+                            Some keywords are reserved, meaning that they cannot be used as an identifier for variable
+                            declarations, function
+                            declarations, etc
+
+                        <li>
+                            They are often called <strong>reserved</strong> words
+                        <li>
+                            Not all
+                            keywords are reserved — for example, <strong>async</strong> can be used as an identifier
+                            anywhere
+
+                        <li>Some keywords are only contextually
+                            reserved — for example,
+                            <ol>
+                                <li>
+                                    <strong>await</strong> is only reserved within the body of an async function
+
+                                <li>
+                                    <strong>let</strong> is only reserved
+                                    <ol>
+                                        <li>in <strong>strict mode</strong> code
+                                        <li>in <strong>const</strong> and <strong>let</strong> declarations
+                                    </ol>
+                            </ol>
+                        <li>
+                            Identifiers are always compared by string value, so escape sequences are interpreted
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">Reserved Keywords</h1>
+                    <ol>
+                        <li>break
+                        <li>case
+                        <li>catch
+                        <li>class
+                        <li>const
+                        <li>continue
+                        <li>debugger
+                        <li>default
+                        <li>delete
+                        <li>do
+                        <li>else
+                        <li>export
+                        <li>extends
+                        <li>false
+                        <li>finally
+                        <li>for
+                        <li>function
+                        <li>if
+                        <li>import
+                        <li>in
+                        <li>instanceof
+                        <li>new
+                        <li>null
+                        <li>return
+                        <li>super
+                        <li>switch
+                        <li>this
+                        <li>throw
+                        <li>true
+                        <li>try
+                        <li>typeof
+                        <li>var
+                        <li>void
+                        <li>while
+                        <li>with
+
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">reserved only in strict mode</h1>
+                    <ol>
+
+                        <li><strong>let</strong>, also reserved in
+                            <ol>
+                                <li><strong>const</strong>
+                                <li><strong>let</strong>
+                                <li><strong>class</strong>
+                            </ol>
+
+                        <li><strong>static</strong>
+                        <li><strong>yield</strong>, also reserved in
+                            <ol>
+                                <li><strong>generator</strong> (function bodies)
+                            </ol>
+                    </ol>
                 </article>
 
                 <article>
@@ -80,13 +181,7 @@
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+'b*" reserved keywords (1) </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +189,9 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+break </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+break </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +200,335 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+"c*" reserved keywords (5) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+case
+catch
+class
+const
+continue </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+case
+catch
+class
+const
+continue </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>const catch class case continue</dd>
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"d*" reserved keywords (4) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+debugger
+default
+delete
+do </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+debugger
+default
+delete
+do </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>do delete default debugger</dd>
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"e*" reserved Keywords (3)</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+else
+export
+extends </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+else
+export
+extends </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"f*" reserved keywords (4) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+false
+finally
+for
+function </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+false
+finally
+for
+function </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>finally function for false</dd>
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"i*" reserved keywords (4) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+if
+import
+in
+instanceof </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+if
+import
+in
+instanceof </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>if import instanceof in </dd>
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"n*" reserved keywords (2)</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+new
+null </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+new
+null </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"r*" reserved keywords (1)</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+return </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+return </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"s*" reserved Keywords (2) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+super
+switch </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+super
+switch </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"t*" reserved keywords (5)</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+this
+throw
+true
+try
+typeof </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+this
+throw
+true
+try
+typeof </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>try this throw true typeof</dd>
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"v*" reserved keywords (2) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+var
+void </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+var
+void </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"w*" reserved keywords (2)</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+while
+with </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+while
+with </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,23 +540,41 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+INSERT CONSOLE OUTPUT TWO (small view) 
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+INSERT CONSOLE OUTPUT TWO (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
 
                 <article>
-                    <h1 class="count">Notes</h1>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
 
-                    <ol>
-                        <li>I am an item</li>
-                    </ol>
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
 
                 </article>
+                <!--here-->
 
                 <article>
                     <h1 class="count refs-heading">References</h1>
@@ -154,11 +582,9 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
-                            </div>
-
-                            <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords">MDN:
+                                    Keywords</a>
                             </div>
 
                         </div>
@@ -286,7 +712,7 @@ INSERT CONSOLE OUTPUT (wide view)
 
                 for (const el of oddsArr) {
                     // for (const el of [1]) {
-                    toggleFirstChildInnerHTML(targets[el], "open", "", "Console");
+                    toggleFirstChildInnerHTML(targets[el], "open", "", "Show");
                 }
 
                 toggleFirstChildInnerHTML(targets[biblioIndex], "open", "", "Bibliography");
@@ -323,7 +749,7 @@ INSERT CONSOLE OUTPUT (wide view)
             // for (const el of [1]) {
             targets[el].addEventListener("toggle",
                 function () {
-                    toggleFirstChildInnerHTML(this, "open", "", "Console");
+                    toggleFirstChildInnerHTML(this, "open", "", "Show");
                     toggleClass(this, "open", "details-console-aclass", "details-console-bclass");
                 }
             );
