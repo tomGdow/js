@@ -90,8 +90,36 @@
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-  </pre><!-- code-content -->
+&lt;script&gt;
+    let vegetable = "cabbage"
+    let price = parseFloat('10')
+    let vatTax = parseFloat('five')
+    debugger;
+    let total = price + vatTax;
+    alert("Total (inc VAT) is " + total);
+
+&lt;/script&gt;
+ 
+Q: Which of the following statements are correct?
+
+   Choose all that apply
+
+A: The web page is blank (no output is shown) 
+   when displayed
+
+B: An alert message box appears with the value Total 
+   (inc VAT) is NaN when the web page is loaded
+
+C: The script will only pause if the developer 
+   tools are opened in the console
+
+D: When the developer tools are opened 
+   in the console, it is possible to step
+   line by line and find the problem
+
+E: An alert message box appears with the 
+   value Total (inc VAT) is 15, 
+   when the web page is loaded </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -102,11 +130,9 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+B C D </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+B C D </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -247,7 +273,7 @@ INSERT CONSOLE OUTPUT (wide view)
 
                 for (const el of oddsArr) {
                     // for (const el of [1]) {
-                    toggleFirstChildInnerHTML(targets[el], "open", "", "Console");
+                    toggleFirstChildInnerHTML(targets[el], "open", "", "Answer");
                 }
 
                 toggleFirstChildInnerHTML(targets[biblioIndex], "open", "", "Bibliography");
@@ -284,7 +310,7 @@ INSERT CONSOLE OUTPUT (wide view)
             // for (const el of [1]) {
             targets[el].addEventListener("toggle",
                 function () {
-                    toggleFirstChildInnerHTML(this, "open", "", "Console");
+                    toggleFirstChildInnerHTML(this, "open", "", "Answer");
                     toggleClass(this, "open", "details-console-aclass", "details-console-bclass");
                 }
             );
