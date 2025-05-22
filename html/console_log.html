@@ -21,6 +21,28 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <style>
+        ol {
+            padding-left: 10%
+        }
+
+        ol ul {
+            border-left: 0.25em solid lightgray;
+            padding-left: 5%;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .red-text {
+            color: red;
+        }
+
+        .orange-text {
+            color: orange;
+        }
+    </style>
 
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
@@ -63,30 +85,68 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>The console object provides access to the debugging console
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">Console</h1>
+                    <ol>
+                        <li><strong>console.assert()</strong>
+                            <ul>
+                                <li>Log an error message to console if the first argument is false
+                            </ul>
+
+                        <li><strong> console.clear()</strong>
+                            <ul>
+                                <li>Clear the consol
+                            </ul>
+                        <li><strong>console.dir()</strong>
+                            <ul>
+                                <li>Displays an interactive listing of the properties of a specified JavaScript object
+                                <li>
+                                    This listing lets you use disclosure triangles to examine the contents of child
+                                    objects
+                            </ul>
+
+                        <li><strong>console.dirxml()</strong>
+
+                            <ul>
+                                <li>
+                                    Displays an XML/HTML Element representation of the specified object if possible or
+                                    the JavaScript Object view if it is not possible
+                            </ul>
+
+                        <li><strong>console.group()</strong>
+                            <ul>
+                                <li>Creates a new inline group, indenting all following output by another level
+                                <li>To move back out a level, call console.groupEnd()
+                            </ul>
+
+                        <li><strong>console.log()</strong>
+                            <ul>
+                                <li>Outputs a message to the console
+                            </ul>
+
+                        <li><strong>console.table()</strong>
+                            <ul>
+                                <li>Displays tabular data as a table
+                            </ul>
+                    </ol>
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+let myobj = { name: "tom", id:100 }
+console.log(myobj.name, 
+    myobj.id, 
+    100, 
+    "hello") </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +154,9 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+tom 100 100 hello </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+tom 100 100 hello </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +165,110 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+let myobj = { name: "tom", id:100 }
+
+console.log("My name is %s", myobj.name) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+My name is tom</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+My name is tom</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let myobj = { name: "tom", id: 100 }
+
+console.log("%cMy Name is %s", 
+    "color:red",
+    myobj.name) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view red-text">
+My Name is tom </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view red-text">
+My Name is tom </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+console.log("My name is %s and my id is %d", 
+    myobj.name, 
+    myobj.id) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+My name is tom and my id is 100 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+My name is tom and my id is 100 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+console.log(`%cMy name is ${myobj.name}`, 
+    "color:orange")</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view orange-text">
+My name is tom </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view orange-text">
+My name is tom </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let myobj = { name: "tom", id: 100 }
+
+console.dir(myobj);
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,21 +280,67 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+Object { name: "tom", 
+           id: 100 }
+id: 100
+name: "tom" </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Object { name: "tom", id: 100 }
+id: 100
+name: "tom" </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+INSERT CONSOLE OUTPUT TWO (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
 
                 <article>
-                    <h1 class="count">Notes</h1>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
 
-                    <ol>
-                        <li>I am an item</li>
-                    </ol>
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
 
                 </article>
 
@@ -154,11 +350,7 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
-                            </div>
-
-                            <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/console">MDN: console</a>
                             </div>
 
                         </div>
