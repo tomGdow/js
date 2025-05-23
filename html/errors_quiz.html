@@ -170,7 +170,7 @@ Uncaught SyntaxError:
                 <article>
                     <h1 class="count">Question</h1>
                     <details open><!--details CODE-->
-                        <summary class="details-console-summary">[JavaScript Inserts]</summary>
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
 Re-initialize a declared constant
 
@@ -246,7 +246,7 @@ For example
 1) Reference Error
 2) Syntax Errror
 3) Type Error
-4) No Error </pre><!-- code-content -->
+4) No Error</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -266,8 +266,14 @@ For example
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-</pre><!-- code-content -->
+let myobj = void 0;
+console.log(myobj);
+console.log(myobj.x)
+
+1) undefined and Reference Error
+2) undefined and Syntax Errror
+3) undefined and TypeError
+4) No Error </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -275,10 +281,20 @@ INSERT CODE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+</pre><!-- code-content -->
+
+                        <pre class="details-console-aclass small-view">
+
+undefined and TypeError
+
+Uncaught TypeError: 
+  myobj is undefined
+                        </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+undefined and TypeError
+
+Uncaught TypeError: 
+  myobj is undefined
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
@@ -288,7 +304,13 @@ INSERT CONSOLE OUTPUT (wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+let myobj = "x";
+console.log(myobj.x)
+
+1) Reference Error
+2) Syntax Errror
+3) Type Error
+4) No Error 
 </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -297,10 +319,13 @@ INSERT CODE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+
+No Error 
+(undefined)
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+No Error 
+(undefined)
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
