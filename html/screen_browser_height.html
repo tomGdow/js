@@ -25,6 +25,11 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+    </style>
 
 </head>
 
@@ -70,12 +75,74 @@
                 </article>
 
                 <article>
+                    <h1 class="count">window.innerHeight</h1>
+                    <ol>
+                        <li>
+                            The <strong>window.innerHeight</strong> property returns the inner height of the browser
+                            window in pixels
+                        <li>
+                            It represents the height of the document's viewing area, excluding browser UI elements like
+                            toolbars,
+                            scrollbars (if present), and window borders
+                        <li>
+                            Think of it as the height of the browser's canvas where your web content is rendered.
+                        <li>
+                            Returns pixels: The value is always returned as a number representing pixels
+                        <li>
+                            Dynamic: The value updates automatically when the browser window is resized.
+                        <li>
+                            This makes it incredibly valuable for
+                            creating responsive designs
+                        <li>
+                            Excludes Browser UI: does not include scrollbars,
+                            browser toolbars, or borders
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">window.outerHeight</h1>
+                    <ol>
+                        <li>
+                            This property returns the outer height of the browser window, including the browser UI
+                            (toolbars, scrollbars, borders,
+                            etc.)
+                        <li>
+                            In essence, it represents the total height of the browser window as a whole
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">document.documentElement.clientHeight</h1>
+                    <ol>
+                        <li>This property returns the height of the document's root element (&lt;html&gt;), including
+                            padding but excluding borders,
+                            margin and the horizontal scrollbar (if present)
+                        <li>Importantly, this property is relative to the document, not the window
+                            itself
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">window.screen.height</h1>
+                    <ol>
+                        <li>This property returns the total height of the user's screen
+                        <li>It is not specific to the browser window
+                        <li>(MDN) The Screen.height read-only property returns the height of the screen in CSS pixels
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">window.screen.availHeight</h1>
+                    <ol>
+                        <li>
+                            The read-only Screen interface's <strong>availHeight</strong> property returns the height,
+                            in CSS pixels, of
+                            the space available for Web
+                            content on the screen
+                    </ol>
+                </article>
+                <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
+
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
@@ -104,7 +171,9 @@ height: 932px, width:1440px</pre><!-- wide-view -->
                         <pre class="details-code-aclass">
 let myheight = window.screen.height;
 let mywidth = window.screen.width;
-console.log("myheight: %spx, mywidth, %spx", myheight,mywidth)</pre><!-- code-content -->
+console.log("myheight: %spx, 
+             mywidth, %spx", 
+             myheight,mywidth)</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -133,7 +202,7 @@ let myInnerWidth = window.innerWidth;
 console.log("myInnerHeight: %spx, 
              myInnerWidth %spx", 
              myInnerHeight,
-             myInnerWidth); </pre><!-- code-content -->
+             myInnerWidth);</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -150,7 +219,6 @@ myInnerHeight: 355px, myInnerWidth 720px</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
-
 
                 <article>
                     <h1 class="count">Code Example</h1>
@@ -174,12 +242,103 @@ console.log("MyOuterHeight %spx,
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-MyOuterHeight 840px, MyOuterWidth, 720px </pre><!-- small-view -->
+MyOuterHeight 840px, 
+MyOuterWidth, 720px </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-MyOuterHeight 840px, MyOuterWidth, 720px</pre><!-- wide-view -->
+MyOuterHeight 840px, 
+MyOuterWidth, 720px</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let myClientHeight = 
+    document.documentElement.clientHeight;
+let myClientWidth = 
+    document.documentElement.clientWidth;
+
+console.log("MyClientHeight %spx, 
+             MyClientWidth, %spx",
+             myClientHeight, 
+             myClientWidth)
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+MyClientHeight 355px, 
+MyClientWidth, 720px</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+MyClientHeight 355px, 
+MyClientWidth, 720px</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let myAvailHeight = screen.availHeight;
+let myAvailWidth = screen.availWidth;
+
+console.log("MyAvailHeight %spx, 
+             MyAvailWidth, %spx",
+             myAvailHeight, myAvailWidth)
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+MyAvailHeight 841px, 
+MyAvailWidth, 1440px</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+MyAvailHeight 841px, 
+MyAvailWidth, 1440px</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+document.documentElement.previousSibling </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+&lt;!DOCTYPE html&gt; (object)</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+&lt;!DOCTYPE html&gt; (object)</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
 
                 <article>
                     <h1 class="count">Code Example</h1>
@@ -223,11 +382,14 @@ INSERT CONSOLE OUTPUT THREE (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://www.codingeasypeasy.com/blog/understanding-the-windowinnerheight-property-in-javascript-a-comprehensive-guide">Understanding
+                                    the Window.innerHeight Property in JavaScript: A Comprehensive Guide</a>
                             </div>
 
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Screen/height">MDN: Screen:
+                                    height property</a>
                             </div>
 
                         </div>
