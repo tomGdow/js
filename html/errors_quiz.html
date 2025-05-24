@@ -310,7 +310,7 @@ console.log(myobj.x)
 1) Reference Error
 2) Syntax Errror
 3) Type Error
-4) No Error 
+4) No Error
 </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -321,12 +321,10 @@ console.log(myobj.x)
                         <pre class="details-console-aclass small-view">
 
 No Error 
-(undefined)
-</pre><!-- small-view -->
+(undefined)</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
 No Error 
-(undefined)
-</pre><!-- wide-view -->
+(undefined)</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -335,7 +333,19 @@ No Error
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+try {
+    throw new Error('A funny error');
+} catch (err) {
+    console.log('catch');
+    return false;
+} finally {
+    console.log("finally");
+}
+   
+1) Reference Error
+2) Syntax Errror
+3) Type Error
+4) No Error
 </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -344,11 +354,11 @@ INSERT CODE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+Uncaught SyntaxError: 
+  return not in function</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+Uncaught SyntaxError: 
+  return not in function</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -357,8 +367,22 @@ INSERT CONSOLE OUTPUT (wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
-</pre><!-- code-content -->
+function myfn() {
+    try {
+        throw new Error('A funny error');
+    } catch (err) {
+        console.log('catch')
+        return false;
+        console.log('catch again')
+    } finally {
+        console.log("finally")
+    }
+}
+
+1) Reference Error
+2) Syntax Errror
+3) Type Error
+4) No Error</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -366,11 +390,13 @@ INSERT CODE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+(No Error)
+catch
+finally</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+(No Error)
+catch
+finally</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
                 <!--here1-->
