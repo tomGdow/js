@@ -25,6 +25,25 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        .dialog-img {
+            width: 80%;
+        }
+
+        .img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 
 </head>
 
@@ -62,63 +81,169 @@
             <main>
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
-                    <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <h1 class="count">window.alert()</h1>
+                    <ol>
+                        <li><code>window.alert()</code> instructs the browser to
+                            <ol>
+                                <li>display a dialog
+                                <li>include an optional message
+                                <li> wait until the user dismisses the dialog
+                            </ol>
+
+                        <li><strong>syntax</strong>
+                            <pre class="details-code-aclass">
+alert()
+alert(message)
+</pre><!-- code-content -->
+                            <dl>
+                                <dt><strong>message</strong>
+                                <dd>
+                                    A string you want to display in the alert dialog, or, alternatively, an object that
+                                    is
+                                    converted into a string and
+                                    displayed
+                            </dl>
+
+                        <li>
+                            The <strong>alert</strong> dialog should be used for messages which do not require any
+                            response on the part
+                            of the user, other than the
+                            acknowledgement of the message
+
+                        <li>
+                            Dialog boxes are <strong>modal windows</strong> - they prevent the user from accessing the
+                            rest of the
+                            program's interface until the
+                            dialog box is closed
+                    </ol>
                 </article>
 
                 <article>
-                    <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
+                    <h1 class="count">window.confirm()</h1>
+                    <ol>
+                        <li>
+                            <code>window.confirm()</code> instructs the browser to
+                            <ol>
+                                <li>display a dialog with an optional message
+                                <li>wait until the user either
+                                    confirms or cancels the dialog
+                            </ol>
+
+                        <li>
+                            <strong>syntax</strong>
+                            <pre class="details-code-aclass">
+confirm()
+confirm(message)</pre>
+                            <dl>
+                                <dt><strong>message</strong></dt>
+                                <dd>A string you want to display in the confirmation dialog</dd>
+                            </dl>
+                        <li>
+                            <strong>return value</strong>
+                            <ol>
+                                <li>true
+                                <li>false
+                            </ol>
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">window.prompt()</h1>
+                    <ol>
+                        <li><strong>window.prompt()</strong> instructs the browser to
+                            <ol>
+                                <li>
+                                    display a dialog prompting the user to input some
+                                    text
+                                <li>
+                                    include an optional message
+                                <li>
+                                    include optional default text in input box
+
+                                <li>
+                                    wait until the user either <strong>submits the text</strong> or <strong>
+                                        cancels the dialog
+                                    </strong>
+                            </ol>
+                        <li>
+                            The submitted value may be assigned to an identifier
+                        <li>
+                            If <strong>cancel</strong> is pressed, <strong>null</strong> is returned
+
+
+                        <li><strong>syntax</strong>
+                            <pre class="details-code-aclass">
+prompt()
+prompt(message)
+prompt(message, defaultValue)
+</pre>
+
+                            <dl>
+                                <dt><strong>message</strong>
+                                <dd>
+                                    <ol>
+                                        <li>
+                                            A string of text to display to the user
+                                        <li>
+                                            Can be omitted if there is nothing to show in the prompt window
+                                    </ol>
+                                <dt><strong>defaultValue</strong></dt>
+                                <dd>A string containing the default value displayed in the text input field.</dd>
+                            </dl>
+                        <li><strong>return value</strong>
+                            <ol>
+                                <li>A string containing the text entered by the user
+                                <li>null
+                            </ol>
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example (alert)</h1>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+document
+    .getElementById("mybtn2")
+    .addEventListener('click',
+        function () {
+       window.alert("This is an alert")
+})
+  </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
                     <br class="wide-view">
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
-                        <pre class="details-console-aclass small-view">
+                        <div class="details-console-aclass small-view">
+                            <div class="img-container">
+                                <img class="dialog-img" src="../images/alert.png" alt="alert box image">
+                            </div>
+                        </div><!-- small-view -->
 
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
-                        <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+                        <div class="details-console-aclass wide-view">
+                            <div class="img-container">
+                                <img class="dialog-img" src="../images/alert.png" alt="alert box image">
+                            </div>
+                        </div><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
                 <article>
-                    <h1 class="count">Code Example</h1>
+                    <h1 class="count">Code Example (Confirm)</h1>
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+document
+  .getElementById("mybtn2")
+  .addEventListener('click',
+    function () {
+      let x = window.confirm("Please Confirm");
+
+console.log("your choice, %s", x)
+})
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -129,24 +254,69 @@ INSERT CODE
                         <summary class="details-console-summary">
                             [JavaScript Inserts]
                         </summary>
-                        <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
-                        <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+                        <div class="details-console-aclass small-view">
+
+                            <div class="img-container">
+                                <img class="dialog-img" src="../images/confirm.png" alt="prompt box image">
+                            </div>
+                            <pre>
+your choice, true
+your choice, false </pre>
+                        </div><!-- small-view -->
+
+                        <div class="details-console-aclass wide-view">
+                            <div class="img-container">
+                                <img class="dialog-img" src="../images/confirm.png" alt="prompt box image">
+                            </div>
+                            <pre>
+your choice, true
+your choice, false </pre>
+                        </div><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here`-->
+
+                <article>
+                    <h1 class="count">Code Example (prompt)</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+document
+    .getElementById("mybtn2")
+    .addEventListener('click',
+        function () {
+        sign = window.prompt(
+            "What is your zodiac sign", 
+            "capricorn");
+        console.log("your sign, %s", sign)
+}) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <div class="details-console-aclass small-view">
+                            <div class="img-container">
+                                <img class="dialog-img" src="../images/prompt.png" alt="prompt box image">
+                            </div>
+                        </div><!-- small-view -->
+                        <div class="details-console-aclass wide-view">
+                            <div class="img-container">
+                                <img class="dialog-img" src="../images/prompt.png" alt="prompt box image">
+                            </div>
+                            <pre>
+your sign, capricorn  // Press 'OK'
+your sign, null       // Press 'Cancel'</pre>
+                        </div><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
 
-                <article>
-                    <h1 class="count">Notes</h1>
-
-                    <ol>
-                        <li>I am an item</li>
-                    </ol>
-
-                </article>
 
                 <article>
                     <h1 class="count refs-heading">References</h1>
@@ -154,11 +324,18 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/alert">MDN:
+                                    window.alert()</a>
                             </div>
 
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt">MDN:
+                                    window.prompt()</a>
+                            </div>
+
+                            <div class="ref">
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm">MDN:
+                                    window.cofirm()</a>
                             </div>
 
                         </div>
