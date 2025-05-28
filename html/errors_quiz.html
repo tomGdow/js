@@ -472,8 +472,27 @@ Uncaught SyntaxError:
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE THREE
-  </pre><!-- code-content -->
+function mostBasicFunction() {
+
+    try {
+        let num1 = 10;
+        let num2 = 0;
+        let result = num1 / num2;
+        console.log(result)
+
+    } catch (err) {
+        console.log(err.name)
+        console.log(err.message)
+    }
+    return 1;
+}
+
+mostBasicFunction();
+
+1) Reference Error
+2) Syntax Errror
+3) Type Error
+4) No Error</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -484,11 +503,9 @@ INSERT CODE THREE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+Infinity (No Error)</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
+Infinity (No Error)</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
