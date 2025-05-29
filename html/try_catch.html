@@ -209,7 +209,27 @@ Oops! Error:A catchy error</pre><!-- wide-view -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+function safeCall(obj, prop) {
+  if (!obj.hasOwnProperty(prop)) {
+    throw new Error(
+      `obj does not have prop ${prop}`)
+  }
+  return obj
+}
+
+let myobj = { "name": "john" }
+
+try {
+  safeCall(myobj, "namey");
+  console.log(myobj.name)
+} catch (err) {
+  console.log("%s: %s", 
+  err.name, 
+  err.message)
+}
+
+console.log("I can continue, even with an error!")
+                            
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -221,11 +241,15 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+Error:
+  obj does not have prop namey
+I can continue, 
+  even with an error! </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+Error:
+  obj does not have prop namey
+I can continue, 
+  even with an error!</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
