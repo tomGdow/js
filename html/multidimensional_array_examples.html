@@ -205,6 +205,104 @@ console.log(JSON.stringify(tmp)) </pre><!-- code-content -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+let arr = [[1, 2, 3], [3, 4, 5, 6], [7]];
+
+for (let i = 0; i &lt; arr.length; i++) { 
+
+  for (let j=0; j &lt; arr[i].length; j++) { 
+
+    arr[i][j] = Math.pow(arr[i][j],2) 
+
+  } 
+}
+
+console.log(JSON.stringify(arr)) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[[1,4,9],[9,16,25,36],[49]] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[[1,4,9],[9,16,25,36],[49]] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let arr = [[1, 2, 3], [3, 4, 5, 6], [7]];
+
+for (inner of arr) {
+  let count = 0;
+  for (el of inner) {
+    inner[count] = Math.pow(el, 2);
+    count++;
+  }
+}
+
+console.log(JSON.stringify(arr)) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[[1,4,9],[9,16,25,36],[49]]</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[[1,4,9],[9,16,25,36],[49]]</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let tmp = [];
+for (inner of arr) {
+
+  tmp.push(inner.map(x => Math.pow(x,2)));
+
+}
+
+console.log(JSON.stringify(tmp)); </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[[1,4,9],[9,16,25,36],[49]]</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[[1,4,9],[9,16,25,36],[49]]</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
 INSERT CODE TWO
   </pre><!-- code-content -->
                     </details><!--details CODE-->
@@ -252,15 +350,6 @@ INSERT CONSOLE OUTPUT THREE (wide view)
 
                 </article>
                 <!--here-->
-
-                <article>
-                    <h1 class="count">Notes</h1>
-
-                    <ol>
-                        <li>I am an item</li>
-                    </ol>
-
-                </article>
 
                 <article>
                     <h1 class="count refs-heading">References</h1>
