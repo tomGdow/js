@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title><!-- Use JavaScript (constants_variables.js)-->
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="TO,DO">
+    <meta name="description" content="TO DO">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+
+    <link rel="stylesheet" href="../css/main.css"><!-- EXTERNAL STYLESHEET -->
+
+    <style>
+        @import url("../css/counters.css");
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <noscript>
+        <link rel="stylesheet" href="../css/nojs.css">
+    </noscript>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <header class="main_header">
+                <div class="banner">
+
+                    <div class="banner-item-1">
+                        <a href="https://tomgdow.com">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+
+                    <div class="banner-item-2"><!-- [JavaScript automatically inserts] --></div>
+                    <div class="banner-item-3-alt"><!--pageNumbers. JavaScript auto inserts --></div>
+                    <div class="banner-item-3"><!-- [Use JavaScript (constants_variables.js)] --></div>
+
+                </div><!-- banner-->
+            </header>
+
+            <nav>
+                <a href="../index.html" accesskey="h">home</a>
+                <a href="PREV.html" id="prevPage" accesskey="p">prev</a>
+                <a href="NEXT.html" id="nextPage" accesskey="n">next</a>
+                <a href="../html/search.html" accesskey="s">search</a>
+            </nav>
+
+            <div class="aside-right">
+                <div class="right-aside-icon">&raquo;</div>
+            </div><!--aside-right -->
+
+            <main>
+                <article>
+                    <noscript><span>This Web Site requires JavaScript!</span></noscript>
+                    <h1 class="count">Introduction</h1>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
+                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
+                    </p>
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example (Basic Class)</h1>
+                    <p>
+                        Basic class with constructor, getter and setter
+                    </p>
+
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+class Color {
+  constructor(r, g, b) {
+    this.values = [r, g, b]
+  }
+
+  getRed() {
+    return this.values[0];
+  }
+
+  setRed(x) {
+    this.values[0] = x;
+  }
+}
+
+let red = new Color(255, 0, 0);
+
+console.log(JSON.stringify(red.values))
+
+red.setRed(128)
+console.log(JSON.stringify(red.values))
+console.log(JSON.stringify(red.getRed()));
+
+red.values[0] = 200;
+console.log(JSON.stringify(red.values))
+console.log(red.getRed());
+ </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-console-aclass small-view">
+[255,0,0] 
+
+[128,0,0] 
+128 
+
+[200,0,0] 
+200 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[255,0,0] 
+
+[128,0,0] 
+128 
+
+[200,0,0] 
+200 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example (Check Setter Range)</h1>
+                    <p>
+                        Add Range Checking to Setter and show problem with <code>values</code> not being private
+                    </p>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+class Color {  
+  constructor(r, g, b) {
+    this.values = [r, g, b]
+  }
+
+  getRed() {
+    return this.values[0];
+  }
+
+  setRed(x) {
+
+    if (x &lt; 0 || x > 255) {
+      throw new RangeError("invalid R Value")
+    }
+    this.values[0] = x;
+  }
+}
+
+let red = new Color(255, 0, 0);
+
+console.log(JSON.stringify(red.values))
+
+try {
+
+  red.setRed(300)
+  console.log(red.getRed())
+
+} catch (err) {
+
+  console.log(`${err.name}: ${err.message}`)
+
+}
+
+try {
+  red.values[0] = 300;
+  console.log((red.values)[0])
+} catch (err) {
+  console.log(err.message)
+}
+ </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[255,0,0]
+
+RangeError: invalid R Value
+
+300 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[255,0,0]
+
+RangeError: invalid R Value
+
+300 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example (Private Values)</h1>
+                    <p>
+                        Add <code>private</code> values
+                    </p>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+class Color {
+  #values;
+  constructor(r, g, b) {
+    this.#values = [r, g, b]
+  }
+
+  getRed() {
+    return this.#values[0];
+  }
+
+  setRed(x) {
+
+  if (x &lt; 0 || x> 255) {
+    throw new RangeError("invalid R Value")
+  }
+  this.#values[0] = x;
+  }
+}
+
+let red = new Color(255, 0, 0);
+
+console.log(JSON.stringify(red.values))
+    
+try {
+
+  red.setRed(300)
+  console.log(red.getRed())
+  
+} catch (err) {
+
+    console.log(`${err.name}: ${err.message}`)
+
+}
+
+try {
+
+  red.values[0] = 300;
+  console.log(red.getRed())
+
+} catch (err) {
+
+  console.log(`${err.name}: ${err.message}`)
+
+} 
+try {
+  red.setRed(255)
+  console.log(red.getRed())
+} catch (err) {
+  console.log(err.message)
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+undefined 
+
+RangeError: invalid R Value 
+
+TypeError: red.values is undefined
+
+255</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+undefined 
+
+RangeError: invalid R Value 
+
+TypeError: red.values is undefined
+
+255</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example (Accessor Fields)</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+class Color {
+  #values;
+  constructor(r, g, b) {
+  this.#values = [r, g, b]
+}
+
+get getRed() {
+  return this.#values[0];
+}
+
+set setRed(x) {
+
+if (x &lt;  0 || x> 255) {
+  throw new RangeError("invalid R Value")
+}
+  this.#values[0] = x;
+}
+
+}
+
+let red = new Color(255, 0, 0);
+let errFn = err => console.log(`${err.name}: ${err.message}`)
+
+console.log(JSON.stringify(red.values))
+
+try {
+
+  red.setRed = 255;
+  console.log(red.getRed)
+
+} catch (err) {
+
+  errFn(err);
+
+}
+
+try {
+  
+  red.setRed(254)
+  console.log(red.getRed())
+
+} catch (err) {
+
+  errFn(err);
+
+}
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+undefined
+
+255
+
+TypeError: red.setRed is not a function</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+undefined
+
+255
+
+TypeError: red.setRed is not a function</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example (static)</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+class Color {
+
+  #values;
+
+  static isValid(r, g, b) {
+    return r >= 0 && r &lt;= 255 && 
+      g >= 0 && g &lt;= 255 && 
+      b >= 0 && b &lt;= 255; 
+    } 
+  
+  constructor(r, g, b) { this.#values=[r, g, b] }
+    get getRed() {
+      return this.#values[0];
+    } 
+    set setRed(x) { 
+      if (x &lt; 0 || x> 255) {
+        throw new RangeError("invalid R Value")
+      }
+      this.#values[0] = x;
+    }
+
+}
+
+let red = new Color(255, 0, 0);
+
+console.log(Color.isValid(255, 255, 255))
+red.setRed = 255;
+console.log(red.getRed) 
+console.log(red.isValid) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true
+255
+undefined</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true
+255
+undefined</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+class Color {
+
+  #values;
+
+  static isValid(r, g, b) {
+    return r >= 0 && r &lt;= 255 && 
+           g &gt;= 0 && g &lt;= 255 && 
+           b &gt;= 0 && b &lt;= 255;
+  } 
+    
+    constructor(r, g, b) { this.#values=[r, g, b] }
+            
+      get getRed() { 
+        return this.#values[0];
+      } 
+            
+    set setRed(x) { 
+    
+      if (x &lt; 0 || x &gt; 255) {
+        throw new RangeError("invalid R Value")
+      }
+
+      this.#values[0] = x;
+    }
+
+}
+
+class ColorWithAlpha extends Color {
+  #alpha;
+
+  constructor(r, g, b, a) {
+ 
+    super(r, g, b);
+            
+    this.#alpha = a;
+  }
+            
+  get alpha () {
+    return this.#alpha;
+  }
+
+  set alpha(value) {
+    if (value &lt; 0 || value> 1) {
+      throw new RangeError("Alpha value must be between 0 and 1")
+    }
+                
+    this.#alpha = value;
+  }
+
+}
+
+let red = new Color(255, 0, 0);
+red.setRed = 255;
+console.log(red.getRed)
+
+let redAlpha = new ColorWithAlpha(255, 0, 0, 0.5)
+console.log(redAlpha.getRed);
+console.log(redAlpha.alpha);</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+255
+255
+0.5</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+255
+255
+0.5</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here-->
+
+                <article>
+                    <h1 class="count refs-heading">References</h1>
+                    <details open><!-- Details REFS -->
+                        <summary class="details-refs-summary">[JavaScript Inserts]</summary>
+                        <div class="ref-container details-refs-aclass">
+                            <div class="ref">
+                                <a href="https://www.google.ie">Google</a>
+                            </div>
+
+                            <div class="ref">
+                                <a href="https://www.google.ie">Google</a>
+                            </div>
+
+                        </div>
+                    </details><!-- Details REFS -->
+                </article>
+            </main>
+
+            <div class="aside-left">
+                <div class="left-aside-icon">&laquo;</div>
+            </div>
+
+            <footer>
+
+                <div class="footer-item-1">
+                    <a href="https://tomgdow.com">
+                        <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                            alt="gravatar image of tomgdow">
+                    </a>
+                </div>
+
+                <div class="footer-item-2">
+                    <span id="page_number"></span> of <span id="total_pages"></span>
+                </div>
+
+                <div class="footer-item-3">[Footer-3]</div><!-- [JavaScript automatically inserts] -->
+
+            </footer>
+
+        </div><!-- grid-container -->
+
+    </div><!--container-->
+
+    <script src="../js/functions.js"></script><!-- JS Functions-->
+    <script src="../js/constants_variables.js"></script><!-- JS Constants_variables -->
+
+    <script>
+        'use strict'
+
+        // page title
+        document.title = getPageTitle(pageTitleArr, pageArr, baseFileName);
+
+        // banner-second-part
+        document.getElementsByClassName("banner-item-2")[0].innerHTML = splitAndCapitalize(baseFileName);
+
+        // banner-third-part
+        document.getElementsByClassName("banner-item-3")[0].innerHTML = "&nbsp;" + bannerThirdPart;
+
+        // footer-third-part
+        document.getElementsByClassName("footer-item-3")[0].innerHTML = "&nbsp;" + baseFileName;
+
+        // next page
+        nextPage.setAttribute("href", nextPageURL(baseFileName, pageArr));
+
+        // previous page
+        prevPage.setAttribute("href", prevPageURL(baseFileName, pageArr, "./"));
+        // prevPage.setAttribute("href", prevPageURL(baseFileName, pageArr));[template-second-page-CHANGE]
+
+        // aside-right event listeners
+        document.getElementsByClassName("aside-right")[0].addEventListener('click', function () {
+            window.location.href = nextPageURL(baseFileName, pageArr, "./");
+            setBackgroundColor(this.className, "lightblue", 0);
+        });
+
+        document.getElementsByClassName("aside-right")[0].addEventListener('mouseover', function () {
+            displayBlock("right-aside-icon");
+            setBackgroundColor(this.className, "#8cc8dc", 0)
+        });
+
+        document.getElementsByClassName("aside-right")[0].addEventListener('mouseout', function () {
+            displayNone("right-aside-icon");
+            setBackgroundColor(this.className, "lightblue", 0)
+        });
+
+        // aside-left event listeners
+        document.getElementsByClassName("aside-left")[0].addEventListener('click', function () {
+            window.location.href = prevPageURL(baseFileName, pageArr, "./");
+            // window.location.href = prevPageURL(baseFileName, pageArr, "./");[Template-seond-page-CHANGE]
+            setBackgroundColor(this.className, "lightblue", 0);
+        });
+
+        document.getElementsByClassName("aside-left")[0].addEventListener('mouseover', function () {
+            displayBlock("left-aside-icon");
+            setBackgroundColor(this.className, "#8cc8dc", 0)
+        });
+
+        document.getElementsByClassName("aside-left")[0].addEventListener('mouseout', function () {
+            displayNone("left-aside-icon");
+            setBackgroundColor(this.className, "lightblue", 0)
+        });
+
+        // Conditionally remove "open" attribute from details tag 
+        let condition = window.matchMedia("(max-width: 440px)");
+        let conditionTwo = window.matchMedia("(min-width: 440px)");
+        let targets = document.getElementsByTagName("details");
+
+        let arr = Array.from(Array(targets.length).keys());
+        let oddsArr = arr.filter(el => el % 2 !== 0);
+        let evensArr = arr.filter(el => el % 2 == 0);
+        const biblioIndex = targets.length - 1;
+
+        window.addEventListener("load",
+            function () {
+
+                // Use condition to REMOVE open attribute from 
+                // media with widths LESS THAN max-width (440px) (mobile)
+
+                for (const el of arr) {
+                    // for (const el of [0, 1, 2]) {
+                    condRemoveAttribute(condition, "details", el, "open");
+                }
+
+                // Use conditionTwo to REMOVE open attribute from 
+                // media with widths GREATER THAN min-width (440px)
+
+                for (const el of oddsArr) {
+                    // for (const el of [1]) {
+                    condRemoveAttribute(conditionTwo, "details", el, "open");
+                }
+
+                // toggle innerHTML
+                for (const el of evensArr) {
+                    // for (const el of [0]) {
+                    toggleFirstChildInnerHTML(targets[el], "open", "", "Code");
+                }
+
+                for (const el of oddsArr) {
+                    // for (const el of [1]) {
+                    toggleFirstChildInnerHTML(targets[el], "open", "", "Console");
+                }
+
+                toggleFirstChildInnerHTML(targets[biblioIndex], "open", "", "Bibliography");
+
+                // Toggle classes
+                for (const el of evensArr) {
+                    // for (const el of [0]) {
+                    toggleClass(targets[el], "open", "details-code-aclass", "details-code-bclass");
+                }
+
+                for (const el of oddsArr) {
+                    // for (const el of [1]) {
+                    toggleClass(targets[el], "open", "details-console-aclass", "details-console-bclass");
+                }
+
+                toggleClass(targets[biblioIndex], "open", "details-refs-aclass", "details-refs-bclass");
+            }
+        );
+
+        // Event Listeners on Details tags 
+        // 1) CODE
+        for (const el of evensArr) {
+            // for (const el of [0]) {
+            targets[el].addEventListener("toggle",
+                function () {
+                    toggleFirstChildInnerHTML(this, "open", "", "Code");
+                    toggleClass(this, "open", "details-code-aclass", "details-code-bclass");
+                }
+            );
+        }
+
+        // 2) CONSOLE
+        for (const el of oddsArr) {
+            // for (const el of [1]) {
+            targets[el].addEventListener("toggle",
+                function () {
+                    toggleFirstChildInnerHTML(this, "open", "", "Console");
+                    toggleClass(this, "open", "details-console-aclass", "details-console-bclass");
+                }
+            );
+        }
+
+        // 3) BIBLIOGRAPHY
+        targets[biblioIndex].addEventListener("toggle",
+            function () {
+                toggleFirstChildInnerHTML(this, "open", "", "Bibliography");
+                toggleClass(this, "open", "details-refs-aclass", "details-refs-bclass");
+            }
+        );
+
+    </script>
+
+    <script src="../js/main.js"></script><!-- Main JS file -->
+
+</body>
+
+</html>
