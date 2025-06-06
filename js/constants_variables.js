@@ -50,7 +50,10 @@ let pageArr = ["index",
     "instantiation",
     "class_examples_one",
     "in",
-    "includes"];
+    "includes",
+"Module-Three",
+"Module-Four",
+"Module-Five"];
 
 pageArr.push("search"); // 'search' should be the last term in pageArr
 
@@ -101,6 +104,9 @@ let pageTitleArr = [
     "class-egs",
     "in",
     "includes",
+    "M3",
+    "M4",
+    "M5",
     "js-search"];
 
 // Add banner third part
