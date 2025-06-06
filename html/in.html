@@ -25,6 +25,18 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        .code-alone {
+            margin-top: 1em;
+        }
+        ol {
+            padding-left: 10%;
+            /* border: 2px solid red; */
+        }
+        ol> li {
+            padding-bottom: 0.2em;
+        }
+    </style>
 
 </head>
 
@@ -63,30 +75,172 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            The <code>in</code> operator returns <strong>true</strong> if the specified property is in
+                            the
+                            specified object <strong>or its prototype chain</strong>
+
+                        <li>
+                            If you want to
+                            check for only non-inherited properties, use <code>Object.hasOwn()</code> instead
+
+                        <li>
+                            A property may be present in an object but have value undefined
+
+                        <li>
+                            Therefore, <code>"x" in obj</code> is not the same as
+                            <br>
+                            <code>obj.x !== undefined</code>
+                        <li>
+                            To make in return <code>false</code> after a property is added, use the <code>delete</code>
+                            operator
+                            instead of
+                            setting that property's
+                            value to <code>undefined</code>
+
+                        <li>
+                            You can also use the in operator to check whether a particular private class field or method
+                            has been defined in an
+                            object
+
+                        <li>
+                            The operator returns <code>true</code> if the property is defined, and <code>false</code>
+                            otherwise
+                        <li>
+                            This is
+                            known as a branded check,
+                            because it returns <code>true</code> if and only if the object was created with that class
+                            constructor,
+                            after which you can safely
+                            access other private properties as well
+
+                            <pre class="details-code-aclass code-alone">
+class C {
+  #x;
+  static isC(obj) {
+    return #x in obj;
+  }
+} </pre><!-- code-content -->
+
+                    </ol>
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let myobj = {"name": "joe", 
+              "age": 21}
+
+console.log("joe" in myobj); </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let myarr = [10,20,30];
+
+console.log(0 in myarr)  
+console.log(4 in myarr)
+console.log(length in myarr)</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true
+false
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true
+false
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"Pi" in Math
+"PI" in Math</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+false
+true</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+false
+true</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+class C {
+  #x;
+  static isC(obj) {
+    return #x in obj;
+  }
+}
 
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+class D {
+
+  #x;
+  static isD(obj) {
+    return #x in obj;
+  }
+}
+
+myc = new C;
+myd = new D;
+
+C.isC(myc)
+C.isC(myd)
+
+D.isD(myc)
+D.isD(myd) </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +248,17 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
+true
+false
 
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+false
+true </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
+true
+false
 
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+false
+true </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +267,7 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+INSERT CODE THREE
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,23 +279,16 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+INSERT CONSOLE OUTPUT THREE (small view) 
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+INSERT CONSOLE OUTPUT THREE (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
 
-                <article>
-                    <h1 class="count">Notes</h1>
-
-                    <ol>
-                        <li>I am an item</li>
-                    </ol>
-
-                </article>
+                <!--here`-->
 
                 <article>
                     <h1 class="count refs-heading">References</h1>
@@ -154,7 +296,9 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in">MDN:
+                                    in operator</a>
                             </div>
 
                             <div class="ref">
