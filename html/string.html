@@ -80,13 +80,12 @@
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+let fname = " joe ";
+let lname = " bloggs ";
 
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+console.log(  `Hello ${fname}, 
+   your firstname is ${fname}
+and your lastname is ${lname}`)</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +93,12 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+Hello joe , your firstname is joe 
+and your lastname is    bloggs
+ </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+Hello joe , your firstname is joe 
+and your lastname is    bloggs</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +107,26 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+let fname = " joe ";
+let lname = " bloggs ";
+
+function capitalize (str) {
+  return String(str.trim()).charAt(0)
+    .toUpperCase()
+    + String(str.trim()).slice(1)
+}
+
+function myTag(strArr, fn, x,ln) {
+
+return `${strArr[0]}${fn.trim().toUpperCase()}
+        ${strArr[1]}${capitalize(fn)}
+        ${strArr[2]}${capitalize(ln)}`
+
+}
+
+console.log(myTag`Hello ${fname}, 
+      your firstname is ${fname} 
+   and your lastname is ${lname}`)
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,11 +138,11 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-</pre><!-- small-view -->
+Hello JOE, your firstname is Joe
+ and your lastname is Bloggs</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-</pre><!-- wide-view -->
+Hello JOE, your firstname is Joe
+ and your lastname is Bloggs </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
