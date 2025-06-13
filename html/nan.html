@@ -25,6 +25,19 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+    </style>
 
 </head>
 
@@ -63,30 +76,128 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            The <code>NaN</code> global property is a value representing Not-A-Number
+                        <li>
+                            <code>NaN</code> is a property of the global object
+                        <li>
+                            In other words, it is a <strong>variable in global scope</strong>
+                        <li>
+                            In modern browsers, <code>NaN</code> is a non-configurable, non-writable property
+                        <li>
+                            Even when this is not the case, avoid overriding
+                            it
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">NaN Generation</h1>
+                    There are five different types of operations that return <code>NaN</code>
+
+                    <ol>
+                        <li>
+                            Failed number conversion, for example
+                            <ol>
+
+                                <li>
+                                    (explicit) <code>parseInt("blabla")</code>,
+                                <li>
+                                    (explicit) <code>Number(undefined)</code>,
+                                <li>
+                                    (implicit) <code>Math.abs(undefined)</code>
+                            </ol>
+
+                        <li>
+                            Math operation where the result is not a real number,
+                            for example
+                            <ol>
+                                <li><code>Math.sqrt(-1)</code>
+                            </ol>
+
+                        <li>
+                            Indeterminate form, for example
+                            <ol>
+                                <li><code>0 * Infinity</code>
+                                <li><code>1 ** Infinity</code>
+                                <li><code>Infinity / Infinity</code>
+                                <li><code>Infinity - Infinity</code>
+                            </ol>
+                        <li>
+                            A method or expression whose operand is or gets coerced to NaN, for example
+                            <ol>
+                                <li>7 ** NaN
+                                <li>7 * "blabla"
+                            </ol>
+                            — this means <code>NaN</code> is contagious
+                        <li>Other cases where an invalid value is to be represented as a number, for example:
+                            <ol>
+                                <li><code>new Date("blabla").getTime()</code>
+                                <li><code>"".charCodeAt(1)</code>
+                            </ol>
+
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">NaN Behaviour</h1>
+                    <ol>
+                        <li>
+                            NaN and its behaviors are not invented by JavaScript
+                        <li>
+                            Its semantics in floating point arithmetic, are
+                            specified by IEEE 754, including
+
+                            <pre class="details-code-aclass">
+NaN == NaN // false </pre><!-- code-content -->
+
+                        <li>
+                            If <code>NaN</code> is involved in a mathematical operation (but not bitwise operations),
+                            the result is usually also <code>NaN</code>
+                        <li>
+                            When <code>NaN</code> is one of the operands of any relational comparison (&lt;, &gt;,
+                            &gt;=,
+                            &lt;=), the result is <strong>always false</strong>
+
+                        <li>
+                            <code>NaN</code> compares
+                            unequal (via==, !=, ===, and !==) to any other value — including to another NaN value
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">
+                        Testing against NaN
+                    </h1>
+                    <ol>
+                        <li>To tell if a value is <code>NaN</code>
+                            <ol>
+                                <li><code>Number.isNaN()</code>
+                                <li><code>isNaN()</code>
+                                <li><code> x !== x </code>
+                                    (NaN is the only value that compares unequal to itself)
+                            </ol>
+                        <li>
+                            However note the difference between <code>isNaN()</code> and <code>Number.isNaN()</code>
+                            <ol>
+                                <li>
+                                    <code>isNaN()</code> will return true
+                                    if the value is
+                                    <strong>currently NaN</strong>, or if it is <strong>going to be NaN</strong> after
+                                    it is coerced to a number
+                                <li>
+                                    <code>Number.isNaN</code>
+                                    will return true <strong>only if the value is currently NaN</strong>
+                            </ol>
+                    </ol>
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+NaN == NaN </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +205,9 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+false</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+false </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +216,311 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+0/0</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+NaN</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+NaN</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+1/0</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Infinity</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Infinity</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+0/1 </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+0</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+0</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+NaN === NaN</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+false </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+false </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+NaN != NaN </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+NaN ! == NaN </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"".charCodeAt(1) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+NaN </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+NaN </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let y = new Date("bla").getDate()
+console.log(y) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+NaN </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+NaN </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof NaN </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Number</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Number</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+isNaN('bla') </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+Number.isNaN("bla") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+false </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+false </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+isNaN(0/0) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+Number.isNaN(0/0) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE ONE
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,31 +532,77 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+INSERT CONSOLE OUTPUT ONE(small view) 
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+INSERT CONSOLE OUTPUT ONE(wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
 
                 <article>
-                    <h1 class="count">Notes</h1>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
 
-                    <ol>
-                        <li>I am an item</li>
-                    </ol>
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
 
                 </article>
-
+                <!--here`-->
                 <article>
                     <h1 class="count refs-heading">References</h1>
                     <details open><!-- Details REFS -->
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN">MDN:
+                                    NaN</a>
                             </div>
 
                             <div class="ref">
