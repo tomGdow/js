@@ -25,6 +25,37 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+
+        .details-code-aclass {
+            margin-top: 1em;
+            margin-left: 0;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .margin-bottom {
+            margin-bottom: 1em;
+            /* border: 2px solid red; */
+        }
+    </style>
+
+
 
 </head>
 
@@ -63,19 +94,180 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            The String object is used to represent and manipulate a sequence of characters
+
+                        <li>
+                            Some of the most-used operations on strings
+                            are
+                            <ol>
+                                <li>
+                                    to check their length
+                                    <pre>
+"mystr".length // 5 </pre>
+                                <li>
+                                    to build and concatenate them using the
+                                    <code> + </code>and <code> += </code> string operators
+                                    <pre>
+let str = "joe"
+str += "doe"
+console.log(str) //joedoe </pre>
+                                <li>
+                                    check for the existence
+                                    or location of substrings with the <code>indexOf()</code> method
+                                    <pre>
+"mystr".indexOf("s") // 2 </pre>
+                                <li>
+                                    extract substrings with the <code>substring()</code> method
+                                    <pre>
+"mystr".substr(1,2) // "ys" </pre>
+                            </ol>
+                    </ol>
+                </article>
+
+                <article>
+                    <h1 class="count">
+                        String Generation </h1>
+                    <ol>
+                        <li>
+                            Strings can be created as primitives from <strong>string literals</strong>
+                            <pre class="details-code-aclass margin-bottom">
+const s1 = "A str primitive"
+const s2 = 'A string primitive'
+const s3 = `A string primitive`</pre>
+                        <li>
+                            as objects using the <strong>String() constructor</strong>
+                            <pre class="details-code-aclass margin-bottom">
+const s4 = new String("A str obj")</pre>
+
+                        <li>
+                            with <code>String("mystr")</code> <strong>without</strong> the <code>new</code> keyword
+                            (which produces a string primitive)
+
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">
+                        Character access
+                    </h1>
+                    <ol>
+                        <li><code>"cat".charAt(1) // "a"</code></li>
+                        <li><code>"cat"[1] // "a"</code></li>
+
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">
+                        String primitives and String objects</h1>
+                    <ol>
+
+                        <li>
+                            String literals (denoted by double or single quotes) and strings returned from
+                            <code>String</code> calls
+                            in a
+                            non-constructor context
+                            (that is, called without using the <code>new</code> keyword) are primitive strings
+                        <li>
+                            A String object can always be converted to its primitive counterpart with the
+                            <code>valueOf()</code> method
+
+                            <pre class="details-code-aclass">
+mystr= new String("2+2")  
+    // [String: '2+2']
+
+typeof mystr  // 'object'
+
+eval(mystr)+100 // '2+2100'
+
+eval(mystr.valueOf())+100
+   // 104 </pre><!-- code-content -->
+                    </ol>
+
+                </article>
+                <article>
+                    <h1 class="count">Comparing Strings</h1>
+                    <ol>
+                        <li>
+                            Use the less-than and greater-than operators to compare strings
+                            <pre class="details-code-aclass">
+temp=[]
+for(el of "09AZaz"){
+    temp.push([el,el.charCodeAt(0)])
+}
+
+// 6
+
+temp
+[
+  [ '0', 48 ],
+  [ '9', 57 ],
+  [ 'A', 65 ],
+  [ 'Z', 90 ],
+  [ 'a', 97 ],
+  [ 'z', 122 ]
+] </pre><!-- code-content -->
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Mnemonic</h1>
+                    <pre class="center">
+0Aa (48 65 97) [Cavan-Galway-Kerry]</pre>
+                </article>
+
+                <article>
+                    <h1 class="count">
+                        String Coercion
+                    </h1>
+                    <ol>
+                        <li>
+                            Strings are returned as-is.
+                        <li>
+                            <code>undefined</code> turns into "undefined"
+                        <li>
+                            <code>null</code> turns into "null"
+                        <li>
+                            <code>true</code> turns into "true";
+
+                        <li>
+                            <code>false</code> turns into "false"
+                        <li>
+                            Numbers are converted with the same algorithm as <code>toString(10)</code>
+                        <li>
+                            Symbols throw a TypeError
+                        <li>
+                            Objects are first converted to a primitive by calling (in the following order)
+                            <ol>
+                                <li><code>[Symbol.toPrimitive]()</code> (with
+                                    "string" as hint)
+                                <li><code>toString()</code>
+                                <li><code>valueOf()</code>
+                            </ol>
+                            The resulting primitive is then converted to a string
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">String Coercion Methods</h1>
+                    <ol>
+                        <li>
+                            Template literal: `${x}` does string coercion
+                        <li>
+                            <code>String()</code>
+                        <li>
+                            Using the <code>+</code> operator
+                            <ol>
+                                <li>
+                                    <code>"" + x</code> coerces its operand to a <strong>primitive instead of a
+                                        string</strong>, and, for
+                                    some objects, has
+                                    entirely
+                                    different behaviors from normal string coercion
+                            </ol>
+                    </ol>
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
@@ -148,6 +340,838 @@ Hello JOE, your firstname is Joe
                 </article>
 
                 <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+String.fromCharCode(48,65,97) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+0Aa' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+0Aa' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"aA">"Aa" </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"Aa">"aA" </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+false </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+false </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"0">"a"
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+false </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+false </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+String.fromCodePoint(48,65,97) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+0Aa' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+0Aa' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let s1="Hello";
+let s2="World";
+let s3 =s1.concat(" ", s2);
+s3 </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'Hello World'</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'Hello World'</pre><!-- small-view -->
+                        </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"0Z"<"AZ"<"aZ" </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+false </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+false </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"0Z"<"AZ" && "AZ" < "aZ" </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const s1 = "dogs are good"
+s1.endsWith("good")
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const s2 ="The enzyme is a protein";
+s2.includes("protein") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+The dog looks like a cat".indexOf("cat") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+21</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+21</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+The dog looks like a cat".indexOf("caty") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+-1 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+-1 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The dog looks like a cat".search("cat") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+21 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+21 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The dog looks like a cat".search("caty") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+-1 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+-1 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat  looks like a cat".indexOf("cat") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+4</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+4</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat  looks like a cat".lastIndexOf("cat")
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+22 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+22 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let str = "The cat looks like the Cat"
+console.log(str.match(/[A-Za-z]at/g)) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Array [ "cat", "Cat" ]
+0: "cat"
+1: "Cat"
+length: 2 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Array [ "cat", "Cat" ]
+0: "cat"
+1: "Cat"
+length: 2 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+`The sequence is ${"pro".repeat(3)}` </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'The sequence is propropro' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'The sequence is propropro' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat looks like a dog".replace("dog", "kitten") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+"The cat looks like a kitten" </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+"The cat looks like a kitten" </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat looks like a dog".slice(1,7) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'he cat' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'he cat' </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>
+                                <code>slice(indexStart)</code> <br>
+                                <code>slice(indexStart, indexEnd)</code>
+
+                            <dd><code>indexEnd</code> is the last index to EXCLUDE from returned substring
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat looks like a dog".split('cat') </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ 'The ', ' looks like a dog' ] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ 'The ', ' looks like a dog' ] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat looks like a dog".startsWith("The") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+The cat looks like a dog".startsWith("The") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat looks like a dog".substr(1,6) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'he cat' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'he cat' </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>!!DEPRECATED</dd>
+                            <dd>The second argument is the number of characters AFTER the starting position</dd>
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat looks like a dog".substring(1,6) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'he ca' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'he ca' </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>from the <code>startIndex</code> up to and excluding the <code>endIndex</code>, or to
+                                the end of the string if
+                                no <code>endIndex</code> is supplied</dd>
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat looks like a dog".toUpperCase() </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'THE CAT LOOKS LIKE A DOG' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'THE CAT LOOKS LIKE A DOG' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"The cat looks like a dog".toLowerCase() </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+"The cat looks like a dog".toLowerCase() </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+"The cat looks like a dog".toLowerCase() </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const mystr2 =" the cat sat on the matress   "
+mystr2.trim()
+mystr2 </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'the cat sat on the matress'
+'  the cat sat on the matress  ' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'the cat sat on the matress'
+'  the cat sat on the matress  ' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const str = " the cat sat on the mat        ";
+str.trim();
+str.trimStart();
+str.trimEnd(); </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'the cat sat on the mat'
+'the cat sat on the mat       '
+'    the cat sat on the mat' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'the cat sat on the mat'
+'the cat sat on the mat       '
+'    the cat sat on the mat'</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE ONE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT ONE(small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT ONE(wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here-->
+
+
+                <article>
                     <h1 class="count">Notes</h1>
 
                     <ol>
@@ -162,7 +1186,9 @@ Hello JOE, your firstname is Joe
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">MDN:
+                                    string</a>
                             </div>
 
                             <div class="ref">
