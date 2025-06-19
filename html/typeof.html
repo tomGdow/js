@@ -26,6 +26,24 @@
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
 
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+
+        .space-above {
+            margin-top: 1em;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -66,6 +84,21 @@
                     <ol>
                         <li>The <code>typeof</code> operator <strong>returns a string</strong> indicating the type of
                             the operand's value
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Need for parentheses in syntax</h1>
+                    <ol>
+                        <li>
+                            The <code>typeof</code> operator has <strong>higher precedence</strong> than binary
+                            operators like addition
+                            (<code>+</code>)
+                        <li>
+                            Therefore, <strong>parentheses are needed</strong> to
+                            evaluate the type of an addition result
+                            <pre class="details-code-aclass space-above">
+typeof 2+3    //  'number3'
+typeof(2+3)   //  'number'</pre><!-- code-content -->
                     </ol>
                 </article>
 
@@ -308,8 +341,7 @@ Number("shoe")
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-typeof typeof 20 
-  </pre><!-- code-content -->
+typeof typeof 20</pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -364,8 +396,8 @@ typeof new String('hello')</pre><!-- code-content -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE THREE
-  </pre><!-- code-content -->
+typeof 123-345-789
+typeof (123-456-189) </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -376,11 +408,11 @@ INSERT CODE THREE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+NaN
+'number'</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide 
-                    </details><!--details CONSOLE -->
+NaN
+'number'</details><!--details CONSOLE -->
 
                 </article>
                 <!--here-->
