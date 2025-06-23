@@ -26,6 +26,20 @@
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
 
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -63,30 +77,75 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            JavaScript's strict mode is a way to opt in to a restricted variant of JavaScript, thereby
+                            implicitly opting-out of
+                            "sloppy mode"
+                        <li>
+                            Strict mode isn't just a subset: it intentionally has different semantics from normal code
+                        <li>
+                            Strict mode
+                            code and non-strict mode code can coexist, so scripts can opt into strict mode incrementally
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Benefits of Strict Mode</h1>
+                    <ol>
+                        <li>
+                            Eliminates some JavaScript silent errors by changing them to throw errors
+                        <li>
+                            Fixes mistakes that make it difficult for JavaScript engines to perform optimizations:
+                            strict mode code can sometimes be
+                            made to run faster than identical code that's not strict mode
+                        <li>
+                            Prohibits some syntax likely to be defined in future versions of ECMAScript
+
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Invoking strict mode</h1>
+                    <ol>
+
+                        <li>
+                            Strict mode applies to entire scripts or to individual functions
+
+                        <li>
+                            It doesn't apply to block statements enclosed in {}
+                            braces: attempting to apply it to such contexts does nothing
+
+                        <li>
+                            To invoke strict mode for an entire script, put the exact statement
+                            <code>"use strict";</code>
+                            (or <code>'use strict';</code>) before any other statements
+
+                        <li>
+                            Likewise, to invoke strict mode for a function, put the exact statement
+                            <code>"use strict";</code> (or
+                            <code>'use strict';</code>) in the
+                            function's body before any other statements
+
+                        <li>
+                            The entire contents of JavaScript modules are automatically in strict mode, with no
+                            statement needed to initiate it
+
+                        <li>
+                            All parts of a class's body are strict mode code, including both class declarations and
+                            class expressions
+                    </ol>
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+'use strict';
 
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+let myvar
+
+mywar = 4; </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +153,25 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+Uncaught ReferenceError: 
+    assignment to undeclared variable 
+    mywar </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+Uncaught ReferenceError: 
+    assignment to undeclared variable 
+    mywar </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note
+                            <dd>
+                                Strict mode makes it impossible to accidentally create global variables
+                            <dd>
+                                In sloppy mode, mistyping a variable in an
+                                assignment creates a new property on the global object and continues to "work"
+                            <dd>
+                                Assignments which would accidentally
+                                create global variables throw an error in strict mode
+                        </dl>
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +180,37 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+function myfn(a, a, b) {
+   return [a,a,b]
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[2,2,3] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[2,2,3] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function myfn2 (a, a, b) {
+    return arguments[0]
+}
+
+console.log(1,2,3);
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,14 +222,686 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+1 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+1 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function myfn3 (a, a, a) {
+    'use strict';
+    return arguments[1];
+}
+console.log(myfn3(1,2,3)) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+    Duplicate parameter name not allowed 
+    in this context </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+    Duplicate parameter name not allowed 
+    in this context </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>
+                                Strict mode requires that function parameter names be unique
+                            <dd>
+                                In sloppy mode, the last duplicated argument hides
+                                previous identically-named arguments
+                            <dd>
+                                Those previous arguments remain available through arguments
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+'use strict';     
+const sum = 03 + 2 + 1; 
+console.log(sum)</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+  "0"-prefixed octal literals are deprecated; 
+  use the "0o" prefix instead </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+  "0"-prefixed octal literals are deprecated; 
+  use the "0o" prefix instead </pre><!-- wide-view -->
+
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>
+                                Strict mode forbids a 0-prefixed octal literal
+                            <dd>
+                                In sloppy mode, a number beginning with a 0, such as 0644, is
+                                interpreted as an octal number (0644 === 420), if all digits are smaller than 8
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+'use strict';
+
+const sum = 0o3 + 2 + 1;
+
+console.log(sum) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+6</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+6</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+with (Math) {
+    console.log(sin(PI/2))
+}
+
+with({"name":"joe"}) {
+    console.log(name)
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+1
+joe </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+1
+joe </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+'use strict';
+with({"name":"joe"}) {
+console.log(name)
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+  strict mode code may not contain 
+  'with' statements </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+  strict mode code may not contain 
+  'with' statements </pre><!-- wide-view -->
+                        <dl class="details-dl">
+                            <dt>Note</dt>
+                            <dd>Strict mode prohibits <code>with</code>
+                        </dl>
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+eval("var x = 2")              
+console.log(x) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+2 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+2 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+'use strict';
+eval("var x = 2")              
+console.log(x) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught ReferenceError: 
+  x is not defined </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught ReferenceError: 
+  x is not defined </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note
+                            <dd>
+                                In strict mode, <code>eval</code> does not introduce new variables into the surrounding
+                                scope
+                            <dd>
+                                In sloppy mode, <code>eval("var x;")</code>
+                                introduces a variable x into the surrounding function or the global scope
+                        </dl>
+
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+eval("let x = 2")
+console.log(x) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught ReferenceError: 
+  x is not defined </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught ReferenceError: 
+  x is not defined </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"use strict";
+x = 3.14;              
+console.log(x) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught ReferenceError: 
+  assignment to undeclared 
+  variable x </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught ReferenceError: 
+  assignment to undeclared 
+  variable x </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"use strict";
+function myfn(arg) { };
+delete myfn; </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+  applying the 'delete' operator to an 
+  unqualified name is deprecated </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+  applying the 'delete' operator to an 
+  unqualified name is deprecated </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"use strict";
+let eval = 3.14; </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError:
+  'eval' can't be defined or 
+  assigned to in strict mode code </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError:
+  'eval' can't be defined or 
+  assigned to in strict mode code </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"use strict";
+let arguments = 3.14; </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 'arguments' can't be defined or 
+  assigned to in strict mode code
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+Uncaught SyntaxError: 
+  'arguments' can't be defined or 
+  assigned to in strict mode code </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function myfn () {
+  return this;
+}
+
+console.log(myfn()) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Window http://127.0.0.1:5500/expt.html </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Window http://127.0.0.1:5500/expt.html </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"use strict";
+
+function myfn () {
+    return this;
+}
+
+console.log(myfn()) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+undefined</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+undefined</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+"use strict";
+const obj = {get x() {return 0} };
+
+obj.x = 3.14; </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught TypeError: 
+  setting getter-only property "x" </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught TypeError: 
+  setting getter-only property "x" </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function myfn(a = 1, b = 2) {
+  "use strict";
+  return a + b;
+}
+
+console.log(myfn()) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+  "use strict" not allowed in function with 
+  default parameter </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+  "use strict" not allowed in function with 
+  default parameter </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+i* extra reserved keywords </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+implements
+interface </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+implements
+interface </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+  l* extra reserved keywords </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+let </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+let </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+p* extra reserved keywords </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+package
+private
+protected
+public </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+package
+private
+protected
+public </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+  s* extra reserved keywords </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+static </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+static </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+y* extra reserved keywords </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+yield </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+yield </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here-->
 
                 <article>
                     <h1 class="count">Notes</h1>
@@ -154,11 +918,12 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">MDN:
+                                    use strict</a>
                             </div>
 
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a href="https://www.w3schools.com/js/js_strict.asp">W3Schools: use strict</a>
                             </div>
 
                         </div>
