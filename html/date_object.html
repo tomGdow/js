@@ -25,6 +25,19 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+    </style>
 
 </head>
 
@@ -63,10 +76,18 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            JavaScript Date objects represent a single moment in time in a platform-independent format
+                        <li>
+                            Date objects encapsulate an
+                            integral number that represents milliseconds since the midnight at the beginning of January
+                            1, 1970, UTC (the epoch)
+
+                        <li>
+                            This timestamp is
+                            timezone-agnostic and uniquely defines an instant in history
+                    </ol>
                 </article>
 
                 <article>
@@ -80,13 +101,10 @@
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+d = new Date() 
+console.log(d)
+console.log(d.toISOString())
+  </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +112,13 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
+Tue Jun 24 2025 19:32:42 GMT+0100 (Irish Standard Time)
 
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+"2025-06-24T18:32:42.360Z" </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
+Tue Jun 24 2025 19:32:42 GMT+0100 (Irish Standard Time)
 
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+"2025-06-24T18:32:42.360Z"</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +127,14 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+d = new Date("2025")
+
+console.log.getDate()
+console.log.getMonth()
+console.log.getFullYear()
+
+console.log(d)
+console.log(d.getISOString())
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,14 +146,305 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+1
+0
+2025
+
+Wed Jan 01 2025 00:00:00 GMT+0000 (Greenwich Mean Time)
+"2025-01-01T00:00:00.000Z" </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+1
+0
+2025
+
+Wed Jan 01 2025 00:00:00 GMT+0000 (Greenwich Mean Time)
+"2025-01-01T00:00:00.000Z" </pre><!-- wide-view -->
+
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const d = new Date(2025,0)
+d.toString()
+d.toISOString()
+d.getMonth()
+d.getDate()
+d.getFullYear()   
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'Wed Jan 01 2025 00:00:00 GMT+0000 (Greenwich Mean Time)'
+'2025-01-01T00:00:00.000Z'
+0
+1
+2025 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'Wed Jan 01 2025 00:00:00 GMT+0000 (Greenwich Mean Time)'
+'2025-01-01T00:00:00.000Z'
+0
+1
+2025 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const d2 = new Date(2025,0,1);
+const temp = []
+
+temp.push(d2.getDate(), 
+          d2.getMonth(),
+          d2.getFullYear()
+          );
+
+temp</pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ 1, 0, 2025 ] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ 1, 0, 2025 ] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let d = new Date(2025,0,1,0)
+
+d.toISOString()
+d.toLocaleTimeString()
+d.toLocaleTimeString('en-us')
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'2025-01-01T00:00:00.000Z'
+'00:00:00'
+'12:00:00 AM' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'2025-01-01T00:00:00.000Z'
+'00:00:00'
+'12:00:00 AM' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+d2 = new Date(2025,0,1,13)
+d2.toUTCString()
+d2.toLocaleTimeString()
+d2.toLocaleTimeString('en-us')
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+2025-01-01T13:00:00.000Z
+'Wed, 01 Jan 2025 13:00:00 GMT'
+'13:00:00'
+'1:00:00 PM' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+2025-01-01T13:00:00.000Z
+'Wed, 01 Jan 2025 13:00:00 GMT'
+'13:00:00'
+'1:00:00 PM' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+d3.setTime(1000*1000*1000*1000)
+d3.getFullYear()
+
+1) 2001
+2) 1985
+3) 2021
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+2001 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+2001 </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>setTimeOut()
+                            <dd>The <code>setTime()</code> method of <code>Date</code> instances changes the timestamp
+                                for this date
+                            <dd>The <strong>timestamp</strong>is the
+                                number of milliseconds since
+                                the epoch
+                            <dd>The <strong>epoch</strong> is defined as the midnight at the beginning of January 1,
+                                1970, UTC
+                        </dl>
+
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+INSERT CONSOLE OUTPUT THREE (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE ONE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT ONE(small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT ONE(wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here-->
 
                 <article>
                     <h1 class="count">Notes</h1>
@@ -154,11 +461,13 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">MDN:
+                                    Date</a>
                             </div>
 
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a href="https://www.w3schools.com/js/js_dates.asp">w3Schools: Date</a>
                             </div>
 
                         </div>
