@@ -25,6 +25,19 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+    </style>
 
 </head>
 
@@ -63,30 +76,152 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            There are many ways to format a date as a string
+                        <li>
+                            The JavaScript specification only specifies one format to be
+                            universally supported: the <code>date time string format</code>, a simplification of the ISO
+                            8601
+                            calendar date extended format
+                        <li>
+                            The
+                            format is as follows
+                            <pre class="details-code-aclass">
+YYYY-MM-DDTHH:mm:ss.sssZ </pre><!-- code-content -->
+
+                    </ol>
+
+                </article>
+                <article>
+                    <h1 class="count">Date Time String Format</h1>
+                    <dl>
+                        <dt><strong>YYYY</strong>
+
+                        <dd>
+                            <ol>
+                                <li>
+                                    The year
+                                <li>
+                                    Four digits (0000 to 9999)
+                                <li>
+                                    Or as an expanded year of + or - followed by six digits
+                                <li>
+                                    The sign is required for expanded years
+                                <li>
+
+                                    -000000 is explicitly disallowed as a valid year
+
+                            </ol>
+                        <dt><strong>MM</strong>
+                        <dd>
+                            <ol>
+                                <li>
+                                    MM is the month
+                                <li>
+                                    Two digits <strong>(01 to 12)</strong>
+                                <li>
+                                    Defaults to 01
+
+                            </ol>
+                        <dt><strong>DD</strong>
+                        <dd>
+                            <ol>
+                                <li>
+                                    The day of the month
+                                <li>
+                                    Two digits (01 to 31)
+                                <li>
+                                    Defaults to 01
+                            </ol>
+                        <dt><strong>T</strong>
+                        <dd>
+                            <ol>
+
+                                <li>
+                                    <code>T</code> is a literal character, which indicates the beginning of the time
+                                    part of the
+                                    string.
+                                <li>
+                                    The <code>T</code> is
+                                    required when
+                                    specifying the time part
+                            </ol>
+                        <dt><strong>HH</strong>
+                        <dd>
+                            <ol>
+                                <li>
+                                    The hour
+                                <li>
+                                    Two digits (00 to 23)
+                                <li>
+                                    As a special case, <code>24:00:00</code> is allowed, and is
+                                    interpreted as midnight at
+                                    the beginning of the next day
+                                <li>
+                                    Defaults to 00
+                            </ol>
+                        <dt><strong>mm</strong>
+                        <dd>
+                            <ol>
+                                <li>
+                                    The minute
+                                <li>
+                                    Two digits (00 to 59)
+                                <li>
+                                    Defaults to 00
+
+                            </ol>
+                        <dt><strong>ss</strong>
+                        <dd>
+                            <ol>
+                                <li>
+                                    The second
+                                <li>
+                                    Two digits (00 to 59)
+                                <li>
+                                    Defaults to 00
+
+                            </ol>
+                        <dt><strong>sss</strong>
+                        <dd>
+                            <ol>
+                                <li>
+                                    The millisecond
+                                <li>
+                                    With three digits (000 to 999)
+                                <li>
+                                    Defaults to 000
+
+                            </ol>
+                        <dt><strong>Z</strong>
+                            <ol>
+                                <li>
+                                    The timezone offset
+                                <li>
+                                    Can either be the literal character <code>Z</code>,indicating UTC
+                                <li>
+                                    Or can be <code>+</code> or <code>-</code>
+                                    followed by <code>HH:mm</code>, the
+                                    offset in hours and minutes from UTC
+                            </ol>
+
+
+                    </dl>
+
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+const d = new Date("2025-10-10")
 
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+d.toISOString()
+d.toDateString()
+d.getMonth() </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +229,14 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+'2025-10-10T00:00:00.000Z'
+'Fri Oct 10 2025'
+9 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
 
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+'2025-10-10T00:00:00.000Z'
+'Fri Oct 10 2025'
+9 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +245,43 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+const d3 = new Date("2025-10-10T19:30:00")
+
+d3.toISOString()
+d3.toDateString()
+d3.toLocaleDateString() </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'2025-10-10T18:30:00.000Z'
+'Fri Oct 10 2025'
+'10/10/2025' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'2025-10-10T18:30:00.000Z'
+'Fri Oct 10 2025'
+'10/10/2025' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const d4 = new Date("2025-10-25T17:00:00.125+09:00")
+
+d4.toISOString()
+d4.getMonth()
+d4.getTime()
+d4.getMilliseconds()
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,14 +293,151 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+'2025-10-25T08:00:00.125Z'
+9
+1761379200125
+125 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'2025-10-25T08:00:00.125Z'
+9
+1761379200125
+125 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+INSERT CONSOLE OUTPUT TWO (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE ONE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT ONE(small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT ONE(wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here-->
 
                 <article>
                     <h1 class="count">Notes</h1>
@@ -154,11 +454,14 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-date-time-string-format">ECMA
+                                    date time string format</a>
                             </div>
 
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a href="S/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format">MDN:
+                                    date time string format</a>
                             </div>
 
                         </div>
