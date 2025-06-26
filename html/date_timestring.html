@@ -312,8 +312,20 @@ d4.getMilliseconds()
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE TWO
-  </pre><!-- code-content -->
+const d = new Date(2025,11,25,14,30,30,100)
+const temp2=[]
+temp2.push(d.getFullYear(),
+           d.getMonth(),
+           d.getHours(), 
+           d.getMinutes(), 
+           d.getSeconds(), 
+           d.getMilliseconds(),
+           d.getTime(),
+           d.toISOString()
+          )
+d4 = new Date()
+d4.setTime(temp2[6])
+temp2 </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -324,11 +336,27 @@ INSERT CODE TWO
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-</pre><!-- small-view -->
+[
+  2025,
+  11,
+  14,
+  30,
+  30,
+  100,
+  1766673030100,
+  '2025-12-25T14:30:30.100Z'
+] </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-</pre><!-- wide-view -->
+[
+  2025,
+  11,
+  14,
+  30,
+  30,
+  100,
+  1766673030100,
+  '2025-12-25T14:30:30.100Z'
+] </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -338,8 +366,10 @@ INSERT CONSOLE OUTPUT TWO (wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE THREE
-  </pre><!-- code-content -->
+const d = new Date(2025,11,25,14,30,30,100)
+const d2=new Date(d.getTime())
+d
+d2 </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -350,11 +380,11 @@ INSERT CODE THREE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+2025-12-25T14:30:30.100Z
+2025-12-25T14:30:30.100Z </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
+2025-12-25T14:30:30.100Z 
+2025-12-25T14:30:30.100Z </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
