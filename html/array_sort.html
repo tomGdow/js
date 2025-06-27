@@ -143,8 +143,8 @@ sort(compareFn) </pre><!-- code-content -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-                            const months = ["March", "Jan", "Feb", "Dec"];
-                            months.sort() </pre><!-- code-content -->
+const months = ["March", "Jan", "Feb", "Dec"];
+months.sort() </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -165,7 +165,7 @@ sort(compareFn) </pre><!-- code-content -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-const arr = [1,100,2,200,3,4]
+const arr = [1,2,100,200,3,4,34]
 arr.sort()
   </pre><!-- code-content -->
                     </details><!--details CODE-->
@@ -178,9 +178,9 @@ arr.sort()
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-[ 1, 100, 2, 200, 3, 4 ] </pre><!-- small-view -->
+[ 1, 100, 2, 200, 3, 34, 4 ] </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-[ 1, 100, 2, 200, 3, 4 ] </pre><!-- wide-view -->
+[ 1, 100, 2, 200, 3, 34, 4 ]</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -190,7 +190,7 @@ arr.sort()
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-const arr = [1,100,2,200,3,4]
+const arr = [1,2,100,200,3,4,34]
 arr.sort((a,b)=> a-b)
   </pre><!-- code-content -->
                     </details><!--details CODE-->
@@ -203,19 +203,20 @@ arr.sort((a,b)=> a-b)
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-[ 1, 2, 3, 4, 100, 200 ] <pre><!-- small-view -->
+[ 1, 2, 3, 4, 34, 100, 200 ] <pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-[ 1, 2, 3, 4, 100, 200 ] </pre><!-- wide-view -->
+[ 1, 2, 3, 4, 34, 100, 200 ]<pre><!-- small-view -->
+</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
-
 
                 <article>
                     <h1 class="count">Code Example</h1>
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+const arr = [1,2,100,200,3,4,34]
 arr.sort((a,b)=> a &lt; b? -1 : 1) </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -227,9 +228,9 @@ arr.sort((a,b)=> a &lt; b? -1 : 1) </pre><!-- code-content -->
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-[ 1, 2, 3, 4, 100, 200 ] </pre><!-- small-view -->
+[1, 2, 3, 4, 34, 100, 200 ] </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-[ 1, 2, 3, 4, 100, 200 ] </pre><!-- wide-view -->
+[1, 2, 3, 4, 34, 100, 200 ]</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -239,7 +240,38 @@ arr.sort((a,b)=> a &lt; b? -1 : 1) </pre><!-- code-content -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE THREE
+const arr = [1,2,100,200,3,4,34]
+const arr2=arr.toSorted((a,b)=>a-b)
+arr
+arr2 </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ 1, 2, 100, 200, 3, 4, 34 ]
+[ 1, 2, 3, 4, 34, 100, 200 ]
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ 1, 2, 100, 200, 3, 4, 34 ]
+[ 1, 2, 3, 4, 34, 100, 200 ] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const arr = [1,2,11]
+arr.sort()
+arr.sort((a,b)=>a-b)
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -251,37 +283,12 @@ INSERT CODE THREE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
+[ 1, 11, 2 ]
+[ 1, 2, 11 ]
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
-                    </details><!--details CONSOLE -->
-
-                </article>
-
-                <article>
-                    <h1 class="count">Code Example</h1>
-                    <details open><!--details CODE-->
-                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
-                        <pre class="details-code-aclass">
-INSERT CODE ONE
-  </pre><!-- code-content -->
-                    </details><!--details CODE-->
-
-                    <br class="small-view">
-                    <br class="wide-view">
-
-                    <details open><!--Details CONSOLE -->
-                        <summary class="details-console-summary">
-                            [JavaScript Inserts]
-                        </summary>
-                        <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-</pre><!-- small-view -->
-                        <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-</pre><!-- wide-view -->
+[ 1, 11, 2 ]
+[ 1, 2, 11 ] </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
