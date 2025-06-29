@@ -25,6 +25,20 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+    </style>
+
 
 </head>
 
@@ -63,19 +77,24 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            JavaScript arrays are resizable and can contain a mix of different data types
+                        <li>
+                            JavaScript arrays are not associative arrays and so, array elements cannot be accessed using
+                            arbitrary strings as
+                            indexes, but must be accessed using nonnegative integers (or their respective string form)
+                            as indexes
+                        <li>
+                            JavaScript arrays are zero-indexed: the first element of an array is at index 0, the second
+                            is at index 1, and so on
+                        <li>
+                            The last element is at the value of the array's length property minus 1
+                    </ol>
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
@@ -140,7 +159,9 @@ INSERT CONSOLE OUTPUT (wide view)
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN:
+                                    arrays</a>
                             </div>
 
                             <div class="ref">
