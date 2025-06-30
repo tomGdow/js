@@ -303,6 +303,235 @@ console.log(JSON.stringify(tmp)); </pre><!-- code-content -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+const myarr =[[1,2],[3,4,5],[6,7,8,9]]
+
+ for(i = 0; i &lt; myarr.length; i++) {
+
+    for(j=0; j &lt; myarr[i].length; j++) {
+
+        myarr[i][j] = Math.pow(myarr[i][j],2)
+    }
+}
+console.log(myarr) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ [ 1, 4 ], [ 9, 16, 25 ], [ 36, 49, 64, 81 ] ] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ [ 1, 4 ], [ 9, 16, 25 ], [ 36, 49, 64, 81 ] ] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const myarr =[[1,2],[3,4,5],[6,7,8,9]]
+
+for(let i =0; i &lt; myarr.length; i++) {
+
+    for(let j=0; j &lt; myarr[0].length; j++) {
+
+        myarr[i][j]=Math.pow(myarr[i][j],4)+1000;
+    }
+}
+console.log(myarr) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ 
+  [ 1001, 1016 ], 
+  [ 1081, 1256, 5 ], 
+  [ 2296, 3401, 8, 9 ] 
+] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ 
+  [ 1001, 1016 ], 
+  [ 1081, 1256, 5 ], 
+  [ 2296, 3401, 8, 9 ] 
+] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const myarr =[[1,2],[3,4,5],[6,7,8,9]]
+for(i in myarr) {
+    for(j in i) {
+        myarr[i][j]=Math.pow(myarr[i][j],2)
+    }
+}
+myarr
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ [ 1, 2 ], [ 9, 4, 5 ], [ 36, 7, 8, 9 ] ] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ [ 1, 2 ], [ 9, 4, 5 ], [ 36, 7, 8, 9 ] ]</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+const myarr =[[1,2],[3,4,5],[6,7,8,9]]
+for(arr of myarr) {
+   for(el of arr) {
+       arr[arr.indexOf(el)] = Math.pow(el, 2)
+    }
+}
+console.log(myarr) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ [ 1, 4 ], [ 9, 16, 25 ], [ 36, 49, 64, 81 ] ] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ [ 1, 4 ], [ 9, 16, 25 ], [ 36, 49, 64, 81 ] ] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let capitalsInRegion = [
+ ["Dublin", "London", "Paris"],
+ ["Brasilia", "Mexico City", "Buenos Aires"],
+ ["Tokyo", "Seoul"]
+]
+
+for(let x =0; x &lt; capitalsInRegion.length; x++) {
+    for(let y=0; y&lt; capitalsInRegion[x].length;y++) {
+        console.log(capitalsInRegion[x][y]);
+    }
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Dublin 
+London 
+Paris
+Brasilia 
+Mexico City 
+Buenos Aires 
+Tokyo 
+Seoul </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Dublin 
+London 
+Paris
+Brasilia 
+Mexico City 
+Buenos Aires 
+Tokyo 
+Seoul</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let capitalsInRegion = [
+ ["Dublin", "London", "Paris"],
+ ["Brasilia", "Mexico City", "Buenos Aires"],
+ ["Tokyo", "Seoul"]
+]
+
+for(let x =0; x &lt; capitalsInRegion.length; x++) {
+    for(let y=0; y &lt; capitalsInRegion[0].length;y++) {
+      console.log(capitalsInRegion[x][y]);
+    }
+} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Dublin 
+London 
+Paris 
+Brasilia 
+Mexico City 
+Buenos Aires 
+Tokyo 
+Seoul
+undefined </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Dublin 
+London 
+Paris 
+Brasilia 
+Mexico City 
+Buenos Aires 
+Tokyo 
+Seoul
+undefined </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
 INSERT CODE TWO
   </pre><!-- code-content -->
                     </details><!--details CODE-->
