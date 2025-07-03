@@ -25,6 +25,20 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
 
 </head>
 
@@ -63,25 +77,74 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              The <code>if...else</code> statement executes a statement if a specified condition is truthy
+            <li>
+              If the condition is falsy, another
+              statement in the optional else clause will be executed
+
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+if (condition)
+  statement1
+else
+  statement2 </pre><!-- code-content -->
+
+          <dl>
+            <dt>condition
+            <dd>
+              An expression that is considered to be either truthy or falsy.
+
+            <dt>statement1
+            <dd>
+              Statement that is executed if condition is truthy
+            <dd>
+              Can be any statement, including further nested if statements
+            <dd>
+              To
+              execute multiple statements, use a block statement to group those statements
+            <dd>
+              To execute no statements, use an empty statement
+
+            <dt>statement2
+            <dd>
+              Statement that is executed if condition is falsy and the else clause exists
+            <dd>
+              Can be any statement, including block
+              statements and further nested if statements
+          </dl>
+        </article>
+
+        <article>
+          <h1 class="count">Falsy</h1>
+          <ol>
+            <li>false
+            <li>0
+            <li>-0
+            <li>""
+            <li>null
+            <li>undefined
+            <li>NaN
+            <li>document.all
+          </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+let a = 10
+
+if (a < 10)
+  console.log(a) 
+else 
+  console.log(a * a * a); </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +152,9 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+1000 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+1000 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,8 +163,15 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+let a = 10
+
+if (a < 10) { 
+  console.log(a) 
+  console.log(a * a) 
+} else { 
+  console.log(a * a * a); 
+  console.log("end") 
+} </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -114,11 +182,11 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+1000
+end</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+1000
+end</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -218,7 +286,8 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else">MDN if
+                  else</a>
               </div>
 
               <div class="ref">
