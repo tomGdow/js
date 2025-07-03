@@ -95,6 +95,7 @@ let pageArr = ["index",
     "do.html",
     "break.html",
     "continue.html",
+    "pass_by_object_sharing",
     "Module-Four",
     "Module-Five"];
 
@@ -190,6 +191,7 @@ let pageTitleArr = [
     "do.html",
     "break.html",
     "continue.html",
+    "pass_object_sharing",
     "M4",
     "M5",
     "js-search"];
