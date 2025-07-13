@@ -71,17 +71,54 @@
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+if (c1) {
+  if (c2) {
+    if (c3) {
+      console.log("A")
+      check()
+      console.log("I happen if TTT")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+
+    } else {
+      console.log("B")
+      check()
+      console.log("I happen if TTF")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+    }
+
+  } else {
+    console.log("C")
+    check()
+    console.log("I happen if TF*")
+    console.log(`I happen if ${c1}-${c2}-${c3}`)
+  }
+
+} else {
+  console.log("D")
+  check()
+  console.log("I happen if F**")
+  console.log(`I happen if ${c1}-${c2}-${c3}`)
+}
+
+function check() {
+console.log(`c3 is ${c3}`)
+console.log(`c2 is ${c2}`)
+console.log(`c1 is ${c1}`)
+}
+
+let c1 = false
+let c2 = true
+let c3 = true
+
+1) A
+2) B
+3) C
+4) D 
+</pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +126,19 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+D
+c3 is true 
+c2 is true 
+c1 is false 
+I happen if F** 
+I happen if false-true-true </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+D
+c3 is true 
+c2 is true 
+c1 is false 
+I happen if F** 
+I happen if false-true-true </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,7 +147,49 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+if (c1) {
+  if (c2) {
+    if (c3) {
+      console.log("A")
+      check()
+      console.log("I happen if TTT")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+
+    } else {
+      console.log("B")
+      check()
+      console.log("I happen if TTF")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+    }
+
+  } else {
+    console.log("C")
+    check()
+    console.log("I happen if TF*")
+    console.log(`I happen if ${c1}-${c2}-${c3}`)
+  }
+
+} else {
+  console.log("D")
+  check()
+  console.log("I happen if F**")
+  console.log(`I happen if ${c1}-${c2}-${c3}`)
+}
+
+function check() {
+console.log(`c3 is ${c3}`)
+console.log(`c2 is ${c2}`)
+console.log(`c1 is ${c1}`)
+}
+
+let c1 = true
+let c2 = true
+let c3 = true
+
+1) A
+2) B
+3) C
+4) D 
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -114,11 +201,19 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+A
+c3 is true
+c2 is true
+c1 is true
+I happen if TTT
+I happen if true-true-true </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+A
+c3 is true
+c2 is true
+c1 is true
+I happen if TTT
+I happen if true-true-true </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -128,7 +223,49 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
+if (c1) {
+  if (c2) {
+    if (c3) {
+      console.log("A")
+      check()
+      console.log("I happen if TTT")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+
+    } else {
+      console.log("B")
+      check()
+      console.log("I happen if TTF")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+    }
+
+  } else {
+    console.log("C")
+    check()
+    console.log("I happen if TF*")
+    console.log(`I happen if ${c1}-${c2}-${c3}`)
+  }
+
+} else {
+  console.log("D")
+  check()
+  console.log("I happen if F**")
+  console.log(`I happen if ${c1}-${c2}-${c3}`)
+}
+
+function check() {
+console.log(`c3 is ${c3}`)
+console.log(`c2 is ${c2}`)
+console.log(`c1 is ${c1}`)
+}
+
+let c1 = true
+let c2 = true
+let c3 = false
+
+1) A
+2) B
+3) C
+4) D 
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -140,11 +277,247 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+B
+c3 is false
+c2 is true 
+c1 is true 
+I happen if TTF 
+I happen if true-true-false </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+B
+c3 is false
+c2 is true 
+c1 is true 
+I happen if TTF 
+I happen if true-true-false </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+if (c1) {
+  if (c2) {
+    if (c3) {
+      console.log("A")
+      check()
+      console.log("I happen if TTT")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+
+    } else {
+      console.log("B")
+      check()
+      console.log("I happen if TTF")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+    }
+
+  } else {
+    console.log("C")
+    check()
+    console.log("I happen if TF*")
+    console.log(`I happen if ${c1}-${c2}-${c3}`)
+  }
+
+} else {
+  console.log("D")
+  check()
+  console.log("I happen if F**")
+  console.log(`I happen if ${c1}-${c2}-${c3}`)
+}
+
+function check() {
+console.log(`c3 is ${c3}`)
+console.log(`c2 is ${c2}`)
+console.log(`c1 is ${c1}`)
+}
+
+let c1 = true
+let c2 = false
+let c3 = true
+
+1) A
+2) B
+3) C
+4) D 
+              </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+C
+c3 is true
+c2 is false
+c1 is true 
+I happen if TF* 
+I happen if true-false-true </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+C
+c3 is true
+c2 is false
+c1 is true 
+I happen if TF* 
+I happen if true-false-true </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+if (c1) {
+  if (c2) {
+    if (c3) {
+      console.log("A")
+      check()
+      console.log("I happen if TTT")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+
+    } else {
+      console.log("B")
+      check()
+      console.log("I happen if TTF")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+    }
+
+  } else {
+    console.log("C")
+    check()
+    console.log("I happen if TF*")
+    console.log(`I happen if ${c1}-${c2}-${c3}`)
+  }
+
+} else {
+  console.log("D")
+  check()
+  console.log("I happen if F**")
+  console.log(`I happen if ${c1}-${c2}-${c3}`)
+}
+
+function check() {
+console.log(`c3 is ${c3}`)
+console.log(`c2 is ${c2}`)
+console.log(`c1 is ${c1}`)
+}
+
+let c1 = false
+let c2 = true
+let c3 = true
+
+1) A
+2) B
+3) C
+4) D 
+              </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+D
+c3 is true 
+c2 is true
+c1 is false
+I happen if F**
+I happen if false-true-true </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+D
+c3 is true 
+c2 is true
+c1 is false
+I happen if F**
+I happen if false-true-true </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+if (c1) {
+  if (c2) {
+    if (c3) {
+      console.log("A")
+      check()
+      console.log("I happen if TTT")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+
+    } else {
+      console.log("B")
+      check()
+      console.log("I happen if TTF")
+      console.log(`I happen if ${c1}-${c2}-${c3}`)
+    }
+
+  } else {
+    console.log("C")
+    check()
+    console.log("I happen if TF*")
+    console.log(`I happen if ${c1}-${c2}-${c3}`)
+  }
+
+} else {
+  console.log("D")
+  check()
+  console.log("I happen if F**")
+  console.log(`I happen if ${c1}-${c2}-${c3}`)
+}
+
+function check() {
+console.log(`c3 is ${c3}`)
+console.log(`c2 is ${c2}`)
+console.log(`c1 is ${c1}`)
+}
+
+let c1 = true
+let c2 = false
+let c3 = false
+
+1) A
+2) B
+3) C
+4) D </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+C 
+c3 is false
+c2 is false
+c1 is true 
+I happen if TF*
+I happen if true-false-false </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+C 
+c3 is false
+c2 is false
+c1 is true 
+I happen if TF*
+I happen if true-false-false </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -156,7 +529,7 @@ INSERT CONSOLE OUTPUT ONE(wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE TWO
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -168,10 +541,10 @@ INSERT CODE TWO
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -182,7 +555,7 @@ INSERT CONSOLE OUTPUT TWO (wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE THREE
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -194,20 +567,23 @@ INSERT CODE THREE
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
         <!--here-->
 
         <article>
-          <h1 class="count">Notes</h1>
+          <h1 class="count">SUMMARY</h1>
 
           <ol>
-            <li>I am an item</li>
+            <li>A is TTT
+              <li>B is TTF
+              <li>C is TFF or TFT
+              <li>D is FTT or FFT or FFF
           </ol>
 
         </article>
