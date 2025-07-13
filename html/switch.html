@@ -25,6 +25,19 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
 
 </head>
 
@@ -63,24 +76,148 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+
+            <li>
+              The switch statement evaluates an expression, matching the expression's value against a series of case
+              clauses, and
+              executes statements after the first case clause with a matching value, until a break statement is
+              encountered
+            <li>
+              The default clause of a switch statement will be jumped to if no case matches the expression's value
+
+            <li>
+              Switch uses the strict equality (<code>===</code>) for comparison
+
+            <li>
+              <strong>fall-through</strong>: If break is omitted, execution will proceed to the next case clause, even
+              to
+              the default clause, regardless of whether
+              the value of that clause's expression matches
+        </article>
+
+        <article>
+          <h1 class="count">Description</h1>
+          <ol>
+            <li>
+              A switch statement first evaluates its expression
+            <li>
+              It then looks for the first case clause whose expression evaluates to
+              the same value as the result of the input expression, <strong>using the strict equality
+                comparison</strong> and transfers control to
+              that clause, executing all statements following that clause
+            <li>
+              The clause expressions are only evaluated when necessary — if a match is already found, subsequent case
+              clause
+              expressions will not be evaluated, even when they will be visited by fall-through
+            <li>
+              If no matching case clause is found, the program looks for the optional default clause, and if found,
+              transfers control
+              to that clause, executing statements following that clause.
+            <li>
+              If no default clause is found, the program continues
+              execution at the statement following the end of switch.
+            <li>
+              By convention, the default clause is the last clause, but it
+              does not need to be so
+            <li>
+              A switch statement may only have one default clause
+            <li>
+              Multiple default clauses will result in a <strong>SyntaxError</strong>
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+
+switch (expression) {
+
+  case caseExpression1:
+    statements
+
+  case caseExpression2:
+   statements
+
+  // …
+
+  case caseExpressionN:
+    statements
+
+  default:
+   statements
+} </pre><!-- code-content -->
+          <br>
+          <pre class="details-code-aclass">
+
+// scoped
+
+switch (expression) {
+
+  case caseExpression1: {
+    statements
+  }
+
+  case caseExpression2: {
+   statements
+  }
+
+  // 
+
+  case caseExpressionN: {
+    statements
+  }
+
+  default: {
+   statements
+  }
+
+} </pre><!-- code-content -->
+          <br>
+
+          <pre class="details-code-aclass">
+
+switch (expression) {
+
+  case caseExpression1:
+    statements
+  
+  default:
+   statements
+
+  case caseExpression2:
+   statements
+
+  // …
+
+  case caseExpressionN:
+    statements
+
+} </pre><!-- code-content -->
+
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+const foo = "Apples"
+
+switch(foo.toLowerCase()) {
+
+  case "oranges":
+    console.log("orange")
+    break;
+
+  case "apples":
+    console.log("Apples");
+  break;
+
+default:
+  console.log("None of above");
+
+}
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -89,11 +226,9 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+Apples</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+Apples</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,8 +237,26 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+const foo = "Apples"
+
+switch (foo.toLowerCase()) {
+
+  case "oranges":
+    console.log("oranges");
+
+  case "apples":
+    console.log("apples");
+
+  case "tomatoes":
+    console.log("tomatoes");
+
+  case "pears":
+    console.log("pears");
+
+  default:
+    console.log("none");
+
+} </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -114,11 +267,15 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+apples
+tomatoes
+pears
+none </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+apples
+tomatoes
+pears
+none </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -128,8 +285,21 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+const bar = void 0;
+ 
+switch (bar) {
+
+  case null:
+    console.log("null")
+
+  case undefined:
+    console.log("undefined")
+    break;
+
+  default:
+    console.log("neither")
+
+} </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -140,11 +310,9 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+undefined </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+undefined </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -155,8 +323,18 @@ INSERT CONSOLE OUTPUT ONE(wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
-              </pre><!-- code-content -->
+switch(true) {
+
+  case bar == null:
+    console.log("null");
+
+  case bar == undefined:
+    console.log("undefined")
+
+  default:
+    console.log("neither")
+
+} </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -167,11 +345,269 @@ INSERT CODE TWO
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+null
+undefined
+neither </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+null
+undefined
+neither </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const bar = void 0;
+
+switch(true) {
+
+  case bar == null:
+    console.log("null");
+    break;
+
+  case bar == undefined:
+    console.log("undefined")
+    break;
+
+  default:
+    console.log("neither");
+} </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+null</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+null</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+switch (undefined) {
+
+  case console.log(1):
+    console.log("statement 1");
+
+  case console.log(2):
+    console.log("statement 2");
+  break;
+
+  default:
+    console.log("default");
+} </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+1
+statement 1
+statement 2
+
+// console.log(2) is NOT evaluated 
+</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+1
+statement 1
+statement 2
+
+// console.log(2) is NOT evaluated </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const action = "say_hello";
+
+switch (action) {
+
+case "say_hello":
+  const message = "hello";
+    console.log(message);
+    break;
+
+  case "say_hi":
+    const message = "hi"
+    console.log(message);
+    break;
+
+}
+
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: redeclaration of const message
+</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: redeclaration of const message
+</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const action = "say_hello";
+
+switch (action) {
+
+  case "say_hello": {
+    const message = "hello";
+    console.log(message);
+    break;
+  }
+
+  case "say_hi": {
+    const message = "hi";
+    console.log(message);
+    break;
+  }
+}</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+hello</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+hello</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+switch (foo) {
+
+  case 0:
+    output += "So ";
+
+  case 1:
+    output += "What ";
+    output += "is ";
+
+  case 2:
+    output += "Your ";
+
+  case 3:
+    output += "Name ";
+
+  case 4:
+    output += "?";
+    console.log(output);
+    break;
+
+  case 5:
+    output += "!";
+    break;
+
+  default:
+    console.log("Please Pick a number from 0 to 5")
+    
+} </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+Output: What is Your Name ?</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+Output: What is Your Name ?</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+switch(foo) {
+
+  case 1:
+    console.log(1);
+
+  default:
+    console.log("default");
+
+  case 2:
+    console.log(2);
+
+  case 3:
+    console.log(3);
+    break;
+
+  case 4:
+    console.log(4);
+
+} </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+default
+2
+3 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+default
+2
+3 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -182,7 +618,7 @@ INSERT CONSOLE OUTPUT TWO (wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE THREE
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -194,10 +630,10 @@ INSERT CODE THREE
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -218,7 +654,8 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch">MDN:
+                  switch</a>
               </div>
 
               <div class="ref">
