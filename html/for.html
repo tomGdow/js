@@ -63,25 +63,48 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              The for statement creates a loop that consists of three optional expressions, enclosed in parentheses and
+              separated by
+              semicolons, followed by a statement (usually a block statement) to be executed in the loop
+            <li>
+              All three expressions in the head of the for loop are optional
+            <li>
+              If omitted, the condition test always evaluates to true
+            <li>
+              To execute no statement within the loop, use an empty statement (<code>;</code>)
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+for (initialization; condition; afterthought)
+  statement </pre><!-- code-content -->
+        </article>
+        <article>
+          <h1 class="count">Comment: Break and Continue</h1>
+          <dl>
+            <dt><strong>Break</strong>
+            <dd>break stops statement execution and goes to the first statement after the loop
+
+            <dt><strong>Continue</strong>
+            <dd>continue stops statement execution and
+              <ol>
+                <li><strong>re-evaluates afterthought</strong>
+                <li>then reevaluates condition
+              </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
-
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+const myarr = [... Array(10).keys()];
+
+for(let i = 0; i &lt; myarr.length; i++)
+    console.log(myarr[i]); </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +112,27 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,8 +141,12 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+const myarr = [... Array(10).keys()];
+
+for(let i = 0; i &lt; myarr.length; i++) {
+  if(i==5) break; 
+  console.log(i)
+} </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -114,11 +157,9 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+0 1 2 3 4</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+0 1 2 3 4</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -128,8 +169,12 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+const myarr = [... Array(10).keys()];
+
+for(let i =0; i &lt; myarr.length; i++) {
+  if (i==5) continue;
+  console.log(i);
+ } </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -140,11 +185,9 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+ 0 1 2 3 4 6 7 8 9 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+ 0 1 2 3 4 6 7 8 9 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -155,8 +198,15 @@ INSERT CONSOLE OUTPUT ONE(wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
-              </pre><!-- code-content -->
+for(let i = 0; i &lt; myarr.length; i++) {
+  
+  if(i==5) {
+    i-=2;
+    continue;
+  }
+
+  console.log(i);
+} </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -167,11 +217,11 @@ INSERT CODE TWO
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+Infinite Loop 
+0 1 2 3 4 4 4 4 4 ... </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+Infinite Loop 
+0 1 2 3 4 4 4 4 4 ... </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -181,8 +231,13 @@ INSERT CONSOLE OUTPUT TWO (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE THREE
-              </pre><!-- code-content -->
+let i = 10;
+
+for(let i = 0; i &lt; 5; i++) {
+  console.log(i);
+} 
+
+console.log(i) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -193,11 +248,407 @@ INSERT CODE THREE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+0 1 2 3 4
+
+10</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+0 1 2 3 4
+
+10</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 0;
+
+ for(; i &lt; 5; i++) {
+   console.log(i);
+  } 
+
+  console.log(i) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+0 1 2 3 4
+
+5</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+0 1 2 3 4
+
+5</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 0;
+
+for(;;) {
+  console.log(i);
+  i++
+  if(i==5) break;
+} 
+
+console.log(i)</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+0
+1
+2
+3
+4
+
+5</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+0
+1
+2
+3
+4
+
+5</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 0;
+
+for(var i =0; i &lt; 4; i++)
+  console.log(i) 
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+  Identifier 'i' has already been declared </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+  Identifier 'i' has already been declared</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 0;
+
+for(let i = 1; i&lt;4; console.log(i++)); </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+1 2 3
+
+// Semicolon (empty statement) is necessary</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+1 2 3
+// Semicolon (empty statement) is necessary </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 0;
+
+for(let i = 1; i&lt;4; console.log(++i))
+  ; 
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+2 3 4
+
+// Semicolon (empty statement) is necessary </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+2 3 4
+// Semicolon (empty statement) is necessary </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const myarr =[...Array(5).keys()]
+myarr.shift()
+console.log(myarr);
+
+for(let i = 0; i &lt; myarr.length; myarr[i++] = Math.pow(myarr[i-1],2))
+  ; 
+  
+console.log(myarr);</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ 1, 2, 3, 4 ]
+[ 1, 4, 9, 16 ]</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ 1, 2, 3, 4 ]
+[ 1, 4, 9, 16 ]</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+
+const myarr =[[1],[2,3],[4,5]]
+
+console.log(myarr)
+
+for(let i=0; i &lt; myarr.length;i++)
+
+  for(let j=0; j &lt; myarr[i].length;j++)
+
+    myarr[i][j] = Math.pow(myarr[i][j],3); 
+
+console.log(myarr) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ [ 1 ], [ 2, 3 ], [ 4, 5 ] ]
+    
+[ [ 1 ], [ 8, 27 ], [ 64, 125 ] ]</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ [ 1 ], [ 2, 3 ], [ 4, 5 ] ]
+    
+[ [ 1 ], [ 8, 27 ], [ 64, 125 ] ]</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+for(let i=0, j=10; i &lt; j; i++, --j)
+  console.log(`${i},${j}`);</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+ 0,10 
+ 1,9 
+ 2,8 
+ 3,7 
+ 4,6 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+ 0,10 
+ 1,9 
+ 2,8 
+ 3,7 
+ 4,6</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+for(let i=0, let j=10; i &lt; j; i++, --j)
+  console.log(`${i},${j}`); 
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+Uncaught SyntaxError: 
+  let is disallowed as a lexically bound name </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+Uncaught SyntaxError: 
+  let is disallowed as a lexically bound name</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+for(let i = 0, j = 5;;i++, j--) {
+  console.log(i);
+  if(i>j) break;
+}</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+0
+1
+2
+3 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+0
+1
+2
+3 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+for(let i = 0; i &lt; 5; i++) {
+  setTimeout(()=>console.log(i), 1000);
+   }
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+  0
+  1
+  2
+  3
+  4</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+  0
+  1
+  2
+  3
+  4</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+for(var i = 0; i &lt; 5; i++) {
+  setTimeout(()=>console.log(i), 1000);
+} </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+  5
+  5
+  5
+  5
+  5</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+  5
+  5
+  5
+  5
+  5</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -218,7 +669,7 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">MDN: for</a>
               </div>
 
               <div class="ref">
