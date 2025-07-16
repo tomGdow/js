@@ -25,6 +25,20 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
 
 </head>
 
@@ -63,25 +77,79 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              The for...in statement iterates over all enumerable string properties of an object (ignoring properties
+              keyed by
+              symbols), including inherited enumerable properties
+
+            <li>
+              The loop will iterate over all enumerable properties of the object itself and <strong>those the object
+                inherits from its prototype chain</strong> (properties of nearer prototypes take precedence over those
+              of prototypes further away
+              from the object
+              in its prototype chain)
+
+            <li>
+              A for...in loop only iterates over enumerable, non-symbol properties
+            <li>
+              Objects created from built-in constructors like
+              Array and Object have inherited non-enumerable properties from Array.prototype and Object.prototype, such
+              as Array's
+              indexOf() method or Object's toString() method, which will not be visited in the for...in loop
+            <li>
+              Indexes returned by for...in are strings!
+          </ol>
+        </article>
+
+        <article>
+          <h1 class="count">Comment: Break and Continue</h1>
+          <dl>
+            <dt><strong>Break</strong>
+            <dd> break stops statement execution and goes to the first statement after the loop
+
+            <dt><strong>Continue</strong>
+            <dd> continue stops statement execution and goes to the next iteration of the loop
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+for (variable in object)
+  statement </pre><!-- code-content -->
+        </article>
+
+        <article>
+          <h1 class="count">Object.keys()</h1>
+          <ol>
+            <li>
+              <code>Object.keys</code> will return a list of <strong>enumerable own string properties</strong>
+            <li>
+              Considers properties attached to the object itself, not its prototype
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Object.getOwnPropertyNames()</h1>
+          <ol>
+            <li>
+              <code>Object.getOwnPropertyNames</code> will return a list of <strong>both enumerable and non-enumerable
+                own string properties</strong>
+            <li>
+              Considers properties attached to the object itself, not its prototype
+          </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+const str ="thomas";
+
+for(let index in str){
+  if(index == 1) continue;
+  console.log(str[index])
+} </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +157,17 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+t
+o
+m
+a
+s</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+t
+o
+m
+a
+s</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,8 +176,12 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+const myarr = Array.from(Array(5).keys())
+
+for(index in myarr) {
+  myarr[index] = myarr[index]*10;
+  console.log(`${index} - ${myarr[index]}`)
+} </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -114,11 +192,17 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+0 - 0
+1 - 10
+2 - 20
+3 - 30
+4 - 40</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+0 - 0
+1 - 10
+2 - 20
+3 - 30
+4 - 40</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -128,8 +212,10 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+const obj ={"fname": "john", "lname": "doe"}
+
+for(key in obj)
+  console.log(`${key} - ${obj[key]}`) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -140,11 +226,241 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+fname - john
+lname - doe</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+fname - john
+lname - doe</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const obj = {"fname": "john", "lname": "doe"}
+
+Object.keys(obj) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ 'fname', 'lname' ]</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ 'fname', 'lname' ]</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const obj = {"fname": "john", "lname": "doe"}
+
+Object.getOwnPropertyNames(obj) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ 'fname', 'lname' ]</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ 'fname', 'lname' ]</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const myarr = [[1],[2,3],[4,5,6]];
+
+for(arr in myarr)
+  for(index in myarr[arr])
+    myarr[arr][index]=Math.pow(myarr[arr][index],3)
+console.log(myarr); </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ [ 1 ], [ 8, 27 ], [ 64, 125, 216 ] ]</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ [ 1 ], [ 8, 27 ], [ 64, 125, 216 ] ] </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const myarr = ["tom", "dow"];
+ 
+for(i in myarr)
+  for(j in myarr[i])
+    console.log(myarr[i][j])</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+t
+o
+m
+d
+o
+w </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+t
+o
+m
+d
+o
+w</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const arr =[0, [[1], [2,3], [4,5]], [6,7], [8,9,10] ];
+
+for(let i in arr) {
+
+  if(typeof arr[i] != "object") {
+    console.log(arr[i])
+
+  } else {
+
+    for(let j in arr[i]) {
+
+      if(typeof arr[i][j] != "object") {
+        console.log(arr[i][j]);
+
+      } else {
+
+        for(let k in arr[i][j])
+          console.log(arr[i][j][k])
+
+      }
+    }
+  }
+}
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const myarr = Array.from({length:3}, (_,x) => 10*x)
+const temp=[]
+
+
+for(i in myarr)
+ temp.push([i, 
+            typeof(i), 
+            myarr[i], 
+            typeof myarr[i]
+           ])
+
+console.log(myarr)
+console.log(temp) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ 0, 10, 20 ]
+
+[
+ [ '0', 'string', 0, 'number' ],
+ [ '1', 'string', 10, 'number' ],
+ [ '2', 'string', 20, 'number' ]
+] </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ 0, 10, 20 ]
+
+[
+ [ '0', 'string', 0, 'number' ],
+ [ '1', 'string', 10, 'number' ],
+ [ '2', 'string', 20, 'number' ]
+]</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -156,7 +472,7 @@ INSERT CONSOLE OUTPUT ONE(wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE TWO
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -168,10 +484,10 @@ INSERT CODE TWO
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -182,7 +498,7 @@ INSERT CONSOLE OUTPUT TWO (wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE THREE
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -194,10 +510,10 @@ INSERT CODE THREE
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -218,7 +534,8 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">MDN:
+                  for...in</a>
               </div>
 
               <div class="ref">
