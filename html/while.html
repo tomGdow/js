@@ -26,6 +26,21 @@
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
 
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
+
 </head>
 
 <body>
@@ -63,25 +78,41 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              The while statement creates a loop that executes a specified statement as long as the test condition
+              evaluates to true
+            <li>
+              The condition is evaluated <strong>before</strong> executing the statement
+            <li>
+              The condition is evaluated before each pass through the loop
+            <li>
+              If the condition evaluates to true, statement is executed
+            <li>
+              When condition evaluates to false, execution continues with the statement after the while loop
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+while (condition)
+  statement </pre><!-- code-content -->
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+let i = 0;
+
+while(i &lt; 5) {
+  console.log(i)
+  i++
+} 
+
+console.log(i)</pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +120,13 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+0 1 2 3 4
+
+5</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+0 1 2 3 4 
+
+5</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,7 +135,42 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+let i = 0;
+while(i &lt; 5)
+  console.log(i++) 
+
+console.log(i)</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+0 1 2 3 4
+
+5</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+0 1 2 3 4
+
+5</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 0
+while(i &lt; 5)
+  console.log(++i);
+
+console.log(i);
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -114,11 +182,13 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+  1 2 3 4 5
+
+  5 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+  1 2 3 4 5
+
+  5 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -128,7 +198,59 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
+let i = 0
+let j = 10
+
+while(i &lt; j)
+  console.log([i++,j--]) 
+
+console.log(i)
+console.log(j) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ 0, 10 ] 
+[ 1, 9 ] 
+[ 2, 8 ]
+[ 3, 7 ] 
+[ 4, 6 ] 
+
+5
+5 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ 0, 10 ] 
+[ 1, 9 ] 
+[ 2, 8 ]
+[ 3, 7 ] 
+[ 4, 6 ] 
+
+5
+5 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 0
+let j = 10
+
+while(i &lt; j)
+  console.log([i++,--j]) 
+
+console.log(i);
+console.log(j);
+
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -140,11 +262,302 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+[ 0, 9 ] 
+[ 1, 8 ] 
+[ 2, 7 ] 
+[ 3, 6 ] 
+[ 4, 5 ]
+
+5
+5 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+[ 0, 9 ] 
+[ 1, 8 ] 
+[ 2, 7 ] 
+[ 3, 6 ] 
+[ 4, 5 ]
+
+5
+5 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 10
+while(i--)
+
+  console.log(i) 
+
+console.log(i)</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+
+-1</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+
+-1</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 0
+let len = 5
+while(i++ &lt; len)
+  console.log(i) 
+
+console.log(i); </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+1 2 3 4 5
+  
+6 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+1 2 3 4 5
+
+6 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 10;
+
+while(i --&gt; 5)
+  console.log(i) 
+
+console.log(i)</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+9
+8
+7
+6
+5 
+
+4</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+9
+8
+7
+6
+5 
+
+4</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 10;
+
+while(--i &gt; 5)
+  console.log(i) 
+
+console.log(i)</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+9
+8
+7
+6 
+
+5</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+9
+8
+7
+6 
+
+5</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 5 
+let j = 10;
+
+while(i-- && j--)
+  console.log([i,j]) 
+
+console.log([i, j])</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ 4, 9 ]
+[ 3, 8 ]
+[ 2, 7 ]
+[ 1, 6 ]
+[ 0, 5 ] 
+
+[-1, 5] // !! j is not decremented</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ 4, 9 ]
+[ 3, 8 ]
+[ 2, 7 ]
+[ 1, 6 ]
+[ 0, 5 ] 
+
+[-1, 5] // !! j is not decremented</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let i = 5; 
+let j = 10;
+
+while(--i && j--)
+  console.log([i,j]) 
+
+console.log([i, j])</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ 4, 9 ]
+[ 3, 8 ]
+[ 2, 7 ]
+[ 1, 6 ]
+
+[0, 6] // !! j is not decremented</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ 4, 9 ]
+[ 3, 8 ]
+[ 2, 7 ]
+[ 1, 6 ] 
+
+[0, 6] // j is not decremented</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let x = 11
+
+while (x) {
+  if (x != 4) {
+    x--;
+    continue;
+  }
+
+  console.log("i am x:", x);
+  x--;
+}
+
+console.log("x:", x) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+i am x: 4
+x: 0</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+i am x: 4
+x: 0</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -156,7 +569,7 @@ INSERT CONSOLE OUTPUT ONE(wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE TWO
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -168,10 +581,10 @@ INSERT CODE TWO
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -182,7 +595,7 @@ INSERT CONSOLE OUTPUT TWO (wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE THREE
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -194,10 +607,10 @@ INSERT CODE THREE
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -218,7 +631,7 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while">MDN: </a>
               </div>
 
               <div class="ref">
