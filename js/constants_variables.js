@@ -99,6 +99,7 @@ let pageArr = ["index",
     "continue",
     "pass_by_object_sharing",
     "Module-Four",
+    "create_element",
     "Module-Five"];
 
 pageArr.push("search"); // 'search' should be the last term in pageArr
@@ -197,6 +198,7 @@ let pageTitleArr = [
     "continue",
     "pass_object_sharing",
     "M4",
+    "create_element",
     "M5",
     "js-search"];
 
