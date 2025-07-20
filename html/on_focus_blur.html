@@ -16,6 +16,7 @@
     @import url("../css/counters.css");
   </style>
 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -25,6 +26,20 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
 
 </head>
 
@@ -63,25 +78,48 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              The <code>focus</code> event fires when an element has received focus
+            <li>
+              The focus event does not bubble, but the related <code>focusin</code> event that
+              follows does bubble
+            <li>
+              The opposite of focus is the blur event, which fires when the element has lost focus
+            <li>
+              The blur event fires when an element has lost focus
+            <li>
+              The blur event does not bubble, but the related focusout event that
+              follows does bubble
+            <li>
+              An element will lose focus if another element is selected
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+addEventListener("focus", (event) => { })
+
+onfocus = (event) => { } </pre><!-- code-content -->
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+&lt;label&gt;
+Some text:
+  &lt;input type="text" placeholder="text input" /&gt;
+&lt;/label&gt;
+
+---
+
+document.getElementsByTagName('input')[0]
+  .addEventListener('focus', 
+    (event) => event.target.style.backgroundColor="red"
+) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +127,9 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+Background color of input box changes to red on focus </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+Background color of input box changes to red on focus </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,8 +138,17 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+&lt;label&gt;
+Some text:
+  &lt;input type="text" placeholder="text input" /&gt;
+&lt;/label&gt;
+
+---
+
+document.getElementsByTagName('input')[0]
+  .addEventListener('blur', 
+    (event) => event.target.style.backgroundColor="cyan"
+) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -114,11 +159,9 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+Background color of input box changes to cyan on blur </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+Background color of input box changes to red on blur </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -218,11 +261,11 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event">MDN: focus event</a>
               </div>
 
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event">MDN: blur event</a>
               </div>
 
             </div>
