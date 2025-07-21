@@ -26,6 +26,24 @@
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
 
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+
+    dd {
+      border: 2px solid white;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -63,24 +81,48 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              DEPRECATED
+            <li>
+              The keypress event is fired when a letter, number, punctuation, or symbol key is pressed, or else when the
+              Enter key is pressed
+          </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+    &lt;input placeholder="0Aa" size="20" /&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;event.keyCode
+      &lt;dd id="log"&gt;
+    
+      &lt;dt&gt;event.key
+      &lt;dd id="log2"&gt;
+    
+      &lt;dt&gt;event.code
+      &lt;dd id="log3"&gt;
+    &lt;/dl&gt;
+
+    ---
+    const log = document.getElementById('log');
+    const log2 = document.getElementById('log2');
+    const log3 = document.getElementById('log3');
+    
+    function logKey(event) {
+    
+    log.textContent += `${event.keyCode} `
+    log2.textContent += `${event.key} `
+    log3.textContent += `${event.code} `
+    }
+    
+    document.getElementsByTagName('input')[0]
+      .addEventListener('keypress', logKey)
+
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -92,8 +134,17 @@ INSERT CODE
 INSERT CONSOLE OUTPUT (small view) 
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+    <input placeholder="0Aa" size="20" />
+    <dl>
+      <dt>event.keyCode
+      <dd id="log">
+    
+      <dt>event.key
+      <dd id="log2">
+    
+      <dt>event.code
+      <dd id="log3">
+    </dl> </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -218,7 +269,7 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keypress_event">MDN: keypress</a>
               </div>
 
               <div class="ref">
@@ -400,6 +451,22 @@ INSERT CONSOLE OUTPUT THREE (wide view)
         toggleClass(this, "open", "details-refs-aclass", "details-refs-bclass");
       }
     );
+
+
+    // Example
+
+    const log = document.getElementById('log');
+    const log2 = document.getElementById('log2');
+    const log3 = document.getElementById('log3');
+
+    function logKey(event) {
+
+      log.textContent += `${event.keyCode} `
+      log2.textContent += `${event.key} `
+      log3.textContent += `${event.code} `
+    }
+
+    document.getElementsByTagName('input')[0].addEventListener('keypress', logKey)
 
   </script>
 
