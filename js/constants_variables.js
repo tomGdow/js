@@ -108,6 +108,7 @@ let pageArr = ["index",
     "on_keypress",
     "on_click",
     "on_mouseover_mouseout",
+    "textcontent_innerhtml",
     "on_input",
     "Module-Five"];
 
@@ -216,6 +217,7 @@ let pageTitleArr = [
     "on_keypress",
     "on_click",
     "on_mouseover_mouseout",
+    "textcontent_innerhtml",
     "on_input",
     "M5",
     "js-search"];
