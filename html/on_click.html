@@ -25,6 +25,20 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
 
 </head>
 
@@ -63,25 +77,56 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+
+            <li>
+              An element receives a <code>click</code> event when any of the following occurs
+              <ol>
+                <li>
+                  A pointing-device button (such as a mouse's primary button) is both pressed and released while the
+                  pointer is located
+                  inside the element
+                <li>
+                  A touch gesture is performed on the element
+                <li>
+                  Any user interaction that is equivalent to a click, such as pressing the Space key or Enter key while
+                  the element is
+                  focused
+
+              </ol>
+            <li>
+              <code>click</code> fires after both the code{mousedown} and code{mouseup} events have fired, in that order
+            <li>
+              The event is a device-independent event — meaning it can be activated by touch, keyboard, mouse, and any
+              other mechanism
+              provided by assistive technology.
+
+          </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+&lt;p id="mytxt"&gt;My text&lt;/p&gt;
+
+&lt;button id="mybtn"&gt;Click Me&lt;/button&gt;
+
+---
+const btn = document.getElementById('mybtn');
+const txt = document.getElementById('mytxt');
+
+function logKey(event) {
+
+log.textContent += `${event.keyCode} `
+log2.textContent += `${event.key} `
+log3.textContent += `${event.code} `
+}
+
+btn.addEventListener('click', 
+  (event) => txt.style.color = "red"); </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -92,7 +137,8 @@ INSERT CODE
 INSERT CONSOLE OUTPUT (small view) 
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+    <p id="mytxt">My text</p>
+    <button id="mybtn">Click Me</button>
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
@@ -218,7 +264,7 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">MDN: click</a>
               </div>
 
               <div class="ref">
@@ -400,6 +446,21 @@ INSERT CONSOLE OUTPUT THREE (wide view)
         toggleClass(this, "open", "details-refs-aclass", "details-refs-bclass");
       }
     );
+
+
+    // Example
+
+    const btn = document.getElementById('mybtn');
+    const txt = document.getElementById('mytxt');
+
+    function logKey(event) {
+
+      log.textContent += `${event.keyCode} `
+      log2.textContent += `${event.key} `
+      log3.textContent += `${event.code} `
+    }
+
+    btn.addEventListener('click', (event) => txt.style.color = "red");
 
   </script>
 
