@@ -108,6 +108,7 @@ let pageArr = ["index",
     "on_keypress",
     "on_click",
     "on_mouseover_mouseout",
+    "on_input",
     "Module-Five"];
 
 pageArr.push("search"); // 'search' should be the last term in pageArr
@@ -215,6 +216,7 @@ let pageTitleArr = [
     "on_keypress",
     "on_click",
     "on_mouseover_mouseout",
+    "on_input",
     "M5",
     "js-search"];
 

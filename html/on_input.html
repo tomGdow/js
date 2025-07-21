@@ -25,7 +25,6 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
-
   <style>
     ol {
       padding-left: 10%;
@@ -79,42 +78,44 @@
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
           <ol>
+            The input event fires when the value of an
+            <ol>
+              <li><code>input</code>
+              <li><code>select</code>
+              <li><code>textarea</code>
+            </ol>
+
+            element has been changed as a direct result of a user action (such as typing in a textbox or checking a
+            checkbox)
+
             <li>
-              The change event is fired for
-              <ol>
-                <li>input
-                <li>select
-                <li>textarea
-              </ol>
-              elements when the user modifies the element's value
+              The input event is fired every time the value of the element changes
             <li>
-              Unlike the input event, the change event is not necessarily fired for each alteration to an element's
-              value.
+              <strong>This is unlike the change event</strong>, which only fires
+              when the value is committed, such as by pressing the enter key or selecting a value from a list of options
           </ol>
         </article>
 
         <article>
-          <h1 class="count">Code Example</h1>
+          <h1 class="count">Code Example (input)</h1>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-&lt;div&gt;
-  &lt;select name="my_select" id="my_select"&gt;
-    &lt;option value="kildare"&gt;Kildare&lt;/option&gt;
-    &lt;option value="dublin" selected&gt;Dublin&lt;/option&gt;
-    &lt;option value="wicklow"&gt;Wicklow&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/div&gt;
+&lt;label for="myinput"&gt;Type&lt;/label&gt;
 
-    ---
+&lt;input type="text" id="myinput" size="40"&gt;
 
-document.getElementsByTagName("select")[0]
-  .addEventListener('change',
-    (event) = &gt; console.log(
-      event.target.parentElement.style.border="2px solid red"
-    )
-); </pre><!-- code-content -->
+&lt;output id="output"&gt;&lt;/output&gt;
+---
+const myinput = document.getElementById('myinput');
+const myoutput = document.getElementById('output');
+
+myinput.addEventListener('input',
+  function(event) {
+    myoutput.value=event.target.value
+  }
+) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -125,24 +126,36 @@ document.getElementsByTagName("select")[0]
 INSERT CONSOLE OUTPUT (small view) 
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-<div>
-  <select name="my_select" id="my_select">
-    <option value="kildare">Kildare</option>
-    <option value="dublin" selected>Dublin</option>
-    <option value="wicklow">Wicklow</option>
-  </select>
-</div>
+<label for="myinput">Type</label>
+<input type="text" id="myinput" size="40">
+<br>
+<output id="output"></output>
+
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
         <article>
-          <h1 class="count">Code Example</h1>
+          <h1 class="count">Code Example (change)</h1>
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+&lt;label for="myinput2"&gt;Type&lt;/label&gt;
+
+&lt;input type="text" id="myinput2" size="40"&gt;
+
+&lt;output id="output2"&gt;&lt;/output&gt;
+
+---
+
+const myinput2 = document.getElementById('myinput2');
+const myoutput2 = document.getElementById('output2');
+
+myinput2.addEventListener('change',
+  function (event) {
+    myoutput2.value = event.target.value
+  }
+) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -156,7 +169,12 @@ INSERT CODE
 INSERT CONSOLE OUTPUT (small view) 
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+<label for="myinput2">Type</label>
+<input type="text" id="myinput2" size="40">
+<br>
+<output id="output2"></output>
+
+// Click outside input box to see effect
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
@@ -257,7 +275,7 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event">MDN: change</a>
+                <a href="https://www.google.ie">Google</a>
               </div>
 
               <div class="ref">
@@ -441,10 +459,27 @@ INSERT CONSOLE OUTPUT THREE (wide view)
     );
 
 
-    // Select Example
+    // Examples
+    // Ex 1
+    const myinput = document.getElementById('myinput');
+    const myoutput = document.getElementById('output');
 
-    document.getElementsByTagName("select")[0].addEventListener('change',
-      (event) => console.log("hello", event.target.parentElement.style.border = "2px solid red"));
+
+    myinput.addEventListener('input',
+      function (event) {
+        myoutput.value = event.target.value
+      }
+    )
+    // Ex 2
+    const myinput2 = document.getElementById('myinput2');
+    const myoutput2 = document.getElementById('output2');
+
+
+    myinput2.addEventListener('change',
+      function (event) {
+        myoutput2.value = event.target.value
+      }
+    )
 
   </script>
 
