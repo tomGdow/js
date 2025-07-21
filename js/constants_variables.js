@@ -110,6 +110,7 @@ let pageArr = ["index",
     "on_mouseover_mouseout",
     "textcontent_innerhtml",
     "on_input",
+    "document_dot_write",
     "Module-Five"];
 
 pageArr.push("search"); // 'search' should be the last term in pageArr
@@ -219,6 +220,7 @@ let pageTitleArr = [
     "on_mouseover_mouseout",
     "textcontent_innerhtml",
     "on_input",
+    "document_dot_write",
     "M5",
     "js-search"];
 
