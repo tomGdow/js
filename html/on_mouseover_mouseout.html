@@ -25,6 +25,27 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+
+    #mydiv {
+      width: 100px;
+      height: 100px;
+      border: 2px solid blue;
+      background-color: white;
+    }
+  </style>
+
 
 </head>
 
@@ -63,24 +84,47 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              The <code>mouseover</code> event is fired at an Element when a pointing device (such as a mouse or
+              trackpad) is used to move the
+              cursor onto the element or one of its child elements
+
+            <li>
+              The mouseout event is fired at an Element when a pointing device (usually a mouse) is used to move the
+              cursor so that it
+              is no longer contained within the element or one of its children
+          </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+&lt;div id="mydiv"&gt;&lt;/div&gt;
+
+const mydiv = document.getElementById('mydiv');
+
+function ondiv (event) {
+
+  event.target.style.backgroundColor="red";
+
+  setTimeout(
+    ()=&gt;event.target.style.backgroundColor="yellow",1000)
+}
+
+function offdiv (event) {
+
+event.target.style.backgroundColor="cyan";
+
+setTimeout(
+  ()=&gt;event.target.style.backgroundColor="",1000)
+}
+
+mydiv.addEventListener('mouseover', ondiv);
+mydiv.addEventListener('mouseout', offdiv);
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -92,7 +136,7 @@ INSERT CODE
 INSERT CONSOLE OUTPUT (small view) 
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+<div id="mydiv"></div>
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
@@ -218,7 +262,7 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event">MDN: mouseover</a>
               </div>
 
               <div class="ref">
@@ -400,6 +444,28 @@ INSERT CONSOLE OUTPUT THREE (wide view)
         toggleClass(this, "open", "details-refs-aclass", "details-refs-bclass");
       }
     );
+
+
+    // Example
+
+    const mydiv = document.getElementById('mydiv');
+
+    function ondiv(event) {
+
+      event.target.style.backgroundColor = "red";
+
+      setTimeout(() => event.target.style.backgroundColor = "yellow", 1000)
+    }
+
+    function offdiv(event) {
+
+      event.target.style.backgroundColor = "cyan";
+
+      setTimeout(() => event.target.style.backgroundColor = "", 1000)
+    }
+
+    mydiv.addEventListener('mouseover', ondiv);
+    mydiv.addEventListener('mouseout', offdiv);
 
   </script>
 
