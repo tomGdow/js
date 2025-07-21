@@ -25,6 +25,24 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+
+    dd {
+      border: 2px solid white;
+    }
+  </style>
+
 
 </head>
 
@@ -63,24 +81,111 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+
+            <li>
+              The <code>keydown</code> event is fired when a key is pressed
+
+            <li>
+              Unlike the deprecated <code>keypress</code> event, the keydown event is fired for all keys, regardless of
+              whether they
+              produce a
+              character value
+
+            <li>
+              The <code>keydown</code> and <code>keyup</code> events provide a code indicating which key is pressed,
+              while <code>keypress</code> indicates
+              which character
+              was entered
+
+            <li>
+              For example, a lowercase "a" will be reported as 65 by keydown and keyup, but as 97 by keypress
+
+            <li>
+              An uppercase "A" is reported as 65 by all events
+
+            <li>
+              The event target of a key event is the currently focused element which is processing the keyboard activity
+
+            <li>
+              This includes:
+              <ol>
+                <li> input
+                <li> textarea
+                <li> anything that is contentEditable
+                <li> anything else that can be interacted
+                  with the keyboard, such as <code>a</code>, <code>button</code>, and <code>summary</code>
+              </ol>
+
+            <li>
+              If no suitable element is in focus, the event target will be the <code>body </code>or the root
+            <li>
+              The event bubbles
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+addEventListener("keydown", (event) => { })
+
+onkeydown = (event) => { } </pre><!-- code-content -->
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+
+&lt;input placeholder="0Aa" size="20" /&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;event.keyCode
+  &lt;dd id="log"&gt;
+
+  &lt;dt&gt;event.key
+  &lt;dd id="log2"&gt;
+
+  &lt;dt&gt;event.code
+  &lt;dd id="log3"&gt;
+
+  &lt;dt&gt;event.shiftKey
+  &lt;dd id="log4"&gt;
+
+  &lt;dt&gt;combined
+  &lt;dd id="log5"&gt;
+
+&lt;/dl&gt;
+
+---
+
+const log = document.getElementById('log');
+const log2 = document.getElementById('log2');
+const log3 = document.getElementById('log3');
+const log4 = document.getElementById('log4');
+const log5 = document.getElementById('log5');
+
+function logKey(event) {
+
+log.textContent += `${event.keyCode} `
+
+log2.textContent += `${event.key} `
+
+log3.textContent += `${event.code} `
+
+log4.textContent += `${event.shiftKey} `
+
+log5.textContent += `[ ${event.keyCode} 
+                       ${event.key} 
+                       ${event.code} 
+                       ${event.shiftKey} ]`
+console.log(event)
+
+}
+
+document.getElementsByTagName('Input')[0]
+  .addEventListener('keydown', logKey)
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -93,6 +198,21 @@ INSERT CONSOLE OUTPUT (small view)
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT (wide view) 
+<input placeholder="0Aa" size="20" />
+<dl>
+  <dt>event.keyCode
+  <dd id="log">
+
+  <dt>event.key
+  <dd id="log2">
+
+  <dt>event.code
+  <dd id="log3">
+  <dt>event.shiftKey
+  <dd id="log4">
+  <dt>combined
+  <dd id="log5">
+</dl>
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
@@ -218,11 +338,11 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event">MDN: keydown</a>
               </div>
 
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event">MDN: keyup</a>
               </div>
 
             </div>
@@ -400,6 +520,29 @@ INSERT CONSOLE OUTPUT THREE (wide view)
         toggleClass(this, "open", "details-refs-aclass", "details-refs-bclass");
       }
     );
+
+
+    // Example
+
+    const log = document.getElementById('log');
+    const log2 = document.getElementById('log2');
+    const log3 = document.getElementById('log3');
+    const log4 = document.getElementById('log4');
+    const log5 = document.getElementById('log5');
+
+    function logKey(event) {
+
+      log.textContent += `${event.keyCode} `
+      log2.textContent += `${event.key} `
+      log3.textContent += `${event.code} `
+      log4.textContent += `${event.shiftKey} `
+      log5.textContent += `[ ${event.keyCode} ${event.key} ${event.code} ${event.shiftKey} ]`
+      console.log(event)
+
+    }
+
+    document.getElementsByTagName('Input')[0].addEventListener('keydown', logKey)
+
 
   </script>
 
