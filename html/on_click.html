@@ -148,8 +148,10 @@ INSERT CONSOLE OUTPUT (small view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+&lt;img src="../images/alert.png" 
+     alt="alert image" 
+     width="300" 
+     onclick="src='../images/confirm.png'"&gt; </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -163,7 +165,9 @@ INSERT CODE
 INSERT CONSOLE OUTPUT (small view) 
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+// Click on image to change src 
+
+<img src="../images/alert.png" alt="alert image" width="300" onclick="src='../images/confirm.png'">
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
@@ -174,8 +178,19 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+&lt;img src="../images/alert.png" 
+     alt="alert image" 
+     width="300" 
+     id ="myimg"&gt;
+
+---
+const myimg = document.getElementById('myimg')
+
+function switchImg () {
+  this.src="../images/confirm.png";
+}
+
+myimg.addEventListener('click', switchImg) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -189,8 +204,9 @@ INSERT CODE ONE
 INSERT CONSOLE OUTPUT ONE(small view) 
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+// Click on image to change src
+
+<img src="../images/alert.png" alt="alert image" width="300" id ="myimg"> </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -201,7 +217,19 @@ INSERT CONSOLE OUTPUT ONE(wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
+&lt;img src="../images/alert.png" 
+     alt="alert image" 
+     width="300" 
+     id ="myimg2"&gt;
+
+---
+const myimg2 = document.getElementById('myimg2');
+
+function switchImg2() {
+ . yimg2.src = "../images/confirm.png";
+}
+
+myimg2.addEventListener('click', switchImg2)
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -216,7 +244,9 @@ INSERT CODE TWO
 INSERT CONSOLE OUTPUT TWO (small view) 
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
+// Click on image to change src
+
+<img src="../images/alert.png" alt="alert image" width="300" id ="myimg2">
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
@@ -227,8 +257,20 @@ INSERT CONSOLE OUTPUT TWO (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE THREE
-              </pre><!-- code-content -->
+&lt;img src="../images/alert.png" 
+     alt="alert image" 
+     width="300" 
+     id="myimg3"&gt;
+
+---
+
+const myimg3 = document.getElementById('myimg3')
+
+function switchImg3 (event) {
+  event.target.src="../images/confirm.png";
+}
+
+myimg3.addEventListener('click', switchImg3) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -242,7 +284,9 @@ INSERT CODE THREE
 INSERT CONSOLE OUTPUT THREE (small view) 
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
+// Click on image to change src
+
+<img src="../images/alert.png" alt="alert image" width="300" id="myimg3">
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
@@ -461,6 +505,39 @@ INSERT CONSOLE OUTPUT THREE (wide view)
     }
 
     btn.addEventListener('click', (event) => txt.style.color = "red");
+
+    // Example 2
+
+    const myimg = document.getElementById('myimg')
+
+
+      function switchImg() {
+        this.src = "../images/confirm.png";
+      }
+
+      myimg.addEventListener('click', switchImg)
+
+      // Example 3
+
+      const myimg2 = document.getElementById('myimg2')
+
+
+        function switchImg2() {
+          myimg2.src = "../images/confirm.png";
+        }
+
+        myimg2.addEventListener('click', switchImg2)
+
+  // Example 4
+
+  const myimg3 = document.getElementById('myimg3')
+
+
+    function switchImg3(event) {
+      event.target.src = "../images/confirm.png";
+    }
+
+    myimg3.addEventListener('click', switchImg3)
 
   </script>
 
