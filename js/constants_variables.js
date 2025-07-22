@@ -111,7 +111,8 @@ let pageArr = ["index",
     "textcontent_innerhtml",
     "on_input",
     "document_dot_write",
-    "Module-Five"];
+    "Module-Five",
+    "forms_basic_one"];
 
 pageArr.push("search"); // 'search' should be the last term in pageArr
 
@@ -222,6 +223,7 @@ let pageTitleArr = [
     "on_input",
     "document_dot_write",
     "M5",
+    "forms_basic_one",
     "js-search"];
 
 // Add banner third part
