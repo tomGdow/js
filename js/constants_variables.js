@@ -114,7 +114,8 @@ let pageArr = ["index",
     "window_dot_open",
     "Module-Five",
     "forms_basic_one",
-"forms_basic_iframe_two"];
+"forms_basic_iframe_two",
+"forms_more_examples"];
 
 pageArr.push("search"); // 'search' should be the last term in pageArr
 
@@ -228,6 +229,7 @@ let pageTitleArr = [
     "M5",
     "forms_basic_one",
     "forms_basic_two",
+    "forms_more_egs",
     "js-search"];
 
 // Add banner third part
