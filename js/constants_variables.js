@@ -117,7 +117,8 @@ let pageArr = ["index",
     "forms_basic_iframe_two",
     "forms_more_examples",
     "forms_post_fetch",
-    "forms_get_fetch"];
+    "forms_get_fetch",
+    "mnemonics"];
 
 pageArr.push("search"); // 'search' should be the last term in pageArr
 
@@ -234,6 +235,7 @@ let pageTitleArr = [
     "forms_more_egs",
     "forms_post_fetch",
     "forms_get_fetch",
+    "mnemonics",
     "js-search"];
 
 // Add banner third part
