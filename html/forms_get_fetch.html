@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>[PAGE TITLE]</title><!-- Use JavaScript (constants_variables.js)-->
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta name="keywords" content="TO,DO">
+  <meta name="description" content="TO DO">
+  <meta name="google" content="notranslate">
+  <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+
+  <link rel="stylesheet" href="../css/main.css"><!-- EXTERNAL STYLESHEET -->
+
+  <style>
+    @import url("../css/counters.css");
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <noscript>
+    <link rel="stylesheet" href="../css/nojs.css">
+  </noscript>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid-container">
+      <header class="main_header">
+        <div class="banner">
+
+          <div class="banner-item-1">
+            <a href="https://tomgdow.com">
+              <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                alt="gravatar image of tomgdow">
+            </a>
+          </div>
+
+          <div class="banner-item-2"><!-- [JavaScript automatically inserts] --></div>
+          <div class="banner-item-3-alt"><!--pageNumbers. JavaScript auto inserts --></div>
+          <div class="banner-item-3"><!-- [Use JavaScript (constants_variables.js)] --></div>
+
+        </div><!-- banner-->
+      </header>
+
+      <nav>
+        <a href="../index.html" accesskey="h">home</a>
+        <a href="PREV.html" id="prevPage" accesskey="p">prev</a>
+        <a href="NEXT.html" id="nextPage" accesskey="n">next</a>
+        <a href="../html/search.html" accesskey="s">search</a>
+      </nav>
+
+      <div class="aside-right">
+        <div class="right-aside-icon">&raquo;</div>
+      </div><!--aside-right -->
+
+      <main>
+        <article>
+          <noscript><span>This Web Site requires JavaScript!</span></noscript>
+          <h1 class="count">Introduction</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
+            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
+          </p>
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+  &lt;form action="https://phptwo.tomgdow.com" 
+           method="GET" 
+           id="form_one"&gt;
+
+    &lt;fieldset class="info"&gt;
+
+      &lt;legend&gt;Personal Information&lt;/legend&gt;
+    
+      &lt;label for="name"&gt;name&lt;/label&gt;
+      &lt;input type="text" name="param1" id="name"&gt;
+      
+      &lt;label for="email"&gt;e-mail&lt;/label&gt;
+      &lt;input type="email" 
+            name="param2" id="email" required&gt;
+      
+      &lt;input type="submit" class="submit"&gt;
+      
+    &lt;/fieldset&gt;
+
+    &lt;fieldset class="output"&gt;
+      &lt;legend&gt;Response&lt;/legend&gt;
+      &lt;div id="message"&gt;&lt;/div&gt;
+  
+      
+      &lt;label for="out-name" 
+            id="label-out-name"&gt;Your name&lt;/label&gt;
+      &lt;output for="name" id="out-name"&gt;&lt;/output&gt;
+      
+      &lt;label for="out-email" id="label-out-email"&gt;
+          Your email address&lt;/label&gt;
+      &lt;output for="email" id="out-email"&gt;&lt;/output&gt;
+      
+      &lt;label for="submitted-url"  id="label-submitted-url"&gt;
+          Submitted url (GET)
+       &lt;/label&gt;
+      &lt;output for="name email" id="submitted-url"&gt;&lt;/output&gt;
+      
+      &lt;label for="returned-querystring" 
+                id="label-returned-querystring" &gt;
+          Query String returned from server&lt;/label&gt;
+      &lt;output for="name, email" 
+                id="returned-querystring"&gt;&lt;/output&gt;
+  
+      &lt;label for="server-response" 
+                id="label-server-response"&gt;
+                Full Server Response&lt;/label&gt;
+      &lt;output for="name,email" 
+                 id="server-response"&gt;&lt;/output&gt;
+      &lt;output for="name,email" 
+                 id="server-response-two"&gt;&lt;/output&gt;
+      
+    &lt;/fieldset&gt;
+  &lt;/form&gt;
+
+  ---
+
+    async function sendData() {
+
+      const formData = new FormData(form_one);
+
+      let param1 = formData.get('param1')
+      let param2 = formData.get('param2')
+      let url = addQueryStringToUrl(
+        "https://phptwo.tomgdow.com", 
+        "param1", param1,
+        "param2", param2);
+
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+        });
+
+        let result = await response.text();
+        let responseArray = result.split('&');
+
+        console.log("response", responseArray)
+
+        document.querySelector("#submitted-url").value = url
+        document.querySelector("#out-name").value = 
+          responseArray[0];
+        document.querySelector("#out-email").value = 
+          responseArray[1];
+        document.querySelector('#returned-querystring').value = 
+          responseArray[3] + "&" + responseArray[4];
+        document.querySelector('#server-response').value = 
+          responseArray[0] + "&" + responseArray[1] + 
+            "&" + responseArray[2] + "&";
+        document.querySelector('#server-response-two').value = 
+          responseArray[3] + "&" + responseArray[4];
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    document.getElementById('form_one').addEventListener('submit', 
+      function (event) {
+
+        event.preventDefault();
+        sendData();
+
+        let msg = "Greetings from PHP Server (GET Method)"
+        document.getElementById('message').innerHTML = msg;
+
+    });
+
+
+    // helper
+
+    function addQueryStringToUrl(url, ...args) {
+      var tmp = url + '?';
+      if (args.length < 3) {
+        // console.log(args);
+        tmp = `${tmp}${args[0]}=${args[1]}`;
+      }
+      else {
+        tmp = `${tmp}${args[0]}=${args[1]}`;
+        for (let i = 2; i < args.length; i += 2) {
+          tmp += `&${args[i]}=${args[i + 1]}`;
+        }
+      }
+      return tmp;
+    }
+
+              </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">[JavaScript Inserts]</summary>
+            <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT (small view) 
+              </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+  <form action="https://phptwo.tomgdow.com" method="GET" id="form_one">
+    <fieldset class="info">
+      <legend>Personal Information</legend>
+      <div>
+        <label for="name">name</label>
+        <input type="text" name="param1" id="name">
+      </div>
+      <div>
+        <label for="email">e-mail</label>
+        <input type="email" name="param2" id="email" required><br>
+      </div>
+      <div>
+        <input type="submit" class="submit">
+      </div>
+    </fieldset>
+    <fieldset class="output">
+      <legend>Response</legend>
+      <div id="message"></div>
+  
+      <div>
+        <label for="out-name" id="label-out-name">Your name</label>
+        <output for="name" id="out-name"></output>
+      </div>
+      <div>
+        <label for="out-email" id="label-out-email">
+          Your email address</label>
+        <output for="email" id="out-email"></output>
+      </div>
+      <div>
+        <label for="submitted-url"  id="label-submitted-url">
+          Submitted url (GET)
+        </label><br>
+        <output for="name email" id="submitted-url"></output>
+      </div>
+      <div>
+        <label for="returned-querystring" id="label-returned-querystring" >Query String returned from
+          server</label><br>
+        <output for="name, email" id="returned-querystring"></output>
+  
+      </div>
+      <div>
+        <label for="server-response" class="hidden" id="label-server-response">Full Server
+          Response</label><br>
+        <output for="name,email" id="server-response"></output><br>
+        <output for="name,email" id="server-response-two"></output>
+      </div>
+    </fieldset>
+  </form>
+              </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+INSERT CODE
+              </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT (small view) 
+              </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT (wide view) 
+              </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+INSERT CODE ONE
+              </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT ONE(small view) 
+              </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT ONE(wide view) 
+              </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+INSERT CODE TWO
+              </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+              </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+              </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+INSERT CODE THREE
+              </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+              </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+              </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+        <!--here-->
+
+        <article>
+          <h1 class="count">Notes</h1>
+
+          <ol>
+            <li>I am an item</li>
+          </ol>
+
+        </article>
+
+        <article>
+          <h1 class="count refs-heading">References</h1>
+          <details open><!-- Details REFS -->
+            <summary class="details-refs-summary">[JavaScript Inserts]</summary>
+            <div class="ref-container details-refs-aclass">
+              <div class="ref">
+                <a href="https://www.google.ie">Google</a>
+              </div>
+
+              <div class="ref">
+                <a href="https://www.google.ie">Google</a>
+              </div>
+
+            </div>
+          </details><!-- Details REFS -->
+        </article>
+      </main>
+
+      <div class="aside-left">
+        <div class="left-aside-icon">&laquo;</div>
+      </div>
+
+      <footer>
+
+        <div class="footer-item-1">
+          <a href="https://tomgdow.com">
+            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+              alt="gravatar image of tomgdow">
+          </a>
+        </div>
+
+        <div class="footer-item-2">
+          <span id="page_number"></span> of <span id="total_pages"></span>
+        </div>
+
+        <div class="footer-item-3">[Footer-3]</div><!-- [JavaScript automatically inserts] -->
+
+      </footer>
+
+    </div><!-- grid-container -->
+
+  </div><!--container-->
+
+  <script src="../js/functions.js"></script><!-- JS Functions-->
+  <script src="../js/constants_variables.js"></script><!-- JS Constants_variables -->
+
+  <script>
+    'use strict'
+
+    // page title
+    document.title = getPageTitle(pageTitleArr, pageArr, baseFileName);
+
+    // banner-second-part
+    document.getElementsByClassName("banner-item-2")[0].innerHTML = splitAndCapitalize(baseFileName);
+
+    // banner-third-part
+    document.getElementsByClassName("banner-item-3")[0].innerHTML = "&nbsp;" + bannerThirdPart;
+
+    // footer-third-part
+    document.getElementsByClassName("footer-item-3")[0].innerHTML = "&nbsp;" + baseFileName;
+
+    // next page
+    nextPage.setAttribute("href", nextPageURL(baseFileName, pageArr));
+
+    // previous page
+    prevPage.setAttribute("href", prevPageURL(baseFileName, pageArr, "./"));
+    // prevPage.setAttribute("href", prevPageURL(baseFileName, pageArr));[template-second-page-CHANGE]
+
+    // aside-right event listeners
+    document.getElementsByClassName("aside-right")[0].addEventListener('click', function () {
+      window.location.href = nextPageURL(baseFileName, pageArr, "./");
+      setBackgroundColor(this.className, "lightblue", 0);
+    });
+
+    document.getElementsByClassName("aside-right")[0].addEventListener('mouseover', function () {
+      displayBlock("right-aside-icon");
+      setBackgroundColor(this.className, "#8cc8dc", 0)
+    });
+
+    document.getElementsByClassName("aside-right")[0].addEventListener('mouseout', function () {
+      displayNone("right-aside-icon");
+      setBackgroundColor(this.className, "lightblue", 0)
+    });
+
+    // aside-left event listeners
+    document.getElementsByClassName("aside-left")[0].addEventListener('click', function () {
+      window.location.href = prevPageURL(baseFileName, pageArr, "./");
+      // window.location.href = prevPageURL(baseFileName, pageArr, "./");[Template-seond-page-CHANGE]
+      setBackgroundColor(this.className, "lightblue", 0);
+    });
+
+    document.getElementsByClassName("aside-left")[0].addEventListener('mouseover', function () {
+      displayBlock("left-aside-icon");
+      setBackgroundColor(this.className, "#8cc8dc", 0)
+    });
+
+    document.getElementsByClassName("aside-left")[0].addEventListener('mouseout', function () {
+      displayNone("left-aside-icon");
+      setBackgroundColor(this.className, "lightblue", 0)
+    });
+
+    // Conditionally remove "open" attribute from details tag 
+    let condition = window.matchMedia("(max-width: 440px)");
+    let conditionTwo = window.matchMedia("(min-width: 440px)");
+    let targets = document.getElementsByTagName("details");
+
+    let arr = Array.from(Array(targets.length).keys());
+    let oddsArr = arr.filter(el => el % 2 !== 0);
+    let evensArr = arr.filter(el => el % 2 == 0);
+    const biblioIndex = targets.length - 1;
+
+    window.addEventListener("load",
+      function () {
+
+        // Use condition to REMOVE open attribute from 
+        // media with widths LESS THAN max-width (440px) (mobile)
+
+        for (const el of arr) {
+          // for (const el of [0, 1, 2]) {
+          condRemoveAttribute(condition, "details", el, "open");
+        }
+
+        // Use conditionTwo to REMOVE open attribute from 
+        // media with widths GREATER THAN min-width (440px)
+
+        for (const el of oddsArr) {
+          // for (const el of [1]) {
+          condRemoveAttribute(conditionTwo, "details", el, "open");
+        }
+
+        // toggle innerHTML
+        for (const el of evensArr) {
+          // for (const el of [0]) {
+          toggleFirstChildInnerHTML(targets[el], "open", "", "Code");
+        }
+
+        for (const el of oddsArr) {
+          // for (const el of [1]) {
+          toggleFirstChildInnerHTML(targets[el], "open", "", "Console");
+        }
+
+        toggleFirstChildInnerHTML(targets[biblioIndex], "open", "", "Bibliography");
+
+        // Toggle classes
+        for (const el of evensArr) {
+          // for (const el of [0]) {
+          toggleClass(targets[el], "open", "details-code-aclass", "details-code-bclass");
+        }
+
+        for (const el of oddsArr) {
+          // for (const el of [1]) {
+          toggleClass(targets[el], "open", "details-console-aclass", "details-console-bclass");
+        }
+
+        toggleClass(targets[biblioIndex], "open", "details-refs-aclass", "details-refs-bclass");
+      }
+    );
+
+    // Event Listeners on Details tags 
+    // 1) CODE
+    for (const el of evensArr) {
+      // for (const el of [0]) {
+      targets[el].addEventListener("toggle",
+        function () {
+          toggleFirstChildInnerHTML(this, "open", "", "Code");
+          toggleClass(this, "open", "details-code-aclass", "details-code-bclass");
+        }
+      );
+    }
+
+    // 2) CONSOLE
+    for (const el of oddsArr) {
+      // for (const el of [1]) {
+      targets[el].addEventListener("toggle",
+        function () {
+          toggleFirstChildInnerHTML(this, "open", "", "Console");
+          toggleClass(this, "open", "details-console-aclass", "details-console-bclass");
+        }
+      );
+    }
+
+    // 3) BIBLIOGRAPHY
+    targets[biblioIndex].addEventListener("toggle",
+      function () {
+        toggleFirstChildInnerHTML(this, "open", "", "Bibliography");
+        toggleClass(this, "open", "details-refs-aclass", "details-refs-bclass");
+      }
+    );
+
+    // Form
+
+    async function sendData() {
+
+      const formData = new FormData(form_one);
+
+      let param1 = formData.get('param1')
+      let param2 = formData.get('param2')
+      let url = addQueryStringToUrl("https://phptwo.tomgdow.com", "param1", param1, "param2", param2);
+
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+        });
+
+        let result = await response.text();
+        let responseArray = result.split('&');
+
+        console.log("response", responseArray)
+
+        document.querySelector("#submitted-url").value = url
+        document.querySelector("#out-name").value = responseArray[0];
+        document.querySelector("#out-email").value = responseArray[1];
+        document.querySelector('#returned-querystring').value = responseArray[3] + "&" + responseArray[4];
+        document.querySelector('#server-response').value = responseArray[0] + "&" + responseArray[1] + "&" + responseArray[2] + "&";
+        document.querySelector('#server-response-two').value = responseArray[3] + "&" + responseArray[4];
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    document.getElementById('form_one').addEventListener('submit', function (event) {
+
+      event.preventDefault();
+      sendData();
+
+      let msg = "Greetings from PHP Server (GET Method)"
+      document.getElementById('message').innerHTML = msg;
+
+    });
+
+
+    // helper
+
+    function addQueryStringToUrl(url, ...args) {
+      var tmp = url + '?';
+      if (args.length < 3) {
+        // console.log(args);
+        tmp = `${tmp}${args[0]}=${args[1]}`;
+      }
+      else {
+        tmp = `${tmp}${args[0]}=${args[1]}`;
+        for (let i = 2; i < args.length; i += 2) {
+          tmp += `&${args[i]}=${args[i + 1]}`;
+        }
+      }
+      return tmp;
+    }
+
+  </script>
+
+  <script src="../js/main.js"></script><!-- Main JS file -->
+
+</body>
+
+</html>
