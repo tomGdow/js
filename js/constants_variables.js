@@ -121,6 +121,7 @@ let pageArr = ["index",
     "forms_radio",
     "fetch_post",
     "fetch_get",
+    "forms_select",
     "mnemonics"];
 
 pageArr.push("search"); // 'search' should be the last term in pageArr
@@ -241,6 +242,7 @@ let pageTitleArr = [
     "forms_radio",
     "fetch_post",
     "fetch_get",
+    "formst_select",
     "mnemonics",
     "js-search"];
 
