@@ -63,10 +63,72 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              The <code>find()</code> method of Array instances returns <strong>the first element</strong> in the
+              provided array that satisfies the provided testing
+              function
+            <li>
+              If no values satisfy the testing function, <strong>undefined</strong> is returned
+
+            <li>
+              <code>find()</code>calls a provided <code>callbackFn</code> function once for each element in an array in
+              ascending-index order, until <code>callbackFn</code>
+              returns a truthy value
+
+            <li>
+              <code>find()</code> then returns that element and stops iterating through the array
+            <li>
+              If <code>callbackFn</code> never
+              returns a truthy value, <code>find()</code> returns <code>undefined</code>
+
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+find(callbackFn)
+find(callbackFn, thisArg) </pre><!-- code-content -->
+          <dl>
+            <dt><strong>callbackfn</strong>
+            <dd>
+              <ol>
+                <li>
+                  A function to execute for each element in the array
+                <li>
+                  It should return a truthy value to indicate a matching element has
+                  been found, and a falsy value otherwise
+
+              </ol>
+            <dt><strong>thisArg</strong>
+
+            <dd>A value to use as this when executing <code>callbackFn</code>
+        </article>
+
+        <article>
+          <h1 class="count">Notes</h1>
+          <ol>
+            <li>
+              If you need the index of the found element in the array, <br> use <code>findIndex()</code>
+            <li>
+              If you need to find the index of a value, <br>
+              use <code>indexOf()</code>
+              <br>
+              (It's similar to <code>findIndex()</code>, but checks each element for
+              equality with the value instead of using a testing function)
+            <li>
+              If you need to find if a value exists in an array, <br>
+              use <code>includes()</code>
+              <br>
+              Again, it checks each element for equality with the
+              value instead of using a testing function
+            <li>
+              If you need to find if any element satisfies the provided testing function, <br>
+              use <code>some()</code>
+            <li>
+              If you need to find all elements that satisfy the provided testing function, <br>
+              use <code>filter()</code>
+          </ol>
         </article>
 
         <article>
@@ -80,8 +142,15 @@
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+const myarr =[200,300, 2,1, 10,3]
+
+myarr.sort((a,b)=>a-b)
+
+function myfn(x) {
+   return x>10
+}
+console.log(myarr)
+console.log(myarr.find(myfn)) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +158,11 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+[ 1, 2, 3, 10, 200, 300 ]
+200</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+[ 1, 2, 3, 10, 200, 300 ]
+200 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,8 +171,7 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+myarr.findIndex(myfn) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -114,11 +182,9 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+4</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+4</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -128,8 +194,7 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+myarr.filter(myfn) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -140,11 +205,80 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+[ 200, 300 ] </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+[ 200, 300 ] </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+myarr.some(myfn) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+true</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+myarr.includes(10) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+myarr.indexOf(10)
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+3 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+3 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -156,7 +290,7 @@ INSERT CONSOLE OUTPUT ONE(wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE TWO
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -168,10 +302,10 @@ INSERT CODE TWO
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -182,7 +316,7 @@ INSERT CONSOLE OUTPUT TWO (wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE THREE
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -194,10 +328,10 @@ INSERT CODE THREE
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -218,7 +352,8 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">MDN:
+                  find</a>
               </div>
 
               <div class="ref">
