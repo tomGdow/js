@@ -204,6 +204,70 @@ function checkField(event,
   }
   return true;
 }
+
+--- 
+
+async function sendData() {
+
+  const formData = new FormData(document.forms[0]);
+  console.log("FORM DATA", formData)
+
+  try {
+    const response = await fetch(
+      "https://php.tomgdow.com", {
+         method: "POST",
+         body: formData
+    });
+
+    let result = await response.text();
+    let responseArray = result.split('&');
+
+    const out_id = ['out-name', 'out-choice'];
+
+    for (el of out_id)
+      document.getElementById(el).value = 
+        responseArray[out_id.indexOf(el)]
+
+    document.getElementById(
+      "server-response").value = result;
+
+
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+document.forms[0].addEventListener(
+  'submit', function (event) {
+
+    event.preventDefault();
+    if (checkField(event, "name", "msg_name", 0))
+      sendData();
+});
+
+document.getElementById('name').addEventListener('focus', function () {
+  event.target.nextElementSibling.innerHTML = "";
+
+  event.target.value = "";
+
+});
+
+function checkField(event, in_id, out_class, class_index) {
+
+  event.preventDefault();
+
+  let condition = event.target.elements[in_id]
+
+  if (condition.value === '') {
+    let msgName = event.target.getElementsByClassName(out_class)[class_index];
+    msgName.innerHTML = "!Required field";
+
+    msgName.style.backgroundColor = "red";
+    return false;
+  }
+  return true;
+}
+
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -505,7 +569,6 @@ INSERT CONSOLE OUTPUT (wide view)
       event.preventDefault();
       if (checkField(event, "name", "msg_name", 0))
         sendData();
-
     });
 
     document.getElementById('name').addEventListener('focus', function () {
