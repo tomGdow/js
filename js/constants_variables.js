@@ -120,7 +120,7 @@ let pageArr = ["index",
     "forms_get_fetch",
     "forms_radio",
     "fetch_post",
-    "forms_validation_post",
+    "fetch_validation_post",
     "fetch_get",
     "forms_select",
     "mnemonics"];
