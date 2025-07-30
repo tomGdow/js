@@ -25,6 +25,20 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
 
 </head>
 
@@ -63,10 +77,30 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+
+            <li>
+              The <code>search()</code> method of String values executes a search for a match between a <strong>regular
+                expression</strong> and this string,
+              returning <strong>the index of the first match</strong> in the string regexp
+
+
+            <li>
+              <strong>Return value</strong>
+              <ol>
+                <li>
+                  The index of the first match between the regular expression and the given string
+                <li>
+                  or -1 if no match was found
+              </ol>
+
+            <li>The <strong>g</strong> flag of regexp has no effect on the <code>search()</code> result
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+search(regexp) </pre><!-- code-content -->
         </article>
 
         <article>
@@ -80,8 +114,8 @@
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+let str = 'this is a ridiculously long string'
+str.search("is") </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +123,9 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+2</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+2</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,8 +134,8 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+let str = 'this is a ridiculously long string'
+str.search(/r.+y/) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -114,11 +146,9 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+11</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+11</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -128,8 +158,8 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+let str = 'this is a ridiculously long string'
+str.search(/s/)</pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -140,69 +170,138 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+3</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+3</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
-
 
         <article>
           <h1 class="count">Code Example</h1>
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
+let str = 'this is a ridiculously long string'
+str.search(/s/g)</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+3</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+3</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let str = 'this is a ridiculously long string'
+/s/.test(str)</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+true</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+true</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+let str = 'this is a ridiculously long string'
+/r.+y/.test(str)</pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+true</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+true</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
 INSERT CODE TWO
-              </pre><!-- code-content -->
-          </details><!--details CODE-->
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
 
-          <br class="small-view">
-          <br class="wide-view">
+    <br class="small-view">
+    <br class="wide-view">
 
-          <details open><!--Details CONSOLE -->
-            <summary class="details-console-summary">
-              [JavaScript Inserts]
-            </summary>
-            <pre class="details-console-aclass small-view">
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
-            <pre class="details-console-aclass wide-view">
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
-          </details><!--details CONSOLE -->
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
 
-        </article>
+</article>
 
-        <article>
-          <h1 class="count">Code Example</h1>
-          <details open><!--details CODE-->
-            <summary class="details-code-summary">[JavaScript Inserts]</summary>
-            <pre class="details-code-aclass">
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
 INSERT CODE THREE
-              </pre><!-- code-content -->
-          </details><!--details CODE-->
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
 
-          <br class="small-view">
-          <br class="wide-view">
+    <br class="small-view">
+    <br class="wide-view">
 
-          <details open><!--Details CONSOLE -->
-            <summary class="details-console-summary">
-              [JavaScript Inserts]
-            </summary>
-            <pre class="details-console-aclass small-view">
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
-            <pre class="details-console-aclass wide-view">
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
-          </details><!--details CONSOLE -->
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
 
-        </article>
+</article>
         <!--here-->
-
         <article>
           <h1 class="count">Notes</h1>
 
@@ -218,7 +317,9 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search">MDN:
+                  string search
               </div>
 
               <div class="ref">
