@@ -81,15 +81,52 @@
         <article>
           <h1 class="count">Code Example</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
+            NOTE: No further javaScript (and no fetch functionality)
           </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-xxx INSERT CODE
+&lt;form action="https://www.google.com" 
+      method="" 
+      id="form_one" 
+      target="myIframe"&gt;
+
+  &lt;fieldset&gt;
+
+    &lt;legend&gt;Personal Information&lt;/legend&gt;
+
+    &lt;div class="box"&gt;
+
+        &lt;label for="name"&gt;name&lt;/label&gt;
+        &lt;input type="text" 
+               name="param1" 
+               id = "name"&gt;
+
+        &lt;label for="email"&gt;e-mail&lt;/label&gt;
+        &lt;input type="email" 
+               name="param2" 
+               id="email" 
+               required&gt;
+
+      &lt;div class="submit"&gt;
+        &lt;input type="image" 
+               src="../images/myButton2.png" 
+               alt="button image" 
+               formaction="https://phptwo.tomgdow.com" 
+               formmethod="GET"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+
+&lt;iframe width="100%" 
+        height="100" 
+        name="myIframe" 
+        id="myIframe" 
+        srcdoc="&lt;div&gt;Response&lt;/div&gt;" 
+        sandbox 
+        title="Server Response" &gt;&lt;/iframe&gt;
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -102,24 +139,22 @@ INSERT CONSOLE OUTPUT (small view)
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT (wide view) 
-<form action="https://www.google.com" method="POST" id="form_one" target="myIframe">
+<form action="https://www.google.com" method="" id="form_one" target="myIframe">
   <fieldset>
     <legend>Personal Information</legend>
     <div class="box">
       <div>
         <label for="name">name</label>
-        <input type="text" name="param1" id ="name">
+        <input type="text" name="param1" id = "name">
       </div>
       <div>
         <label for="email">e-mail</label>
         <input type="email" name="param2" id="email" required>
       </div>
       <div class="submit">
-        <!-- <input type="submit" formaction="https://phptwo.tomgdow.com" formmethod="GET"> -->
         <input type="image" src="../images/myButton2.png" alt="button image" formaction="https://phptwo.tomgdow.com" formmethod="GET">
       </div>
     </div>
-
   </fieldset>
 </form>
 
@@ -128,120 +163,6 @@ INSERT CONSOLE OUTPUT (wide view)
           </details><!--details CONSOLE -->
         </article>
 
-        <article>
-          <h1 class="count">Code Example</h1>
-          <details open><!--details CODE-->
-            <summary class="details-code-summary">[JavaScript Inserts]</summary>
-            <pre class="details-code-aclass">
- expt INSERT CODE
-              </pre><!-- code-content -->
-          </details><!--details CODE-->
-
-          <br class="small-view">
-          <br class="wide-view">
-
-          <details open><!--Details CONSOLE -->
-            <summary class="details-console-summary">
-              [JavaScript Inserts]
-            </summary>
-            <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
-            <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
-          </details><!--details CONSOLE -->
-
-        </article>
-
-        <article>
-          <h1 class="count">Code Example</h1>
-          <details open><!--details CODE-->
-            <summary class="details-code-summary">[JavaScript Inserts]</summary>
-            <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
-          </details><!--details CODE-->
-
-          <br class="small-view">
-          <br class="wide-view">
-
-          <details open><!--Details CONSOLE -->
-            <summary class="details-console-summary">
-              [JavaScript Inserts]
-            </summary>
-            <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
-            <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
-          </details><!--details CONSOLE -->
-
-        </article>
-
-
-        <article>
-          <h1 class="count">Code Example</h1>
-          <details open><!--details CODE-->
-            <summary class="details-code-summary">[JavaScript Inserts]</summary>
-            <pre class="details-code-aclass">
-INSERT CODE TWO
-              </pre><!-- code-content -->
-          </details><!--details CODE-->
-
-          <br class="small-view">
-          <br class="wide-view">
-
-          <details open><!--Details CONSOLE -->
-            <summary class="details-console-summary">
-              [JavaScript Inserts]
-            </summary>
-            <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
-            <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
-          </details><!--details CONSOLE -->
-
-        </article>
-
-        <article>
-          <h1 class="count">Code Example</h1>
-          <details open><!--details CODE-->
-            <summary class="details-code-summary">[JavaScript Inserts]</summary>
-            <pre class="details-code-aclass">
-INSERT CODE THREE
-              </pre><!-- code-content -->
-          </details><!--details CODE-->
-
-          <br class="small-view">
-          <br class="wide-view">
-
-          <details open><!--Details CONSOLE -->
-            <summary class="details-console-summary">
-              [JavaScript Inserts]
-            </summary>
-            <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
-            <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
-          </details><!--details CONSOLE -->
-
-        </article>
-        <!--here-->
-
-        <article>
-          <h1 class="count">Notes</h1>
-
-          <ol>
-            <li>I am an item</li>
-          </ol>
-
-        </article>
 
         <article>
           <h1 class="count refs-heading">References</h1>
