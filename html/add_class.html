@@ -25,7 +25,13 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
-
+  <style>
+    .myclass {
+      background-color: lightgoldenrodyellow;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
 </head>
 
 <body>
@@ -68,20 +74,66 @@
             repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
           </p>
         </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          Three methods of adding a class
+          <pre class="details-code-aclass">
+div.classList.add("foo", "bar", "baz");
+div.classList.remove("foo", "bar", "baz"); 
+
+div.classList.toggle("foo");
+</pre><!-- code-content -->
+          <br>
+
+          <pre class="details-code-aclass">
+div.setAttribute("class","foo");
+div.removeAttribute("class", "foo"); </pre><!-- code-content -->
+          <br>
+
+          <pre class="details-code-aclass">
+div.className="foo"; </pre><!-- code-content -->
+        </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+&lt;div class="target"&gt;&lt;/div&gt;
+
+&lt;button 
+  id="mybtn-wide-add" 
+  name="mybtn-add" 
+  type="button"&gt;
+  Add class
+&lt;/button&gt;
+
+&lt;button 
+  id="mybtn-wide-remove" 
+  name="mybtn-remove" 
+  type="button"&gt;
+  Remove Class
+&lt;/button&gt;
+
+---
+document.getElementById("mybtn-wide-add").
+  addEventListener('click',
+    function (event) {
+      event.target.previousElementSibling.
+        classList.add("myclass");
+    }
+)
+
+document.getElementById("mybtn-wide-remove").
+  addEventListener('click',
+    function (event) {
+    event.target.previousElementSibling.
+      previousElementSibling.
+        classList.remove("myclass");
+  }
+) </pre><!-- code-content -->
+
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,10 +141,14 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+<div class="target"></div>
+<button id="mybtn-small-add" name="mybtn-add" type="button">Add Class</button>
+<button id="mybtn-small-remove" name="mybtn-remove" type="button">Remove Class</button>
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+<div class="target"></div>
+<button id="mybtn-wide-add" name="mybtn-add" type="button">Add Class</button>
+<button id="mybtn-wide-remove" name="mybtn-remove" type="button">Remove Class</button>
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
@@ -102,8 +158,40 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+&lt;div class="target"&gt;&lt;/div&gt;
+
+&lt;button 
+  id="mybtn-wide-add-2" 
+  name="mybtn-add" 
+  type="button"&gt;
+  Add Class
+&lt;/button&gt;
+
+&lt;button 
+  id="mybtn-wide-remove-2" 
+  name="mybtn-remove" 
+  type="button"&gt;
+  Remove Class
+&lt;/button&gt;
+
+---
+
+document.getElementById("mybtn-wide-add-2").
+  addEventListener('click',
+    function (event) {
+      event.target.previousElementSibling.
+        setAttribute("class","myclass");
+  }
+)
+
+document.getElementById("mybtn-wide-remove-2").
+  addEventListener('click',
+    function (event) {
+      event.target.previousElementSibling.
+        previousElementSibling.
+          removeAttribute("class", "myclass")
+  }
+) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -114,10 +202,14 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+<div class="target"></div>
+<button id="mybtn-small-add-2" name="mybtn-add" type="button">Add Class</button>
+<button id="mybtn-small-remove-2" name="mybtn-remove" type="button">Remove Class</button>
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+<div class="target"></div>
+<button id="mybtn-wide-add-2" name="mybtn-add" type="button">Add Class</button>
+<button id="mybtn-wide-remove-2" name="mybtn-remove" type="button">Remove Class</button>
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
@@ -128,8 +220,23 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+&lt;div class="target"&gt;&lt;/div&gt;
+&lt;button 
+  id="mybtn-wide-add-3" 
+  name="mybtn-add" 
+  type="button"&gt;
+  Add Class
+&lt;/button&gt;
+
+---
+
+document.getElementById("mybtn-wide-add-3").
+  addEventListener('click',
+    function (event) {
+      event.target.previousElementSibling.
+        className = "myclass";
+    }
+  ) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -140,10 +247,12 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
+<div class="target"></div>
+<button id="mybtn-small-add-3" name="mybtn-add" type="button">Add Class</button>
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
+<div class="target"></div>
+<button id="mybtn-wide-add-3" name="mybtn-add" type="button">Add Class</button>
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
@@ -155,8 +264,21 @@ INSERT CONSOLE OUTPUT ONE(wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
-              </pre><!-- code-content -->
+&lt;div class="target"&gt;&lt;/div&gt;
+&lt;button 
+  id="mybtn-wide-add-4" 
+  name="mybtn-add" 
+  type="button"&gt;
+  Toggle Class
+&lt;/button&gt;
+
+document.getElementById("mybtn-wide-add-4").
+  addEventListener('click',
+    function (event) {
+      event.target.previousElementSibling.
+        classList.toggle("myclass");
+  }
+) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -168,9 +290,13 @@ INSERT CODE TWO
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT TWO (small view) 
+<div class="target"></div>
+<button id="mybtn-small-add-4" name="mybtn-add" type="button">Toggle Class</button>
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT TWO (wide view) 
+<div class="target"></div>
+<button id="mybtn-wide-add-4" name="mybtn-add" type="button">Toggle Class</button>
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
@@ -204,25 +330,16 @@ INSERT CONSOLE OUTPUT THREE (wide view)
         <!--here-->
 
         <article>
-          <h1 class="count">Notes</h1>
-
-          <ol>
-            <li>I am an item</li>
-          </ol>
-
-        </article>
-
-        <article>
           <h1 class="count refs-heading">References</h1>
           <details open><!-- Details REFS -->
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">MDN: classList</a>
               </div>
 
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">MDN: setAttribute</a>
               </div>
 
             </div>
@@ -401,6 +518,83 @@ INSERT CONSOLE OUTPUT THREE (wide view)
       }
     );
 
+
+    // Examples
+    // eg1
+    document.getElementById("mybtn-wide-add").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.classList.add("myclass");
+      }
+    )
+
+    document.getElementById("mybtn-wide-remove").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.previousElementSibling.classList.remove("myclass");
+      }
+    )
+
+    document.getElementById("mybtn-small-add").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.classList.add("myclass");
+      }
+    )
+
+    document.getElementById("mybtn-small-remove").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.previousElementSibling.classList.remove("myclass");
+      }
+    )
+    // eg2
+
+    document.getElementById("mybtn-wide-add-2").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.setAttribute("class", "myclass");
+      }
+    )
+
+    document.getElementById("mybtn-wide-remove-2").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.previousElementSibling.removeAttribute("class", "myclass")
+      }
+    )
+
+    document.getElementById("mybtn-small-add-2").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.setAttribute("class", "myclass");
+      }
+    )
+
+    document.getElementById("mybtn-small-remove-2").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.previousElementSibling.removeAttribute("class", "myclass")
+      }
+    )
+
+
+    // eg3
+    document.getElementById("mybtn-wide-add-3").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.className = "myclass";
+      }
+    )
+
+    document.getElementById("mybtn-small-add-3").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.className = "myclass";
+      }
+    )
+    // eg4
+    document.getElementById("mybtn-wide-add-4").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.classList.toggle("myclass");
+      }
+    )
+
+    document.getElementById("mybtn-small-add-4").addEventListener('click',
+      function (event) {
+        event.target.previousElementSibling.classList.toggle("myclass");
+      }
+    )
   </script>
 
   <script src="../js/main.js"></script><!-- Main JS file -->
