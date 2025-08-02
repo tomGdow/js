@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>[PAGE TITLE]</title><!-- Use JavaScript (constants_variables.js)-->
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta name="keywords" content="TO,DO">
+  <meta name="description" content="TO DO">
+  <meta name="google" content="notranslate">
+  <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+
+  <link rel="stylesheet" href="../css/main.css"><!-- EXTERNAL STYLESHEET -->
+
+  <style>
+    @import url("../css/counters.css");
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <noscript>
+    <link rel="stylesheet" href="../css/nojs.css">
+  </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid-container">
+      <header class="main_header">
+        <div class="banner">
+
+          <div class="banner-item-1">
+            <a href="https://tomgdow.com">
+              <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                alt="gravatar image of tomgdow">
+            </a>
+          </div>
+
+          <div class="banner-item-2"><!-- [JavaScript automatically inserts] --></div>
+          <div class="banner-item-3-alt"><!--pageNumbers. JavaScript auto inserts --></div>
+          <div class="banner-item-3"><!-- [Use JavaScript (constants_variables.js)] --></div>
+
+        </div><!-- banner-->
+      </header>
+
+      <nav>
+        <a href="../index.html" accesskey="h">home</a>
+        <a href="PREV.html" id="prevPage" accesskey="p">prev</a>
+        <a href="NEXT.html" id="nextPage" accesskey="n">next</a>
+        <a href="../html/search.html" accesskey="s">search</a>
+      </nav>
+
+      <div class="aside-right">
+        <div class="right-aside-icon">&raquo;</div>
+      </div><!--aside-right -->
+
+      <main>
+        <article>
+          <noscript><span>This Web Site requires JavaScript!</span></noscript>
+          <h1 class="count">Introduction</h1>
+          <ol>
+            <li>
+              The <code>match()</code> method of String values retrieves the result of matching this string against a
+              regular expression
+            <li><strong>return value</strong>
+              <ol>
+                <li>
+                  an <strong>array</strong> whose contents depend on the presence or absence of the global (g) flag
+                <li>
+                  or code{null} if no matches are found
+                <li>
+                  If the <strong>g</strong> flag is not used, only the first complete match and its related capturing
+                  groups are returned
+                  <br>
+                  In this case,
+                  <code>match()</code> will return the same result as <code>RegExp.prototype.exec()</code>
+
+                <li>
+                  If the <strong>g</strong> flag is used, all results matching the complete regular expression will be
+                  returned, but
+                  capturing groups are
+                  not included
+              </ol>
+            <li>If no match is found, Both <code>indexOf</code> and <code>search</code>return -1, whereas
+              <code>match</code> returns <code>null</code>
+            <li><code>indexOf</code> for plain strings. <code>search</code> for regex, both return an index value or
+              <code>-1</code> if no match
+            <li><code>match</code> for regex returns an array and null if no match
+
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Comment</h1>
+          <ol>
+            <li>
+              If you need to know if a string matches a regular expression <code>RegExp</code>, use
+              <code>RegExp.prototype.test()</code>
+            <li>
+              If you only want the first match found, you might want to use <code>RegExp.prototype.exec()</code> instead
+            <li>
+              If you want to obtain capture groups and the global flag is set, you need to use
+              <code>RegExp.prototype.exec()</code> or
+              <code>String.prototype.matchAll()</code> instead
+          </ol>
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.match(/string/) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">[JavaScript Inserts]</summary>
+            <pre class="details-console-aclass small-view">
+[
+  'string',
+  index: 4,
+  input: 'The string is a string, yes a string',
+  groups: undefined
+] </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[
+  'string',
+  index: 4,
+  input: 'The string is a string, yes a string',
+  groups: undefined
+] </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.match(/string/g) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[ 'string', 'string', 'string' ]</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[ 'string', 'string', 'string' ]</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>s
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.match(/string/)[0] </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'string' </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'string' </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.match(/string/).index==str.search(/string/) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+true</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+true</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+/string/.exec(str) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[
+  'string',
+  index: 4,
+  input: 'The string is a string, yes a string',
+  groups: undefined
+] </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[
+  'string',
+  index: 4,
+  input: 'The string is a string, yes a string',
+  groups: undefined
+] </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+/string/.exec(str).index==str.match(/string/).index
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+ /string/.test(str) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.match('strong') </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+null </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+null </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.indexOf('string')
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+4 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+4 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.indexOf('strong')
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+-1</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+-1</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.indexOf("strong") ? "Truthy" : "Falsey"
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'Truthy'</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'Truthy'</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.search(/strong/) ? "Truthy" : "Falsey"
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'Truthy' </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'Truthy' </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+str.match(/strong/) ? "Truthy" : "Falsey"
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'Falsey' </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'Falsey' </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str = "The string is a string, yes a string";
+/strong/.exec(str) ? "Truthy" : "Falsey"
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'Falsey'</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'Falsey'</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+        <!--here-->
+
+        <article>
+          <h1 class="count">Notes</h1>
+
+          <ol>
+            <li>I am an item</li>
+          </ol>
+
+        </article>
+
+        <article>
+          <h1 class="count refs-heading">References</h1>
+          <details open><!-- Details REFS -->
+            <summary class="details-refs-summary">[JavaScript Inserts]</summary>
+            <div class="ref-container details-refs-aclass">
+              <div class="ref">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match">MDN:
+                  string match</a>
+              </div>
+
+              <div class="ref">
+                <a href="https://www.google.ie">Google</a>
+              </div>
+
+            </div>
+          </details><!-- Details REFS -->
+        </article>
+      </main>
+
+      <div class="aside-left">
+        <div class="left-aside-icon">&laquo;</div>
+      </div>
+
+      <footer>
+
+        <div class="footer-item-1">
+          <a href="https://tomgdow.com">
+            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+              alt="gravatar image of tomgdow">
+          </a>
+        </div>
+
+        <div class="footer-item-2">
+          <span id="page_number"></span> of <span id="total_pages"></span>
+        </div>
+
+        <div class="footer-item-3">[Footer-3]</div><!-- [JavaScript automatically inserts] -->
+
+      </footer>
+
+    </div><!-- grid-container -->
+
+  </div><!--container-->
+
+  <script src="../js/functions.js"></script><!-- JS Functions-->
+  <script src="../js/constants_variables.js"></script><!-- JS Constants_variables -->
+
+  <script>
+    'use strict'
+
+    // page title
+    document.title = getPageTitle(pageTitleArr, pageArr, baseFileName);
+
+    // banner-second-part
+    document.getElementsByClassName("banner-item-2")[0].innerHTML = splitAndCapitalize(baseFileName);
+
+    // banner-third-part
+    document.getElementsByClassName("banner-item-3")[0].innerHTML = "&nbsp;" + bannerThirdPart;
+
+    // footer-third-part
+    document.getElementsByClassName("footer-item-3")[0].innerHTML = "&nbsp;" + baseFileName;
+
+    // next page
+    nextPage.setAttribute("href", nextPageURL(baseFileName, pageArr));
+
+    // previous page
+    prevPage.setAttribute("href", prevPageURL(baseFileName, pageArr, "./"));
+    // prevPage.setAttribute("href", prevPageURL(baseFileName, pageArr));[template-second-page-CHANGE]
+
+    // aside-right event listeners
+    document.getElementsByClassName("aside-right")[0].addEventListener('click', function () {
+      window.location.href = nextPageURL(baseFileName, pageArr, "./");
+      setBackgroundColor(this.className, "lightblue", 0);
+    });
+
+    document.getElementsByClassName("aside-right")[0].addEventListener('mouseover', function () {
+      displayBlock("right-aside-icon");
+      setBackgroundColor(this.className, "#8cc8dc", 0)
+    });
+
+    document.getElementsByClassName("aside-right")[0].addEventListener('mouseout', function () {
+      displayNone("right-aside-icon");
+      setBackgroundColor(this.className, "lightblue", 0)
+    });
+
+    // aside-left event listeners
+    document.getElementsByClassName("aside-left")[0].addEventListener('click', function () {
+      window.location.href = prevPageURL(baseFileName, pageArr, "./");
+      // window.location.href = prevPageURL(baseFileName, pageArr, "./");[Template-seond-page-CHANGE]
+      setBackgroundColor(this.className, "lightblue", 0);
+    });
+
+    document.getElementsByClassName("aside-left")[0].addEventListener('mouseover', function () {
+      displayBlock("left-aside-icon");
+      setBackgroundColor(this.className, "#8cc8dc", 0)
+    });
+
+    document.getElementsByClassName("aside-left")[0].addEventListener('mouseout', function () {
+      displayNone("left-aside-icon");
+      setBackgroundColor(this.className, "lightblue", 0)
+    });
+
+    // Conditionally remove "open" attribute from details tag 
+    let condition = window.matchMedia("(max-width: 440px)");
+    let conditionTwo = window.matchMedia("(min-width: 440px)");
+    let targets = document.getElementsByTagName("details");
+
+    let arr = Array.from(Array(targets.length).keys());
+    let oddsArr = arr.filter(el => el % 2 !== 0);
+    let evensArr = arr.filter(el => el % 2 == 0);
+    const biblioIndex = targets.length - 1;
+
+    window.addEventListener("load",
+      function () {
+
+        // Use condition to REMOVE open attribute from 
+        // media with widths LESS THAN max-width (440px) (mobile)
+
+        for (const el of arr) {
+          // for (const el of [0, 1, 2]) {
+          condRemoveAttribute(condition, "details", el, "open");
+        }
+
+        // Use conditionTwo to REMOVE open attribute from 
+        // media with widths GREATER THAN min-width (440px)
+
+        for (const el of oddsArr) {
+          // for (const el of [1]) {
+          condRemoveAttribute(conditionTwo, "details", el, "open");
+        }
+
+        // toggle innerHTML
+        for (const el of evensArr) {
+          // for (const el of [0]) {
+          toggleFirstChildInnerHTML(targets[el], "open", "", "Code");
+        }
+
+        for (const el of oddsArr) {
+          // for (const el of [1]) {
+          toggleFirstChildInnerHTML(targets[el], "open", "", "Console");
+        }
+
+        toggleFirstChildInnerHTML(targets[biblioIndex], "open", "", "Bibliography");
+
+        // Toggle classes
+        for (const el of evensArr) {
+          // for (const el of [0]) {
+          toggleClass(targets[el], "open", "details-code-aclass", "details-code-bclass");
+        }
+
+        for (const el of oddsArr) {
+          // for (const el of [1]) {
+          toggleClass(targets[el], "open", "details-console-aclass", "details-console-bclass");
+        }
+
+        toggleClass(targets[biblioIndex], "open", "details-refs-aclass", "details-refs-bclass");
+      }
+    );
+
+    // Event Listeners on Details tags 
+    // 1) CODE
+    for (const el of evensArr) {
+      // for (const el of [0]) {
+      targets[el].addEventListener("toggle",
+        function () {
+          toggleFirstChildInnerHTML(this, "open", "", "Code");
+          toggleClass(this, "open", "details-code-aclass", "details-code-bclass");
+        }
+      );
+    }
+
+    // 2) CONSOLE
+    for (const el of oddsArr) {
+      // for (const el of [1]) {
+      targets[el].addEventListener("toggle",
+        function () {
+          toggleFirstChildInnerHTML(this, "open", "", "Console");
+          toggleClass(this, "open", "details-console-aclass", "details-console-bclass");
+        }
+      );
+    }
+
+    // 3) BIBLIOGRAPHY
+    targets[biblioIndex].addEventListener("toggle",
+      function () {
+        toggleFirstChildInnerHTML(this, "open", "", "Bibliography");
+        toggleClass(this, "open", "details-refs-aclass", "details-refs-bclass");
+      }
+    );
+
+  </script>
+
+  <script src="../js/main.js"></script><!-- Main JS file -->
+
+</body>
+
+</html>
