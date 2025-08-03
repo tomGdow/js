@@ -25,6 +25,20 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
 
 </head>
 
@@ -63,10 +77,61 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              The <code>splice()</code> method of Array instances changes the contents of an array by removing or
+              replacing existing elements
+              and/or adding new elements <strong>in place</strong>
+              <li>
+                The <code>splice()</code> method is a mutating method
+            <li>
+              To create a new array with a segment removed and/or replaced without mutating the original array, use
+              <code>toSpliced()</code>
+            <li>
+              To access part of an array without modifying it, see <code>slice()</code>
+
+            <li><strong>deleteCount</strong>
+              <ol>
+                <li>
+                  If <code>deleteCount</code> is omitted, or if its value is greater than or equal to the number of
+                  elements after
+                  the position
+                  specified by start, then all the elements from start to the end of the array will be deleted
+                <li>
+                  However, if you wish to
+                  pass any itemN parameter, you should pass <code>Infinity</code> as deleteCount to delete all elements
+                  after start,
+                  because an
+                  explicit undefined gets converted to 0.
+
+                <li>
+                  If <code>deleteCount</code> is 0 or negative, no elements are removed
+                <li>
+                  In this case, you should specify at least
+                  one new element
+              </ol>
+            <li>
+              <strong>return value</strong>
+              <ol>
+                <li>
+                  An array containing the deleted elements.
+                <li>
+                  If only one element is removed, an array of one element is returned.
+                <li>
+                  If no elements are removed, an empty array is returned.
+              </ol>
+
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Syntax</h1>
+          <pre class="details-code-aclass">
+splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2)
+splice(start, deleteCount, item1, item2, /* …, */ itemN) </pre><!-- code-content -->
+
         </article>
 
         <article>
@@ -80,7 +145,12 @@
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+const myarr =[1,200, 300, 2, 50]
+myarr.sort((a,b)=> a-b)
+console.log(myarr)
+const mynewarr=myarr.splice(2,3,6000)
+console.log(mynewarr)
+console.log(myarr)
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -89,11 +159,13 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+[ 1, 2, 50, 200, 300 ]
+[ 1, 2, 6000 ]
+[ 50, 200, 300 ] </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+[ 1, 2, 50, 200, 300 ]
+[ 1, 2, 6000 ]
+[ 50, 200, 300 ] </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -218,7 +290,8 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">MDN:
+                  array splice</a>
               </div>
 
               <div class="ref">
