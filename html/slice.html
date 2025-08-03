@@ -25,6 +25,20 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
 
 </head>
 
@@ -63,10 +77,53 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <dl>
+            <dt><strong>string</strong>
+            <dd>
+              <ol>
+                <li>
+                  The <code>slice()</code> method of String values extracts a section of this string and returns it as a
+                  new string,
+                  without modifying the original string
+                <li>If indexStart >= str.length, an empty string is returned
+              </ol>
+            <dt><strong>array</strong>
+            <dd>
+              <ol>
+                <li>
+                  The <code>slice()</code> method of Array instances returns a shallow copy of a portion of an array
+                  into a new array
+                  object selected
+                  from start to end (<strong>end not included</strong>) where start and end represent the index of items
+                  in that array
+                <li>
+                  The original array will not be modified
+                <li>
+                  The <code>slice()</code> method is a copying method
+
+              </ol>
+          </dl>
+        </article>
+        <article>
+          <h1 class="count">syntax</h1>
+          <dl>
+            <dt><strong>string</strong>
+            <dd>
+              <pre class="details-code-aclass">
+slice()
+slice(start)
+slice(start, end)
+              </pre><!-- code-content -->
+            <dt><strong>array</strong>
+            <dd>
+              <pre class="details-code-aclass">
+slice(indexStart)
+slice(indexStart, indexEnd)
+
+// Negative index counts back from the end of the array
+// slice() extracts up to but not including end
+              </pre><!-- code-content -->
+          </dl>
         </article>
 
         <article>
@@ -80,8 +137,8 @@
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+const animals = ["ant", "bison", "camel", "duck", "elephant"]
+animals.slice(2) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +146,9 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+[ 'camel', 'duck', 'elephant' ] </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+[ 'camel', 'duck', 'elephant' ] </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,7 +157,8 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+const animals = ["ant", "bison", "camel", "duck", "elephant"]
+animals.slice(2,3)
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -114,11 +170,9 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+[ 'camel' ] </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+[ 'camel' ] </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -128,8 +182,8 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+const animals = ["ant", "bison", "camel", "duck", "elephant"]
+animals.slice(2,-1) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -140,11 +194,9 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+[ 'camel', 'duck' ] </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+[ 'camel', 'duck' ] </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -155,8 +207,8 @@ INSERT CONSOLE OUTPUT ONE(wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
-              </pre><!-- code-content -->
+const animals = ["ant", "bison", "camel", "duck", "elephant"]
+animals.slice() </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -167,11 +219,230 @@ INSERT CODE TWO
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+["ant", "bison", "camel", "duck", "elephant"] </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+["ant", "bison", "camel", "duck", "elephant"] </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str1 = "The morning is upon us."
+str1.slice() </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+"The morning is upon us."</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+"The morning is upon us." </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str1 = "The morning is upon us."
+str1.slice(1,8) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'he morn'</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'he morn'</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str1 = "The morning is upon us."
+str1.slice(1) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'he morning is upon us.'</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'he morning is upon us.'</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str1 = "The morning is upon us."
+str1.slice(1,-2)</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'he morning is upon u'</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'he morning is upon u'</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str1 = "The morning is upon us."
+str1.slice(30)</pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+""</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+"" </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str1 = "The morning is upon us."
+str1.slice(11, -7)
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+' is u'</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+' is u'</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str ="thomas"
+str.slice(2,4) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+
+'om' </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'om' </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str ="thomas"
+str.substr(2,2) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'om' </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'om' </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+const str ="thomas"
+str.substring(2,4) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'om' </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'om' </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -182,7 +453,7 @@ INSERT CONSOLE OUTPUT TWO (wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE THREE
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -194,10 +465,10 @@ INSERT CODE THREE
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -218,7 +489,8 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">MDN:
+                  Array.prototype.slice()</a>
               </div>
 
               <div class="ref">
