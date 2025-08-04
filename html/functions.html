@@ -124,8 +124,16 @@ myfunction(8) </pre><!-- code-content -->
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+let a = 20;
+let b = 10;
+function myAdd(num1, num2) {
+  b = a + num1 + num2;
+  return ++b;
+}
+ 
+console.log(myAdd(20,10))
+console.log(a)
+console.log(b) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -136,11 +144,13 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+51
+20
+51 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+51
+20
+51 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -151,7 +161,16 @@ INSERT CONSOLE OUTPUT ONE(wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
+let a = 20;
+let b = 10;
+function myAdd(num1, num2) {
+  let b = a + num1 + num2;
+  return ++b;
+}
+ 
+console.log(myAdd(20,10))
+console.log(a)
+console.log(b)
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -163,11 +182,14 @@ INSERT CODE TWO
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+51
+20
+10 </pre><!-- small-view -->
+            </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+51
+20
+10 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -177,8 +199,14 @@ INSERT CONSOLE OUTPUT TWO (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE THREE
-              </pre><!-- code-content -->
+function mystr(a,b,c,d) {
+  return `${a}${b}${c}${d}`
+}
+
+console.log(mystr())
+console.log(mystr(1,2))
+console.log(mystr(1,2,3))
+console.log(mystr(1,2,3,4)) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -189,11 +217,15 @@ INSERT CODE THREE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+'undefinedundefinedundefinedundefined'
+'12undefinedundefined'
+'123undefined'
+'1234' </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+'undefinedundefinedundefinedundefined'
+'12undefinedundefined'
+'123undefined'
+'1234' </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
