@@ -369,6 +369,11 @@ TypeError: red.setRed is not a function</pre><!-- wide-view -->
 
         <article>
           <h1 class="count">Code Example (static)</h1>
+          <dl>
+            <dt><strong>static</strong>
+            <dd>The static keyword is used within classes to define methods or properties that belong <strong>to the
+                class itself</strong>, rather than to instances of the class
+          </dl>
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
@@ -423,7 +428,19 @@ undefined</pre><!-- wide-view -->
         </article>
 
         <article>
-          <h1 class="count">Code Example</h1>
+          <h1 class="count">Code Example (extends)</h1>
+          <dl>
+            <dt><strong>super</strong>
+            <dd>
+              The <code>super</code> keyword is used inside classes to access and call functions on an object's parent
+              class
+            <dd>
+              There are two main ways super is used:
+              <ol>
+                <li>Call the parent constructor
+                <li>Call methods from the parent class
+              </ol>
+          </dl>
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
@@ -470,7 +487,9 @@ class ColorWithAlpha extends Color {
 
   set alpha(value) {
     if (value &lt; 0 || value> 1) {
-      throw new RangeError("Alpha value must be between 0 and 1")
+      throw new RangeError(
+        "Alpha value must be between 0 and 1"
+      )
     }
                 
     this.#alpha = value;
