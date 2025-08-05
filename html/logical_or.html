@@ -25,6 +25,20 @@
   <noscript>
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
 
 </head>
 
@@ -63,25 +77,73 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+
+            <li>
+              The logical OR (<code>||</code>) returns the <strong>first truthy value</strong>, if any
+            <li>
+              Otherwise, the <strong>last value</strong> (if all are falsy) is returned
+            <li>
+              The logical OR (<code>||</code>) (logical disjunction) operator for a set of operands is true if and only
+              if one or more of its
+              operands is true
+            <li>
+              It is typically used with boolean (logical) values
+            <li>
+              When it is, it returns a Boolean value
+            <li>
+              However,
+              the <code>||</code> operator actually returns the value of one of the specified operands, so if this
+              operator is used with
+              non-Boolean values, it will return a non-Boolean value
+            <li>
+              It is often used for default values
+              <br>
+              <pre class="details-code-aclass">
+let name = userInput || "Anonymous"; </pre><!-- code-content -->
+
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">Short-Circuit Evaluation</h1>
+          <ol>
+
+            <li>
+              The logical OR expression is evaluated left to right, it is tested for possible "short-circuit" evaluation
+              using the
+              following rule
+              <pre class="details-code-aclass">
+(some truthy expression) || 
+   expr is short-circuit evaluated 
+   to the truthy expr </pre><!-- code-content -->
+
+            <li>
+              Short circuit means that the <code>expr</code> part above is not evaluated, hence any side effects of
+              doing so do not
+              take effect
+              (e.g., if <code>expr</code> is a function call, the calling never takes place)
+          </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+let a = 10;
+function myfna () {
+ return true;
+}
+
+function myfnb () {
+  ++a;
+ console.log("a is:", a)
+}
+
+console.log(myfna()) || myfnb()
+
+console.log(a) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +151,11 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+true
+10 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+true
+10 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,8 +164,8 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+let a = "Dog" || "Cat"
+console.log(a) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -114,11 +176,9 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+"Dog" </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+"Dog" </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -128,8 +188,8 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
+let a = true || false
+console.log(a) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -140,11 +200,9 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+true </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+true </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -155,8 +213,7 @@ INSERT CONSOLE OUTPUT ONE(wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
-              </pre><!-- code-content -->
+console.log(true || false && false) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -167,11 +224,9 @@ INSERT CODE TWO
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+true </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+true </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -181,8 +236,7 @@ INSERT CONSOLE OUTPUT TWO (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE THREE
-              </pre><!-- code-content -->
+console.log((true || false) && false) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -193,11 +247,9 @@ INSERT CODE THREE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+false </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+false </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -208,7 +260,7 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 let  a = 11;
-let b = 20;
+let  b = 20;
 
 console.log(a,b)
 
@@ -216,8 +268,7 @@ if( a++ % 2 == 0 || b++ >= 15 || a++ > b++) {
 console.log('hello world')
 }
 
-console.log(a,b)
-              </pre><!-- code-content -->
+console.log(a,b) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -233,6 +284,91 @@ console.log(a,b)
             <pre class="details-console-aclass wide-view">
 11 20
 12 21</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let a = 11;
+let b = 20;
+
+console.log(a,b)
+
+if( a++ % 2 == 0 || b++ <= 15 || a++ < b++) {
+console.log('hello world')
+} </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+11 20
+13 22 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+11 20
+13 22 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -253,7 +389,8 @@ console.log(a,b)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR">MDN:
+                  Logical OR (||)</a>
               </div>
 
               <div class="ref">
@@ -279,6 +416,85 @@ console.log(a,b)
         </div>
 
         <div class="footer-item-2">
+
+          <article>
+            <h1 class="count">Code Example</h1>
+            <details open><!--details CODE-->
+              <summary class="details-code-summary">[JavaScript Inserts]</summary>
+              <pre class="details-code-aclass">
+INSERT CODE ONE
+  </pre><!-- code-content -->
+            </details><!--details CODE-->
+
+            <br class="small-view">
+            <br class="wide-view">
+
+            <details open><!--Details CONSOLE -->
+              <summary class="details-console-summary">
+                [JavaScript Inserts]
+              </summary>
+              <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT ONE(small view) 
+</pre><!-- small-view -->
+              <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT ONE(wide view) 
+</pre><!-- wide-view -->
+            </details><!--details CONSOLE -->
+
+          </article>
+
+
+          <article>
+            <h1 class="count">Code Example</h1>
+            <details open><!--details CODE-->
+              <summary class="details-code-summary">[JavaScript Inserts]</summary>
+              <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+            </details><!--details CODE-->
+
+            <br class="small-view">
+            <br class="wide-view">
+
+            <details open><!--Details CONSOLE -->
+              <summary class="details-console-summary">
+                [JavaScript Inserts]
+              </summary>
+              <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+              <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+            </details><!--details CONSOLE -->
+
+          </article>
+
+          <article>
+            <h1 class="count">Code Example</h1>
+            <details open><!--details CODE-->
+              <summary class="details-code-summary">[JavaScript Inserts]</summary>
+              <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+            </details><!--details CODE-->
+
+            <br class="small-view">
+            <br class="wide-view">
+
+            <details open><!--Details CONSOLE -->
+              <summary class="details-console-summary">
+                [JavaScript Inserts]
+              </summary>
+              <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+              <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+            </details><!--details CONSOLE -->
+
+          </article>
           <span id="page_number"></span> of <span id="total_pages"></span>
         </div>
 
