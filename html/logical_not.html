@@ -63,10 +63,30 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              The logical NOT operator in JavaScript is <code>!</code>
+            <li>
+              It is used to invert the truthiness of a value
+              <ol>
+                <li>
+                  If the value is <code>truthy</code>, <code>!</code> makes it <code>false</code>
+                <li>
+                  If the value is <code>falsy</code>, <code>!</code> makes it <code>true</code>
+
+              </ol>
+
+            <li>
+              Returns false if its single operand can be converted to true; otherwise, returns true
+
+            <li>
+              You can also use double NOT (<code>!!</code>) to convert a value <strong>to its boolean
+                equivalent</strong>
+              <ol>
+                <li><code>!!0</code> returns <code>false</code>
+                <li><code>!!"hello"</code> returns <code>true</code>
+              </ol>
+          </ol>
         </article>
 
         <article>
@@ -80,7 +100,7 @@
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+!false
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -89,11 +109,9 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+true </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+true </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -102,7 +120,30 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+!true </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+false </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+false </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+!!0
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -114,37 +155,9 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+false </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
-          </details><!--details CONSOLE -->
-
-        </article>
-
-        <article>
-          <h1 class="count">Code Example</h1>
-          <details open><!--details CODE-->
-            <summary class="details-code-summary">[JavaScript Inserts]</summary>
-            <pre class="details-code-aclass">
-INSERT CODE ONE
-              </pre><!-- code-content -->
-          </details><!--details CODE-->
-
-          <br class="small-view">
-          <br class="wide-view">
-
-          <details open><!--Details CONSOLE -->
-            <summary class="details-console-summary">
-              [JavaScript Inserts]
-            </summary>
-            <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
-            <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+false </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -218,7 +231,8 @@ INSERT CONSOLE OUTPUT THREE (wide view)
             <summary class="details-refs-summary">[JavaScript Inserts]</summary>
             <div class="ref-container details-refs-aclass">
               <div class="ref">
-                <a href="https://www.google.ie">Google</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT">MDN:
+                  logical NOT</a>
               </div>
 
               <div class="ref">
