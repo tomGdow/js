@@ -730,8 +730,15 @@ d.getMilliseconds() </pre><!-- wide-view -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE THREE
-  </pre><!-- code-content -->
+let bday1 = new Date(2025,8,23);
+let bday2 = new Date(2025,9,23);
+let bday3 = new Date("2025-9-23")
+let bday4 = new Date("Sept-23-2025")
+
+let arr=[bday1,bday2,bday3,bday4]
+
+for(el of arr)
+  console.log(el.getMonth()) </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -742,11 +749,15 @@ INSERT CODE THREE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+8
+9
+8
+8 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
+8
+9
+8
+8 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -757,7 +768,15 @@ INSERT CONSOLE OUTPUT THREE (wide view)
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
 INSERT CODE ONE
-  </pre><!-- code-content -->
+let bday1 = new Date(2025,8,23);
+let bday2 = new Date(2025,9,23);
+let bday3 = new Date("2025-9-23")
+let bday4 = new Date("Sept-23-2025")
+
+let arr=[bday1,bday2,bday3,bday4]
+
+for(el of arr)
+   console.log(el.toString()) </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -768,11 +787,15 @@ INSERT CODE ONE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-</pre><!-- small-view -->
+Tue Sep 23 2025 00:00:00 GMT+0100 (Irish Standard Time)
+Thu Oct 23 2025 00:00:00 GMT+0100 (Irish Standard Time)
+Tue Sep 23 2025 00:00:00 GMT+0100 (Irish Standard Time)
+Tue Sep 23 2025 00:00:00 GMT+0100 (Irish Standard Time) </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-</pre><!-- wide-view -->
+Tue Sep 23 2025 00:00:00 GMT+0100 (Irish Standard Time)
+Thu Oct 23 2025 00:00:00 GMT+0100 (Irish Standard Time)
+Tue Sep 23 2025 00:00:00 GMT+0100 (Irish Standard Time)
+Tue Sep 23 2025 00:00:00 GMT+0100 (Irish Standard Time) </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
