@@ -29,11 +29,13 @@
         .code-alone {
             margin-top: 1em;
         }
+
         ol {
             padding-left: 10%;
             /* border: 2px solid red; */
         }
-        ol> li {
+
+        ol>li {
             padding-bottom: 0.2em;
         }
     </style>
@@ -83,7 +85,7 @@
 
                         <li>
                             If you want to
-                            check for only non-inherited properties, use <code>Object.hasOwn()</code> instead
+                            check for only non-inherited properties, use <code>Object.hasOwn(obj, prop)</code> instead
 
                         <li>
                             A property may be present in an object but have value undefined
@@ -135,7 +137,7 @@ class C {
 let myobj = {"name": "joe", 
               "age": 21}
 
-console.log("joe" in myobj); </pre><!-- code-content -->
+console.log("name" in myobj); </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
