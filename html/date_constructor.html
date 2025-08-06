@@ -87,37 +87,37 @@
         <article>
           <h1 class="count">Syntax</h1>
           <pre class="details-code-aclass">
-          new Date()
-          new Date(value)
-          new Date(dateString)
-          new Date(dateObject)
-          
-          new Date(year, monthIndex)
-          new Date(year, monthIndex, day)
-          new Date(year, monthIndex, day, hours)
+new Date()
+new Date(value)
+new Date(dateString)
+new Date(dateObject)
 
-          new Date(year, 
-                   monthIndex,
-                   day, 
-                   hours, 
-                   minutes)
+new Date(year, monthIndex)
+new Date(year, monthIndex, day)
+new Date(year, monthIndex, day, hours)
 
-          new Date(year, 
-                   monthIndex, 
-                   day, 
-                   hours, 
-                   minutes,
-                   seconds)
-                   
-          new Date(year, 
-                   monthIndex, 
-                   day, 
-                   hours, 
-                   minutes, 
-                   seconds, 
-                   milliseconds)
+new Date(year, 
+          monthIndex,
+          day, 
+          hours, 
+          minutes)
+
+new Date(year, 
+          monthIndex, 
+          day, 
+          hours, 
+          minutes,
+          seconds)
           
-          Date() </pre><!-- code-content -->
+new Date(year, 
+          monthIndex, 
+          day, 
+          hours, 
+          minutes, 
+          seconds, 
+          milliseconds)
+
+Date() </pre><!-- code-content -->
 
         </article>
         <article>
@@ -146,13 +146,13 @@
                 <li>
                   Also known as <strong>the epoch</strong>
               </ol>
-            <li><strong>datestring</strong>
+            <li><code>datestring</code>
               <ol>
                 <li>
                   A string value representing a date, parsed and interpreted using the same algorithm implemented by
                   <code>Date.parse()</code>
               </ol>
-            <li><strong>dateobject</strong>
+            <li><code>dateobject</code>
               <ol>
                 <li>
                   An existing Date object
@@ -163,7 +163,7 @@
                   equivalent to <code>new Date(dateObject.valueOf())</code>, except the <code>valueOf()</code> method is
                   not called
               </ol>
-            <li><strong>Individual date and time component values</strong>
+            <li><code>Individual date and time component values</code>
               <ol>
                 <li>
                   Given <strong>at least a year and month</strong>, this form of <code>Date()</code>returns a Date
@@ -262,6 +262,21 @@
 
                   </ol>
               </ol>
+            <li><code>Date()</code>
+              <ol>
+                <li>
+                  Calling the Date() function strong{without the new keyword} returns a string representation of the
+                  current date and time,
+                  exactly as <code>new Date().toString()</code> does
+                <li>
+                  Any arguments given in a <code>Date()</code> function call (without the new keyword) are
+                  ignored; regardless of whether it's called with an invalid date string — or even called with any
+                  arbitrary object or
+                  other primitive as an argument
+                <li>
+                  Calling <code>Date()</code> without the <code>new</code> keyword always returns a string
+                  representation of the current date and time
+              </ol>
 
           </ol>
         </article>
@@ -269,11 +284,6 @@
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
@@ -331,7 +341,7 @@ myutcdate </pre><!-- code-content -->
         </article>
 
         <article>
-          <h1 class="count">Code Example</h1>
+          <h1 class="count">Code Example 700</h1>
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
@@ -358,29 +368,49 @@ mydy.toISOString() </pre><!-- code-content -->
         </article>
 
 
-        <article>
-          <h1 class="count">Code Example</h1>
-          <details open><!--details CODE-->
-            <summary class="details-code-summary">[JavaScript Inserts]</summary>
-            <pre class="details-code-aclass">
-INSERT CODE TWO
-              </pre><!-- code-content -->
-          </details><!--details CODE-->
+<article>
+    <h1 class="count">Code Example Fixed</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+const nd1 = Date()
+const nd2 = Date(2000, 02, 18)
+const nd3 = Date("2000-03-18")
 
-          <br class="small-view">
-          <br class="wide-view">
+nd1
+nd2
+nd3 </pre><!-- code-content -->
+    </details><!--details CODE-->
 
-          <details open><!--Details CONSOLE -->
-            <summary class="details-console-summary">
-              [JavaScript Inserts]
-            </summary>
-            <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
-            <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
-          </details><!--details CONSOLE -->
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+'Wed Aug 06 2025 15:59:30 GMT+0100 
+    (Irish Standard Time)'
+
+'Wed Aug 06 2025 15:59:45 GMT+0100 
+    (Irish Standard Time)'
+
+'Wed Aug 06 2025 16:00:10 GMT+0100 
+    (Irish Standard Time)' </pre><!-- small-view -->
+
+        <pre class="details-console-aclass wide-view">
+'Wed Aug 06 2025 15:59:30 GMT+0100 
+    (Irish Standard Time)'
+
+'Wed Aug 06 2025 15:59:45 GMT+0100 
+    (Irish Standard Time)'
+
+'Wed Aug 06 2025 16:00:10 GMT+0100 
+    (Irish Standard Time)' </pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
 
         </article>
 
@@ -389,8 +419,13 @@ INSERT CONSOLE OUTPUT TWO (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE THREE
-              </pre><!-- code-content -->
+const nd4 = new Date()
+const nd5 = new Date(2000, 02,18)
+const nd6 = new Date("2000-03-18")
+
+nd4.toString()
+nd5.toString()
+nd6.toString() </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -401,11 +436,23 @@ INSERT CODE THREE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+'Wed Aug 06 2025 16:02:51 GMT+0100
+    (Irish Standard Time)'
+
+'Sat Mar 18 2000 00:00:00 GMT+0000 
+    (Greenwich Mean Time)'
+
+'Sat Mar 18 2000 00:00:00 GMT+0000 
+    (Greenwich Mean Time)' </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+'Wed Aug 06 2025 16:02:51 GMT+0100 
+    (Irish Standard Time)'
+
+'Sat Mar 18 2000 00:00:00 GMT+0000 
+    (Greenwich Mean Time)'
+
+'Sat Mar 18 2000 00:00:00 GMT+0000 
+    (Greenwich Mean Time)' </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
