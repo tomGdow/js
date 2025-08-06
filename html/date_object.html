@@ -320,10 +320,10 @@ d3.getFullYear()
 2001 </pre><!-- wide-view -->
                         <!--ususally inserted before details-console end tag-->
                         <dl class="details-dl">
-                            <dt>setTimeOut()
+                            <dt>setTime()
                             <dd>The <code>setTime()</code> method of <code>Date</code> instances changes the timestamp
                                 for this date
-                            <dd>The <strong>timestamp</strong>is the
+                            <dd>The <strong>timestamp</strong> is the
                                 number of milliseconds since
                                 the epoch
                             <dd>The <strong>epoch</strong> is defined as the midnight at the beginning of January 1,
@@ -347,8 +347,7 @@ d3.getFullYear()
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
 const mydate = new Date(86400*1000*365.25*30)
-mydate.getFullYear()
-  </pre><!-- code-content -->
+mydate.getFullYear() </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -374,8 +373,7 @@ mydate.getFullYear()
   const mydate = new Date(2025,08,01)
   mydate.setMonth(mydate.getMonth()+3)
   mydate.getMonth()
-  mydate.toString()
-  </pre><!-- code-content -->
+  mydate.toString() </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -387,10 +385,12 @@ mydate.getFullYear()
                         </summary>
                         <pre class="details-console-aclass small-view">
 11
-'Mon Dec 01 2025 00:00:00 GMT+0000 (Greenwich Mean Time)' </pre><!-- small-view -->
+'Mon Dec 01 2025 00:00:00 GMT+0000 
+  (Greenwich Mean Time)' </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
 11
-'Mon Dec 01 2025 00:00:00 GMT+0000 (Greenwich Mean Time)' </pre><!-- wide-view -->
+'Mon Dec 01 2025 00:00:00 GMT+0000 
+  (Greenwich Mean Time)' </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -401,8 +401,7 @@ mydate.getFullYear()
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-Date.now()
-  </pre><!-- code-content -->
+Date.now() </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -428,8 +427,7 @@ Date.now()
 const mydate = new Date()
 
 mydate.getTime()
-Date.now() - mydate
-  </pre><!-- code-content -->
+Date.now() - mydate </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -438,7 +436,7 @@ Date.now() - mydate
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">
                             [JavaScript Inserts]
-                        </summary>> const mydate = new Date()
+                        </summary>
                         <pre class="details-console-aclass small-view">
 1754433934852
 43900 </pre><!-- small-view -->
