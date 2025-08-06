@@ -112,7 +112,9 @@ WEBVTT
 <b>generally!</b>
 
 02:10.100 --> 02:14.000
-<b>TEMP END</b>
+<b>Sort ASCENDING</b>
+<b>(a,b)=>a-b</b>
 
 02:15.100 --> 02:19.000
+<b>TEMP END</b>
 <b>The End</b>        
