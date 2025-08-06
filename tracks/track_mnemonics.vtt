@@ -116,5 +116,14 @@ WEBVTT
 <b>(a,b)=>a-b</b>
 
 02:15.100 --> 02:19.000
-<b>TEMP END</b>
+<b>slice DOES NOT</b>
+<b>modify in place</b>        
+
+02:20.100 --> 02:24.000
+<b>Splice</b>
+<b>Modifies in place</b>        
+<b>takes deleteCount param</b>        
+<b>(not an index value)</b>
+
+02:25.100 --> 02:29.000
 <b>The End</b>        
