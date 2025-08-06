@@ -91,16 +91,12 @@
             <li>
               If an element is <code>undefined</code> or <code>null</code>, it is
               converted to an empty string instead of the string "null" or "undefined".
+            <li>acts on a SINGLE array!</li>
           </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
@@ -126,8 +122,13 @@ a.join() </pre><!-- code-content -->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 const a = ["Wind", "Water", "Fire"]
-a.join('-')
-              </pre><!-- code-content -->
+a.join('-') </pre><!-- code-content -->
+              <!--ususally inserted before details-console end tag-->
+              <dl class="details-dl">
+                <dt><code>.join()</code>
+                <dd>Combines all the elements of an array into a single string, with an optional
+                separator between elements
+              </dl>
           </details><!--details CODE-->
 
           <br class="small-view">
