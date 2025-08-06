@@ -92,19 +92,14 @@
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
 d = new Date() 
+
 console.log(d)
-console.log(d.toISOString())
-  </pre><!-- code-content -->
+console.log(d.toISOString()) </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -134,7 +129,7 @@ console.log.getMonth()
 console.log.getFullYear()
 
 console.log(d)
-console.log(d.getISOString())
+console.log(d.toISOString())
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -242,8 +237,7 @@ let d = new Date(2025,0,1,0)
 
 d.toISOString()
 d.toLocaleTimeString()
-d.toLocaleTimeString('en-us')
-  </pre><!-- code-content -->
+d.toLocaleTimeString('en-us') </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -342,10 +336,18 @@ d3.getFullYear()
 
                 <article>
                     <h1 class="count">Code Example</h1>
+                    <dl>
+                        <dt><strong>Date object using milliseconds</strong>
+                        <dd>To create a new Date object in JavaScript using milliseconds, you simply pass the
+                            millisecond value (milliseconds since
+                            January 1, 1970, UTC — also known as the Unix epoch) into the Date constructor
+                    </dl>
+
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE THREE
+const mydate = new Date(86400*1000*365.25*30)
+mydate.getFullYear()
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -357,11 +359,9 @@ INSERT CODE THREE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+2000 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
+2000 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -371,7 +371,10 @@ INSERT CONSOLE OUTPUT THREE (wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE ONE
+  const mydate = new Date(2025,08,01)
+  mydate.setMonth(mydate.getMonth()+3)
+  mydate.getMonth()
+  mydate.toString()
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -383,11 +386,11 @@ INSERT CODE ONE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-</pre><!-- small-view -->
+11
+'Mon Dec 01 2025 00:00:00 GMT+0000 (Greenwich Mean Time)' </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-</pre><!-- wide-view -->
+11
+'Mon Dec 01 2025 00:00:00 GMT+0000 (Greenwich Mean Time)' </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -398,7 +401,7 @@ INSERT CONSOLE OUTPUT ONE(wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE TWO
+Date.now()
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -410,11 +413,9 @@ INSERT CODE TWO
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-</pre><!-- small-view -->
+1754433789564 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-</pre><!-- wide-view -->
+1754433789564 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
@@ -424,7 +425,10 @@ INSERT CONSOLE OUTPUT TWO (wide view)
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE THREE
+const mydate = new Date()
+
+mydate.getTime()
+Date.now() - mydate
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -434,13 +438,13 @@ INSERT CODE THREE
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">
                             [JavaScript Inserts]
-                        </summary>
+                        </summary>> const mydate = new Date()
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+1754433934852
+43900 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
+1754433934852
+43900 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
