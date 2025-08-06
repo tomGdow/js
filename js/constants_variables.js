@@ -138,7 +138,8 @@ let pageArr = ["index",
     "fetch_post",
     "fetch_validation_post",
     "fetch_get",
-    "mnemonics"];
+    "mnemonics",
+    "mnemonics_two"];
 
 pageArr.push("search"); // 'search' should be the last term in pageArr
 
@@ -276,6 +277,7 @@ let pageTitleArr = [
     "fetch_validation_post",
     "fetch_get",
     "mnemonics",
+    "mnemonics_two",
     "js-search"];
 
 // Add banner third part
