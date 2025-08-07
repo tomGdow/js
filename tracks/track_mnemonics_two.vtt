@@ -30,10 +30,13 @@ WEBVTT
 <b>UNDEFINED!</b>
 
 00:26.100 --> 00:30.000
-<b>do delete default debugger</b>
+<b>toFixed</b>
+<b>returns STRING</b>
 
 00:31.100 --> 00:35.000
-<b>catch class case const continue</b>
+<b>toPrecision</b>
+<b>returns STRING</b>
+
 
 00:36.100 --> 00:40.000
 <b>Win - inn -- out</b>
