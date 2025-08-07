@@ -66,11 +66,17 @@
           <ol>
             <li>
               A function without a return values returns <code>undefined</code>
+            <li>The default value for function parameters is <strong>undefined</strong>
+
           </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
+            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
+          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
@@ -78,8 +84,7 @@
 function myfunction(arg) {
   return arg % 2 ? arg/2 : arg *2;
 }
-myfunction(7)
-              </pre><!-- code-content -->
+myfunction(7) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -226,6 +231,100 @@ console.log(mystr(1,2,3,4)) </pre><!-- code-content -->
 '12undefinedundefined'
 '123undefined'
 '1234' </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+function myfn(a,b) {
+  return [a,b]
+}
+
+myfn(10)
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+[10, undefined]
+</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+[10, undefined]
+</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+  function myconcat(separator) {
+    let result = "";
+    result += arguments[1];
+    for(let i = 2; i < arguments.length; i++) {
+      result += separator + arguments[i];
+    }
+    return result;
+  }
+
+  myconcat("-", 
+           "tom",
+           "dick",
+           "harry",
+           "worth") </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+tom-dick-harry-worth'
+</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+tom-dick-harry-worth'</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
