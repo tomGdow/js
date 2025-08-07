@@ -214,7 +214,8 @@ const mya =[1,2,10,20,3, 5, 30]
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE THREE
+let num = 100.251;
+console.log(50 + num.toFixed(2))
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -226,11 +227,15 @@ INSERT CODE THREE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+'50100.25' </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
+'50100.25' </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note
+                            <dd>toFixed (and toPrecision) returns a string!
+                        </dl>
+
                     </details><!--details CONSOLE -->
 
                 </article>
