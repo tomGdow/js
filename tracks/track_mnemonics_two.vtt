@@ -20,11 +20,14 @@ WEBVTT
 <b>---</b>
 
 00:16.100 --> 00:20.000
-<b>Legend outstanding in own fieldset</b>
+<b>functions</b>
+<b>ARGUMENTS, not args!</b>
+<b>---</b>
 
 00:21.100 --> 00:25.000
-<b>const a</b>
-<b>Syntax Error</b>
+<b>functions</b>
+<b>no return value</b>
+<b>UNDEFINED!</b>
 
 00:26.100 --> 00:30.000
 <b>do delete default debugger</b>
