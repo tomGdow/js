@@ -528,8 +528,22 @@ I happen if true-false-false </pre><!-- wide-view -->
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
-  </pre><!-- code-content -->
+let c1 = 1, c2 = 1, c3 = 1
+
+if(c1){
+  if(c2){
+    if(c3){
+       "TTT"} else {
+    "TTF"}} else {
+  "TF*"}} else {
+ "F**"} </pre><!-- code-content -->
+            <!--ususally inserted before details-console end tag-->
+            <dl class="details-dl">
+              <dt>Note
+              <dd>Note that only "TTT" NOT executed from within else
+              <dd>All <code>else</code> preceded by two "&rcub;" except 'innner-inner' one!!
+              <dd>Nest <code>if</code> finishes with a single "&rcub;"</dd>
+            </dl>
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -540,11 +554,9 @@ INSERT CODE TWO
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-</pre><!-- small-view -->
+TTT</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-</pre><!-- wide-view -->
+TTT</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -581,9 +593,9 @@ INSERT CONSOLE OUTPUT THREE (wide view)
 
           <ol>
             <li>A is TTT
-              <li>B is TTF
-              <li>C is TFF or TFT
-              <li>D is FTT or FFT or FFF
+            <li>B is TTF
+            <li>C is TFF or TFT
+            <li>D is FTT or FFT or FFF
           </ol>
 
         </article>
