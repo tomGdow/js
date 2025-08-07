@@ -323,6 +323,8 @@ undefined </pre><!-- wide-view -->
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
+const bar = void 0;
+
 switch(true) {
 
   case bar == null:
@@ -425,6 +427,7 @@ statement 1
 statement 2
 
 // console.log(2) is NOT evaluated 
+// console.log() returns undefined
 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 1
@@ -455,10 +458,7 @@ case "say_hello":
     const message = "hi"
     console.log(message);
     break;
-
-}
-
-  </pre><!-- code-content -->
+} </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -521,6 +521,9 @@ hello</pre><!-- wide-view -->
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
+const foo = 1;
+let output = "Output: ";
+
 switch (foo) {
 
   case 0:
@@ -572,6 +575,8 @@ Output: What is Your Name ?</pre><!-- wide-view -->
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
+let foo = 10;
+
 switch(foo) {
 
   case 1:
