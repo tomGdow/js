@@ -1,19 +1,23 @@
 WEBVTT
 
 00:01.000 --> 00:05.000
-<b>Hello</b>
-<b>I am working!!</b>
-<b>REF ERR</b>
+<b>==</b>
+<b>false==false</b>
+<b>true==true</b>
+<b>---</b>
 
 00:06.100 --> 00:10.000
-<b>REDS</b>
-<b>Redeclaration is</b>
-<b>SYNTAX ERR</b>
+<b>==</b>
+<b>either operand NaN</b>
+<b>false</b>
+<b>---</b>
 
 00:11.100 --> 00:15.000
-<b>2Ass-Type</b>
-<b>Reassignment is</b>
-<b>TYPE ERR</b>
+<b>==</b>
+<b>object</b>
+<b>true </b>
+<b>both operands ref same obj </b>
+<b>---</b>
 
 00:16.100 --> 00:20.000
 <b>Legend outstanding in own fieldset</b>
