@@ -67,6 +67,7 @@
             <li>
               A function without a return values returns <code>undefined</code>
             <li>The default value for function parameters is <strong>undefined</strong>
+              <li>Initialiazations are NOT hoisted in JS, only declarations!
 
           </ol>
         </article>
@@ -308,7 +309,14 @@ tom-dick-harry-worth'</pre><!-- wide-view -->
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE THREE
+function calculate() {
+  let x = 2;
+  alert(x+y)
+}
+calculate()
+
+var x = 1;
+var y = 2
   </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -320,14 +328,106 @@ INSERT CODE THREE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+NaN </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
+NaN </pre><!-- wide-view -->
+<!--ususally inserted before details-console end tag-->
+<dl class="details-dl">
+  <dt>Note
+  <dd>Initialiazations are NOT hoisted, only declarations!
+</dl>
+
           </details><!--details CONSOLE -->
 
         </article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+function calculate() {
+let x = 2;
+alert(x + y)
+}
+calculate()
+
+let x = 1;
+let y = 2
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+Uncaught ReferenceError: 
+  can't access lexical declaration 'y' before initialization
+NO alert box appears!  </pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+Uncaught ReferenceError: 
+  can't access lexical declaration 'y' before initialization
+NO alert box appears!  </pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
         <!--here-->
 
         <article>
