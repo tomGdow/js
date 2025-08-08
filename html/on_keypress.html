@@ -89,6 +89,32 @@
               Enter key is pressed
           </ol>
         </article>
+        <article>
+          <h1 class="count">Chat GPT</h1>
+          <ol>
+            <li>
+              The difference between <code>onkeypress</code> and <code>onkeydown</code> lies in when they fire and what
+              keys they respond to
+            <li><code>onkeydown</code>
+              <ol>
+                <li>
+                  Fires: When a key is first pressed down
+                <li>
+                  Triggers for all keys, including modifier keys (e.g., Shift, Ctrl, Arrow keys, etc.)
+                <li>
+                  Fires repeatedly if the key is held down (key repeat)
+              </ol>
+            <li><code>onkeypress</code>
+              <ol>
+                <li>
+                  Fires: After keydown, but only for printable characters (e.g., letters, numbers, symbols).
+                <li>
+                  Does NOT fire for non-character keys like Shift, Ctrl, Esc, Arrow keys, etc.
+                <li>
+                  The event is considered deprecated and should not be used in modern code
+              </ol>
+          </ol>
+        </article>
 
         <article>
           <h1 class="count">Code Example</h1>
