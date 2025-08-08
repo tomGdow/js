@@ -120,6 +120,16 @@ else
         </article>
 
         <article>
+          <h1 class="count">Scope</h1>
+          <ol>
+
+            <li>
+              Scoping within an <code>if</code> statement follows block scope rules introduced with ES6 (let and const)
+              and function
+              scope for variables declared with var
+          </ol>
+        </article>
+        <article>
           <h1 class="count">Falsy</h1>
           <ol>
             <li>false
@@ -196,7 +206,13 @@ end</pre><!-- wide-view -->
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
+let x = 10;
+
+if(++x > 10) {
+  x++;
+  console.log(x);
+}
+console.log(x)
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -208,11 +224,112 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+12
+12 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+12
+12 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let x = 10;
+if(++x > 10) {
+  {++x}
+  console.log(x)
+}
+console.log(x)
+              </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+12
+12 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+12
+12 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let x  = 10;
+if(++x > 10) {
+  let x = 50;
+  x++
+  console.log(x)
+}
+console.log(x) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+51
+11 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+51
+11 </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+let x = 10;
+if (++x > 10) {
+  let x = 50;
+  x++;
+  {
+    let x = 100
+    x++
+    console.log(x)
+  }
+  console.log(x)
+}
+console.log(x) </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+101
+51
+11 </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+101
+51
+11 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -224,7 +341,7 @@ INSERT CONSOLE OUTPUT ONE(wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE TWO
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -236,10 +353,10 @@ INSERT CODE TWO
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -250,7 +367,7 @@ INSERT CONSOLE OUTPUT TWO (wide view)
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
 INSERT CODE THREE
-              </pre><!-- code-content -->
+  </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -262,10 +379,10 @@ INSERT CODE THREE
             </summary>
             <pre class="details-console-aclass small-view">
 INSERT CONSOLE OUTPUT THREE (small view) 
-              </pre><!-- small-view -->
+</pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 INSERT CONSOLE OUTPUT THREE (wide view) 
-              </pre><!-- wide-view -->
+</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
