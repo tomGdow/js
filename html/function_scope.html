@@ -26,6 +26,21 @@
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
 
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -63,30 +78,210 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            In JavaScript, function scope means that variables declared inside a function are only
+                            accessible within that function
+                            (and its nested functions), not outside it
+
+                        <li>
+                            Anything declared with <code>var</code>, <code>let</code>, or <code>const</code> inside a
+                            function is scoped to that function
+                        <li>
+                            Outside code cannot directly access those variables
+                        <li>
+                            Inner (nested) functions can still access them — this is the basis of closures
+
+                        <li>
+                            <code>var</code> is function-scoped, meaning it ignores block boundaries (<code>if</code>,
+                            <code>for</code>, etc.) but still
+                            respects the containing function
+                        <li>
+                            <code>let</code> and <code>const</code> are block-scoped, but a block inside a function is
+                            still part of that
+                            function's scope
+                        <li>
+                            Function scope is different from global scope (variables declared outside all functions) and
+                            block scope
+
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Diagram</h1>
+                    <pre class="details-code-aclass">
+// Generated with Chat GPT
+
+Scope
+│
+├── var globalVar = "I'm global";
+│
+└── function outerFunction() // Function scope starts here
+│
+├── var functionVar = "I'm scoped to outerFunction";
+│
+├── if (true) // Block starts here
+│ │
+│ ├── var stillFunctionScope = "var ignores block scope";
+│ ├── let blockScopedLet = "let stays in this block";
+│ └── const blockScopedConst = "const stays in this block";
+│
+├── console.log(stillFunctionScope); // ✅ works
+├── console.log(blockScopedLet); // ❌ Error: not defined
+│
+└── function innerFunction() // Nested function scope
+│
+├── console.log(functionVar); // ✅ works (closure)
+└── var innerVar = "I'm scoped to innerFunction";
+                    </pre><!-- code-content -->
+
+
+                </article>
+
+                <article>
+                    <h1 class="count"> Summary </h1>
+
+                    <dl>
+                        <dt><strong>Function scope</strong>
+                        <dd>Variables declared with <code>var</code>, <code>let</code>, or <code>const</code> inside a
+                            function are hidden from the outside
+                            world
+
+                        <dt> <strong>Blockscope</strong>
+                        <dd> <code>let</code> and <code>const</code> live only inside the { ... } block they are
+                            declared in; <code>var</code> ignores this and stays in the function's scope
+
+                        <dt><strong>Closures</strong>
+                        <dd>Inner functions can reach up to their parent's variable
+                    </dl>
+                </article>
+
+                <article>
+                    <h1 class="count">Function Arguments</h1>
+                    <ol>
+
+                        <li>
+                            Arguments exist only inside the function body
+                        <li>
+                            They are not accessible outside that function
+                        <li>
+                            Inside the function, you can access them by their name or via <strong>the special
+                                arguments</strong> object (in non-arrow functions)
+
+                        <li>
+                            If a variable with the same name is declared in an inner scope (or in parameters
+                            themselves), it shadows outer
+                            variables.
+
+                        <li>
+                            Default values for parameters are evaluated <strong>in their own scope</strong> (the
+                            parameter scope), which is separate from the
+                            function body scope
+
+                        <li>
+                            You can reference earlier parameters in later parameter defaults, but not variables declared
+                            inside the function body.
+
+                        <li>
+                            In non-strict mode, parameters and the arguments object are linked: changing one changes the
+                            other.
+                        <li>
+                            In strict mode, they are decoupled
+
+                        <li>
+                            Arrow functions don't have their own arguments object — they inherit it from their enclosing
+                            scope
+
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Shadowing</h1>
+                    <ol>
+                        <li>
+                            In JavaScript, shadowing happens when a variable declared within a certain scope (e.g.,
+                            inside a function or block) has
+                            the same name as a variable in an outer scope
+
+                        <li>
+                            The inner declaration “shadows” the outer one — meaning inside that scope, the inner
+                            variable takes precedence, and the
+                            outer variable becomes inaccessible by its name
+
+                    </ol>
+                    <pre class="details-code-aclass">
+let name = "Outer";
+
+function example() {
+
+  let name = "Inner"; 
+      // This shadows the outer 'name'
+
+  console.log(name); // "Inner"
+}
+
+example();
+
+console.log(name); // "Outer"
+                                </pre><!-- code-content -->
+
+                    <ol start="3">
+                        <li>
+                            Shadowing can happen with function scope (var) or block scope (let / const)
+                        <li>
+                            It can also occur with <strong>parameters shadowing outer variables</strong>
+                    </ol>
+                    <pre class="details-code-aclass">
+let value = 10;
+
+function test(value) { // parameter shadows 
+                          the outer variable
+
+  console.log(value); // uses the parameter
+}
+
+test(5); // 5 </pre><!-- code-content -->
+                    <ol start="4">
+                        <li>
+                            You can shadow let with another let (or const) in a nested block
+                        <li>
+                            You cannot shadow a let or const with var in the same or overlapping scope
+                        <li>
+                            You can shadow var with let or const inside a block (because block-scoped variables don't
+                            leak out)
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Illegal Shadowing</h1>
+                    <ol>
+                        <li>
+                            Illegal shadowing in JavaScript happens when you try to redeclare a variable in the same
+                            scope using <code>var</code> when the
+                            original was declared with <code>let</code> or <code>const</code>
+                        <li>
+                            JavaScript treats this as a syntax error because code{let} and <code>const</code> are
+                            block-scoped and cannot
+                            be overridden by a <code>var</code> (which
+                            is function-scoped and hoisted)
+                        <li>Note that the following IS allowed!
+                            <br>
+                            <br>
+                            <pre class="details-code-aclass">
+var x = 10;
+var x = 100; </pre><!-- code-content -->
+                    </ol>
                 </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+  'use strict';
+  
+  var x  = 10;
+  var x = 100;
+  
+  console.log(x) </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -94,22 +289,9 @@ int main()
                     <details open><!--Details CONSOLE -->
                         <summary class="details-console-summary">[JavaScript Inserts]</summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+100 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+100 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
                 </article>
 
@@ -118,7 +300,197 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+var a = 1
+var b = 2
+
+function process(a, b) {
+    a = 10;
+    b = 10;
+    return a * b;
+}
+
+console.log(a)
+console.log(b)
+
+console.log(process(20,5))
+
+console.log(a)
+console.log(b) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+1
+2
+
+200
+
+1
+2 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+1
+2
+
+200
+
+1
+2 </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note
+                            <dd>Note 'shadowing'
+                            <dd>Shadowing happens when a variable declared within a certain scope (e.g., inside a
+                                function or block) has
+                                the same name as a variable in an outer scope
+                            <dd>The inner declaration “shadows” the outer one — meaning inside that scope, the inner
+                                variable takes precedence, and the
+                                outer variable becomes inaccessible by its name
+                        </dl>
+
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+var a = 1
+var b = 2
+
+function prucess(x,y) {
+    a = 10;
+    b = 20;
+    return a * b;
+}
+console.log(a)
+console.log(b)
+
+console.log(prucess(20,5))
+
+console.log(a)
+console.log(b) </pre><!-- code-content -->
+                        </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+1
+2
+
+200
+
+10
+20 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+1
+2
+
+200
+
+10
+20
+</pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note
+                            <dd>No 'Shadowing' here
+                        </dl>
+
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let a = 1
+let b = 2
+
+function process(a, b) {
+    a = 10;
+    b = 20;
+    return a * b;
+}
+console.log(a)
+console.log(b)
+
+console.log(process(20,5))
+
+console.log(a)
+console.log(b) </pre><!-- code-content -->
+                        </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+1
+2
+
+200
+
+1
+2 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+1
+2
+
+200
+
+1
+2 </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note
+                            <dd>'Shadowing' OK with let
+                        </dl>
+
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let a = 1
+let b = 2
+
+function prucess(x,y) {
+a = 10;
+b = 20;
+return a * b;
+}
+console.log(a)
+console.log(b)
+
+console.log(prucess(20,5))
+
+console.log(a)
+console.log(b)
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,14 +502,350 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+1
+2
+
+200
+
+10
+20 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+1
+2
+
+200
+
+10
+20 </pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note
+                            <dd>
+                                The value of a global variable declared and initialized with <code>let</code>
+                                may be changed from within a function
+                        </dl>
+
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const a = 1;
+const b = 2;
+
+function process(a, b) {
+    a = 10;
+    b = 20;
+    return a * b;
+}
+console.log(a)
+console.log(b)
+
+console.log(process(20,5))
+
+console.log(a)
+console.log(b) </pre><!-- code-content -->
+                        </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+1
+2
+
+200
+
+1
+2
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+1
+2
+
+200
+
+1
+2
+</pre><!-- wide-view -->
+                        <!--ususally inserted before details-console end tag-->
+                        <dl class="details-dl">
+                            <dt>Note
+                            <dd>'Shadowing' of variables declared and initialized with <code>const</code>
+                        </dl>
+
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+const a = 1
+const b = 2
+
+function prucess(x, y) {
+  a = 10;
+  b = 20;
+  return a * b;
+}
+console.log(a)
+console.log(b)
+
+console.log(prucess(20, 5))
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught TypeError: invalid assignment to const 'a' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught TypeError: invalid assignment to const 'a' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let outerVar = "outer";
+
+function myFunc(param1, param2 = "default") {
+  let localVar = "local";
+
+  function innerFunc(innerParam) {
+    console.log(param1, 
+                param2, 
+                localVar, 
+                outerVar, 
+                innerParam);
+  }
+
+  innerFunc("inner");
+}
+
+myFunc("arg1") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+arg1 default outer local inner </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+arg1 default outer local inner </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function myFuncTwo(param1, param2="default") {
+  let localVar = "local";
+  function innerFunc(innerParam) {
+    console.log(param1, 
+                param2, 
+                outerVar, 
+                localVar,
+                innerParam)
+  }
+
+return innerFunc
+
+}
+
+myFn = myFuncTwo("arg2")
+myFn("inner") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+arg2 default outer local inner </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+arg2 default outer local inner </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+function myfn(arg1,arg2) {
+  var arg1 =10
+  var arg2 = 20
+  return [arg1, arg2, arguments[0], arguments[1]]
+}
+
+myfn(30,35) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ 10, 20, 10, 20 ] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ 10, 20, 10, 20 ] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function myfnS(arg1, arg2) {
+  'use strict';
+  var arg1 = 10;
+  var arg2 = 20;
+  return [arg1, arg2, arguments[0], arguments[1]]
+}
+ 
+ myfnS(30,35) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ 10, 20, 30, 35 ] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ 10, 20, 30, 35 ] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function myFn3(arg1, arg2) {
+  let temp = 0;
+  for(el of arguments)
+  temp += el
+  return temp;
+ }
+
+myFn3(1,2)
+myFn3(1,2,3,4,5) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+3
+15 </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+3
+15 </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here-->
 
                 <article>
                     <h1 class="count">Notes</h1>
