@@ -138,6 +138,40 @@
         </article>
 
         <article>
+          <h1 class="count">Chat GPT</h1>
+          <pre class="details-code-aclass">
+let str1 = "hello"
+let str2 = new String("hello");
+
+why is str1 == str2?
+          </pre><!-- code-content -->
+
+          <ol>
+            <li>
+              <code>str</code> → a primitive string value: <code>"hello"</code>
+            <li>
+              <code>str2</code> → a String object: <code>String { "hello" }</code>
+            <li>
+              This is not a primitive; its an object with properties and methods
+            <li> <code>==</code> (loose equality) in JavaScript performs type coercion if the operands are of different
+              types
+            <li>
+              When comparing a primitive to an object, the object is converted to a primitive using
+              <code>ToPrimitive</code> (which,
+              for a String
+              object, calls <code>.valueOf(</code> and returns <code>"hello"</code>).
+            <li>
+              After coercion:
+              <code>"hello" == "hello" → true</code>
+              li>
+              Final result: <code>true</code>
+            <li>
+              But <code>===</code> (strict equality) would give false because it <strong>does not coerce types</strong>
+          </ol>
+
+        </article>
+
+        <article>
           <h1 class="count">Code Example</h1>
 
           <details open><!--details CODE-->
