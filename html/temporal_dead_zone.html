@@ -129,12 +129,13 @@ console.log(x); // ✅ 10
                         <li>Accessing <code>x</code> after declaration but before initialization returns undefined
                         <li>Initialization assigns a value to <code>x</code>
                         <li>
-                            With <code>const</code>, declaration and initialization must happen on the same line, so TDZ ends and
+                            With <code>const</code>, declaration and initialization must happen on the same line, so TDZ
+                            ends and
                             initialization happen together
                     </ol>
 
                 </article>
-                
+
                 <article>
                     <h1 class="count">var/let comparison</h1>
                     <pre class="details-code-aclass">
@@ -191,6 +192,23 @@ Uncaught ReferenceError
     can't access lexical declaration 
     'foo' before initialization</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
+                </article>
+
+                <article>
+                    <h1 class="count">Summary</h1>
+                    <ol>
+                        <li>
+                            When JavaScript enters a block or function scope, it creates all declared variables in
+                            memory.
+                        <li>
+                            For <code>let</code> and <code>const</code>, these variables are placed in the
+                            <code>TDZ</code> from the start of the scope until their declaration line is
+                            executed
+                        <li>
+                            Any attempt to access them during the <code>TDZ</code> results in an error, rather than
+                            returning
+                            <code>undefined</code> (like <code>var</code> would)
+                    </ol>
                 </article>
 
                 <article>
