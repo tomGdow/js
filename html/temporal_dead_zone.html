@@ -26,6 +26,21 @@
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
 
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -91,6 +106,59 @@
                             than the order in which the
                             code is written (position)
                     </ol>
+                </article>
+                <article>
+                    <h1 class="count">Timeline Example</h1>
+
+                    <pre class="details-code-aclass">
+{
+// TDZ begins here
+console.log(x); // ❌ ReferenceError (still in TDZ)
+
+let x; // Declaration happens here — TDZ ends
+console.log(x); // ✅ undefined (declared but not assigned)
+
+x = 10; // Initialization happens here
+console.log(x); // ✅ 10
+}
+                    </pre><!-- code-content -->
+                    <ol>
+                        <li><code>TDZ</code> starts at the beginning of the block
+                        <li>Accessing <code>x</code> before declaration results in a <code>ReferenceError</code>
+                        <li>Declaration happens, but no value is assigned yet
+                        <li>Accessing <code>x</code> after declaration but before initialization returns undefined
+                        <li>Initialization assigns a value to <code>x</code>
+                        <li>
+                            With <code>const</code>, declaration and initialization must happen on the same line, so TDZ ends and
+                            initialization happen together
+                    </ol>
+
+                </article>
+                
+                <article>
+                    <h1 class="count">var/let comparison</h1>
+                    <pre class="details-code-aclass">
+SCOPE START
+│
+├── var a
+│
+│ var: Hoisted + Initialized to undefined immediately
+│ (can be accessed before declaration — no error)
+│
+│ let: Hoisted but uninitialized until declaration
+│ (in TDZ → accessing throws ReferenceError)
+│
+┌──────────────────────────────
+│ var a; 
+│ let b;
+│ console.log(a); // ✅ undefined console.log(b);
+│ console.log(b)  // ❌ ReferenceError;
+│ a = 5; | let b = 10; │
+| let b = 10; 
+│ console.log(a); // 5 
+| console.log(b); // 10 
+└───────────────────────────────
+                    </pre><!-- code-content -->
                 </article>
 
                 <article>
