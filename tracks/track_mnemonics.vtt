@@ -73,6 +73,7 @@ WEBVTT
 
 01:21.100 --> 01:25.000
 <b>0/0 is NaN</b>
+<b>0/1 is Infinity</b>
 
 01:26.100 --> 01:30.000
 <b>try catch dotm dotn</b>
@@ -110,6 +111,7 @@ WEBVTT
 <b>Math.round(x)</b>
 <b>equals Math.floor(x+0.5)</b>
 <b>generally!</b>
+<b>Rounds to INTEGER</b>
 
 02:10.100 --> 02:14.000
 <b>Sort ASCENDING</b>
