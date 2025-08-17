@@ -154,24 +154,38 @@ console.log("Page still works!");
               </ol>
           </ol>
         </article>
-        
+
         <article>
+          <h1 class="count">Summary</h1>
+          <ol>
+            <li>
+              A <code>ReferenceError</code> tells you: "The name you're trying to use doesn't exist in this context."
+
+            <li>
+              A <code>ReferenceError</code> happens when you try to use a variable, function, or object that doesn't
+              exist in the
+              current scope.
+            <li>
+              It's about “not found”
+
+            <li>
+              A <code>TypeError</code>, on the other hand, happens when you try to do something with a value, but the
+              value's type
+              doesn't support that operation.
+            <li>
+              It's about “wrong type of value”
+
+          </ol>
 
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+console.log(x) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -179,11 +193,9 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+Uncaught ReferenceError: x is not defined </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+Uncaught ReferenceError: x is not defined </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
@@ -192,7 +204,8 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
+console.log(myVar);
+let myVar = 10;
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -204,10 +217,14 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+Uncaught ReferenceError: 
+  can't access lexical declaration 'myVar' 
+  before initialization
               </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+Uncaught ReferenceError: 
+  can't access lexical declaration 'myVar' 
+  before initialization
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
@@ -218,7 +235,8 @@ INSERT CONSOLE OUTPUT (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE ONE
+let count = 5;
+console.log(cout);
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -230,11 +248,9 @@ INSERT CODE ONE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT ONE(small view) 
-              </pre><!-- small-view -->
+Uncaught ReferenceError: cout is not defined </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT ONE(wide view) 
-              </pre><!-- wide-view -->
+Uncaught ReferenceError: cout is not defined </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
