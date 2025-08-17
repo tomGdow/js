@@ -30,11 +30,11 @@
     ol {
       padding-left: 10%;
     }
-  
+
     ol ol {
       padding-left: 5%;
     }
-  
+
     ol>li {
       padding-bottom: 0.2em;
     }
@@ -95,13 +95,50 @@
           </p>
           <pre class="details-code-aclass">
 ReferenceError        console.log(notDefinedVar) 
+
 TypeError             null.foo()
+
 RangeError            new Array(-1)
+
 SyntaxError (in eval) eval("var a =")
+
 URIError              decodeURIComponent("%")
+
 AggregateError        Promise.any([]) without handling
           </pre><!-- code-content -->
 
+        </article>
+        <article>
+          <h1 class="count">
+            Key Rules
+          </h1>
+          <ol>
+            <li>
+              If uncaught, the error bubbles up the call stack and terminates the current execution context (the
+              function and anything
+              above it)
+            <li>
+              If caught with <code>try...catch</code> , execution continues after the <code>catch</code> block.
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">
+            Call Stack/Propagation
+          </h1>
+
+          <pre class="details-code-aclass">
+Call Stack (top to bottom)
+          
+┌───────────────────┐
+│ functionC()       │ <-- ❌ Error thrown here 
+├───────────────────┤ 
+│ functionB()       │ <-- Execution context destroyed
+├───────────────────┤ 
+│ functionA()       │ <-- Execution context destroyed
+├───────────────────┤ 
+│ Global Context    │ <-- If not caught, stops here 
+|                   |      & console.log()
+└───────────────────┘ </pre><!-- code-content -->
         </article>
 
         <article>
