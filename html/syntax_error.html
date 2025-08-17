@@ -80,15 +80,16 @@
           <h1 class="count">Introduction</h1>
           <ol>
             <li>
-              A syntax error in JavaScript happens when the code you've written breaks the grammatical rules of the
+              A <code>SyntaxError</code> in JavaScript happens when the code you've written breaks the grammatical rules
+              of the
               JavaScript
               language
             <li>
               In other words, the JavaScript engine can't even understand your code well enough to try to run it
             <li>
-              Syntax errors are detected immediately when the script is parsed, before execution
+              <code>SyntaxErrors</code> are detected immediately when the script is parsed, before execution
             <li>
-              The code will stop running at the error and won't execute further
+              The code will <strong>stop running</strong> at the error and won't execute further
           </ol>
         </article>
         <article>
@@ -97,7 +98,11 @@
           </h1>
           <ol>
             <li>
-              Syntax Errors are detected at parsing/execution and WILL NOT (usually) be caught by a try/catch block!
+              <code>SyntaxErrors</code> are (almost always) detected at parsing/execution and WILL NOT (usually) be
+              caught by a try/catch block!
+            <li>Code with a <code>SyntaxError</code> WILL NOT RUN AT ALL
+              <br>
+              <br>
               <pre class="details-code-aclass">
 try {
 
