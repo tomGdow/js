@@ -261,7 +261,21 @@ Uncaught ReferenceError: cout is not defined </pre><!-- wide-view -->
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
+&lt;h2&gt;X and Y&lt;/h2&gt;
+
+&lt;p id="output"&gt;Am I Replaced?&lt;/p&gt;
+
+&lt;script&gt;
+  var  x = 10;
+
+  function testScope() {
+    var y = 20;
+  }
+&lt;/script&gt;
+
+&lt;script&gt;
+  document.getElementById('output').innerHTML = "sum of x and y is " + (x + y)
+&lt;/script&gt;
               </pre><!-- code-content -->
           </details><!--details CODE-->
 
@@ -273,11 +287,15 @@ INSERT CODE TWO
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-              </pre><!-- small-view -->
+Uncaught ReferenceError: 
+  y is not defined
+
+// No replacement of "Am I Replaced?" text </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-              </pre><!-- wide-view -->
+Uncaught ReferenceError: 
+  y is not defined
+
+// No replacement of "Am I Replaced?" text </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
