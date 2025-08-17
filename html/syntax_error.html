@@ -26,6 +26,21 @@
     <link rel="stylesheet" href="../css/nojs.css">
   </noscript>
 
+  <style>
+    ol {
+      padding-left: 10%;
+    }
+
+    ol ol {
+      padding-left: 5%;
+    }
+
+    ol>li {
+      padding-bottom: 0.2em;
+    }
+  </style>
+
+
 </head>
 
 <body>
@@ -63,25 +78,62 @@
         <article>
           <noscript><span>This Web Site requires JavaScript!</span></noscript>
           <h1 class="count">Introduction</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-            repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-          </p>
+          <ol>
+            <li>
+              A syntax error in JavaScript happens when the code you've written breaks the grammatical rules of the
+              JavaScript
+              language
+            <li>
+              In other words, the JavaScript engine can't even understand your code well enough to try to run it
+            <li>
+              Syntax errors are detected immediately when the script is parsed, before execution
+            <li>
+              The code will stop running at the error and won't execute further
+          </ol>
+        </article>
+        <article>
+          <h1 class="count">
+            Note
+          </h1>
+          <ol>
+            <li>
+              Syntax Errors are detected at parsing/execution and WILL NOT (usually) be caught by a try/catch block!
+              <pre class="details-code-aclass">
+try {
+
+  const a;
+  console.log(a)
+
+} catch (e) {
+
+  console.log(e.name)
+  console.log(e.message)
+
+} finally {
+
+  console.log("Note that I do NOT RUN!")
+}
+
+// UNCAUGHT SyntaxError: 
+     missing = in const declaration </pre><!-- code-content -->
+          </ol>
         </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+&lt;div id="mydiv1"&gt;&lt;/div&gt;
+&lt;div id="mydiv2"&gt;&lt;/div&gt;
+
+document.getElementById('mydiv1').innerHTML = 
+  "Hello World!";
+let x = 10;
+let x = 20;
+document.getElementById('mydiv2').innerHTML =
+   "Hello Universe!"; </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -89,11 +141,15 @@ INSERT CODE
           <details open><!--Details CONSOLE -->
             <summary class="details-console-summary">[JavaScript Inserts]</summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+Uncaught SyntaxError: redeclaration of let x
+
+// Code does NOT run at all
+// NO CHANGE to web page </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
-              </pre><!-- wide-view -->
+Uncaught SyntaxError: redeclaration of let x
+
+// Code does NOT run at all
+// NO CHANGE to web page </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
         </article>
 
