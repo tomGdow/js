@@ -54,13 +54,13 @@ WEBVTT
 <b>Dividend</b>
 
 00:51.100 --> 00:55.000
-<b>TEMP</b>
-<b>END</b>
+<b>!!</b>
+<b>convert value to</b>
+<b>boolean</b>
 
 00:56.100 --> 01:00.000
-<b>untoUn</b>
-<b>typeof undefined</b>
-<b>undefined</b>
+<b>TEMP</b>
+<b>END</b>
 
 01:01.100 --> 01:05.000
 <b>nu == un</b>
