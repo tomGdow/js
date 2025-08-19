@@ -131,9 +131,14 @@
               </ol>
               Example:
               <pre class="details-code-aclass">
-document.querySelector("button").onclick = function() {
-alert(nonexistentVar); // ReferenceError
-console.log("This won't run");
+document.querySelector("button").onclick = 
+
+  function() {
+
+    alert(nonexistentVar); 
+    // ReferenceError
+
+    console.log("This won't run");
 };
               </pre><!-- code-content -->
             <li><strong>when caught</strong>
