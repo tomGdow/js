@@ -117,12 +117,58 @@
                             This auto-boxing behavior is not observable in JavaScript code but is a good mental model of
                             various behaviors
                         <li>
-                            for
+                            For
                             example, why "mutating" primitives does not work (because <code>str.foo = 1</code> is not
                             assigning to
                             the property foo of str
                             itself, but to an ephemeral wrapper object)
                     </ol>
+
+                </article>
+                <article>
+                    <h1 class="count">Chat GPT</h1>
+                    <ol>
+                        <li>
+                            In JavaScript, a primitive is a data type that is not an object and has no methods of its
+                            own
+                        <li>
+                            Primitives are the most
+                            basic kinds of values in the language — they are immutable, meaning their values cannot be
+                            changed once created (though
+                            variables holding them can be reassigned)
+
+                        <li>
+                            They are copied by value (not by reference)
+                        <li>
+                            They are immutable (e.g., you can't change a string's characters directly)
+                        <li>
+                            They can be wrapped temporarily by JavaScript in “wrapper objects” (like String, Number,
+                            Boolean) when you use methods
+                            on them
+                        <li>Primitives are simple, immutable values copied by value, while objects are complex, mutable,
+                            and
+                            copied by reference
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Summary Table</h1>
+                    <dl>
+                        <dt><code>string</code>
+                        <dd>represents textual data
+                        <dt><code>number</code>
+                        <dd>represents integers and floating-point numbers
+                        <dt><code>bigint</code>
+                        <dd>represents whole numbers larger than what number can safely represent
+                        <dt><code>boolean</code>
+                        <dd>represents logical values true or false
+                        <dt><code>undefined</code>
+                        <dd>a variable that has been declared but not assigned a value
+                        <dt><code>symbol</code>
+                        <dd>a unique and immutable identifier, often used as object keys
+                        <dt><code>null</code>
+                        <dd>represents an intentional absence of any object value
+
+                    </dl>
 
                 </article>
 
@@ -177,22 +223,251 @@ console.log([10, "joe", true, void 0, null].map(x => [x, typeof x]))</pre><!-- c
 
                 </article>
 
+
                 <article>
-                    <h1 class="count refs-heading">References</h1>
-                    <details open><!-- Details REFS -->
-                        <summary class="details-refs-summary">[JavaScript Inserts]</summary>
-                        <div class="ref-container details-refs-aclass">
-                            <div class="ref">
-                                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">MDN:
-                                    primitives</a>
-                            </div>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let str ="hello"
+typeof str </pre><!-- code-content -->
+                    </details><!--details CODE-->
 
-                            <div class="ref">
-                                <a href="https://www.google.ie">Google</a>
-                            </div>
+                    <br class="small-view">
+                    <br class="wide-view">
 
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'string' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'string' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let num = 42
+typeof num </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'number'
+
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'number' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let big = 123456789012345678901234567890n;
+typeof big; </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'bigint' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'bigint' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let flag = true;
+typeof flag; </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'boolean' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'boolean' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let x;
+typeof x </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'undefined' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'undefined' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let sym = Symbol("id");
+console.log(sym);
+console.log(typeof sym) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Symbol(id)
+'symbol' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Symbol(id)
+'symbol' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let empty = null;
+typeof empty </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'object' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'object' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here-->
+
+                earticle>
+                <h1 class="count refs-heading">References</h1>
+                <details open><!-- Details REFS -->
+                    <summary class="details-refs-summary">[JavaScript Inserts]</summary>
+                    <div class="ref-container details-refs-aclass">
+                        <div class="ref">
+                            <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">MDN:
+                                primitives</a>
                         </div>
-                    </details><!-- Details REFS -->
+
+                        <div class="ref">
+                            <a href="https://www.google.ie">Google</a>
+                        </div>
+
+                    </div>
+                </details><!-- Details REFS -->
                 </article>
             </main>
 
