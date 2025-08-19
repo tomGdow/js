@@ -73,7 +73,7 @@ WEBVTT
 
 01:21.100 --> 01:25.000
 <b>0/0 is NaN</b>
-<b>0/1 is Infinity</b>
+<b>1/0 is Infinity</b>
 
 01:26.100 --> 01:30.000
 <b>try catch dotm dotn</b>
