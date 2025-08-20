@@ -108,6 +108,27 @@ parseInt(string, radix)
 
                     </ol>
                 </article>
+                <article>
+                    <h1 class="count">parseInt vs Number.parseInt</h1>
+                    <ol>
+                        <li>
+                            <code>parseInt</code> and <code>Number.parseInt</code> are essentially the
+                            same function, but their difference lies in where they
+                            are located in the global scope and object hierarchy
+                    </ol>
+                    <dl>
+                        <dt><strong>parseInt</strong>
+                        <dd>Global function available directly as <code>parseInt(...)</code>
+                        <dd>Has existed since the very early versions of JavaScript (before ES6)
+                        <dd>It can be called without referencing <code>Number</code>
+                        <dt><strong>Number.parseInt</strong>
+                        <dd>Method of the <code>Number</code> object, introduced in ES6 (ES2015)
+                        <dd>It is the same underlying function as the global <code>parseInt</code>
+                        <dd>Provided mainly for modularization and consistency, since newer functions (like
+                            <code>Number.isInteger</code>, <code>Number.isNaN</code>, etc.)
+                            are all grouped under <code>Number</code>
+                    </dl>
+                </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
@@ -350,8 +371,8 @@ parseInt(mystr) </pre><!-- code-content -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE THREE
-  </pre><!-- code-content -->
+Number(" 3.14 ")
+parseInt(" 3.14 ") </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
@@ -362,15 +383,256 @@ INSERT CODE THREE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+3.14
+3 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
+3.14
+3</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
+                
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+Number (" 3.14 ")
+parseFloat(" 3.14 ")
+Number(" 3.14 ") == parseFloat(" 3.14 ") </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+3.14
+3.14
+true </pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+3.14
+3.14
+true </pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+parseInt("42px")
+Number("42px") </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+42
+NaN </pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+42
+NaN </pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+Number("3.14 159")
+parseInt("3.14 159") </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+NaN
+3 </pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+NaN
+3 </pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE ONE
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT ONE(small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT ONE(wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE ONE
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT ONE(small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT ONE(wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
                 <!--here-->
+
 
                 <article>
                     <h1 class="count refs-heading">References</h1>
