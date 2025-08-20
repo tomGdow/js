@@ -82,8 +82,11 @@
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
                     <ol>
-                        <li>The <code>typeof</code> operator <strong>returns a string</strong> indicating the type of
-                            the operand's value
+                        <li>
+                            The <code>typeof</code> operator is used to check the type of a value (operand)
+                        <li>
+                            It always <strong>returns a string</strong> that describes the type
+
                     </ol>
                 </article>
                 <article>
@@ -101,14 +104,34 @@ typeof 2+3    //  'number3'
 typeof(2+3)   //  'number'</pre><!-- code-content -->
                     </ol>
                 </article>
+                <article>
+                    <h1 class="count">
+                        Summary
+                    </h1>
+                    <ol>
+                        <li>
+                            Always returns a string like <code>"number"</code>, <code>"string"</code>, etc.
+                        <li>
+                            Quirk: <code>typeof null</code> returns <code>"object"</code> (a long-standing JavaScript
+                            bug)
+                        <li>
+                            Functions are a special case: <code>typeof function(){} === "function"</code> is
+                            <code>true</code>
+                        <li>
+                            Useful for type checking at runtime
+
+                        <li>
+                            <code>Primitives</code> → <code>"primitive"</code>
+                        <li>
+                            <code>Objects</code> → <code>"object"</code> (except functions).
+                        <li>
+                            <code>Functions</code> → <code>"function"</code> (including class)
+                        <li><code>Null</code> → <code>"object"</code> (a quirk in JavaScript)
+                    </ol>
+                </article>
 
                 <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
 
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
@@ -415,6 +438,485 @@ NaN
 'number'</details><!--details CONSOLE -->
 
                 </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof 42
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'number' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'number' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof NaN
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'number' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'number' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof Infinity
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'number' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'number' </pre><!-- small-view -->
+                        </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof "hello"
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'string' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'string'
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof `my template`
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'string' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'string' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof true </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'boolean' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'boolean' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof undefined
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+"undefined" </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+"undefined" </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof null
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'object' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'object' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <article>
+                        <h1 class="count">Code Example</h1>
+                        <details open><!--details CODE-->
+                            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                            <pre class="details-code-aclass">
+typeof Symbol('foo') </pre><!-- code-content -->
+                        </details><!--details CODE-->
+
+                        <br class="small-view">
+                        <br class="wide-view">
+
+                        <details open><!--Details CONSOLE -->
+                            <summary class="details-console-summary">
+                                [JavaScript Inserts]
+                            </summary>
+                            <pre class="details-console-aclass small-view">
+'symbol' </pre><!-- small-view -->
+                            <pre class="details-console-aclass wide-view">
+'symbol' </pre><!-- wide-view -->
+                        </details><!--details CONSOLE -->
+
+                    </article>
+
+
+                    <article>
+                        <h1 class="count">Code Example</h1>
+                        <details open><!--details CODE-->
+                            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                            <pre class="details-code-aclass">
+typeof 123n </pre><!-- code-content -->
+                        </details><!--details CODE-->
+
+                        <br class="small-view">
+                        <br class="wide-view">
+
+                        <details open><!--Details CONSOLE -->
+                            <summary class="details-console-summary">
+                                [JavaScript Inserts]
+                            </summary>
+                            <pre class="details-console-aclass small-view">
+'bigint' </pre><!-- small-view -->
+                            <pre class="details-console-aclass wide-view">
+'bigint' </pre><!-- wide-view -->
+                        </details><!--details CONSOLE -->
+
+                    </article>
+
+                    <article>
+                        <h1 class="count">Code Example</h1>
+                        <details open><!--details CODE-->
+                            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                            <pre class="details-code-aclass">
+typeof {} </pre><!-- code-content -->
+                        </details><!--details CODE-->
+
+                        <br class="small-view">
+                        <br class="wide-view">
+
+                        <details open><!--Details CONSOLE -->
+                            <summary class="details-console-summary">
+                                [JavaScript Inserts]
+                            </summary>
+                            <pre class="details-console-aclass small-view">
+'object' </pre><!-- small-view -->
+                            <pre class="details-console-aclass wide-view">
+'object' </pre><!-- wide-view -->
+                        </details><!--details CONSOLE -->
+
+                    </article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof [] </pre><!-- code-content -->
+                    </details><!--details CODE-->
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'object' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'object' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let d = new Date();
+typeof d </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'object' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'object' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof /[A-Za-z]/ </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'object' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'object' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof function myfn(){} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class=" small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'function' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'function' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof class Foo {} </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'function' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'function' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof (() => {}) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'function' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'function' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof Math </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'object' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'object' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+typeof globalThis </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+'object' </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+'object' </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
                 <!--here-->
 
                 <article>
@@ -423,7 +925,9 @@ NaN
                         <summary class="details-refs-summary">[JavaScript Inserts]</summary>
                         <div class="ref-container details-refs-aclass">
                             <div class="ref">
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">MDN: typeof</a>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">MDN:
+                                    typeof</a>
                             </div>
 
                             <div class="ref">
