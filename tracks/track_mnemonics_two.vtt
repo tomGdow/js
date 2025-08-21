@@ -68,12 +68,12 @@ WEBVTT
 <b>try this typeof throw true</b>
 
 01:11.100 --> 01:15.000
-<b>TEMP</b>
-<b>END</b>
+<b>86,400 seconds</b>
+<b>in a day</b>
 
 01:16.100 --> 01:20.000
-<b>0-9A-Za-z</b>
-<b>increase in char value LTR</b>
+<b>TEMP</b>
+<b>END</b>
 
 01:21.100 --> 01:25.000
 <b>0/0 is NaN</b>
