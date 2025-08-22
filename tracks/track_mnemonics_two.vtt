@@ -72,19 +72,20 @@ WEBVTT
 <b>in a day</b>
 
 01:16.100 --> 01:20.000
+<b>(a) void var</b>
+<b>both reserved</b>
+
+01:21.100 --> 01:25.000
+<b>slICE can take</b>
+<b>negative argument</b>
+
+01:26.100 --> 01:30.000
 <b>TEMP</b>
 <b>END</b>
 
-01:21.100 --> 01:25.000
-<b>0/0 is NaN</b>
-
-01:26.100 --> 01:30.000
-<b>try catch dotm dotn</b>
-<b>(.message, .name)</b>
-
 01:31.100 --> 01:35.000
-<b>Buttons of Confirm</b>        
-<b>OK Cancel</b>        
+<b>TEMP</b>
+<b>END</b>
 
 01:36.100 --> 01:40.000
 <b>&& exits on first false</b>
