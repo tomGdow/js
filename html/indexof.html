@@ -136,12 +136,54 @@ indexOf(searchElement, fromIndex)
         </article>
 
         <article>
+          <h1 class="count">
+            Compare indexOf and search methods
+          </h1>
+          <dl>
+            <dt><strong>indexOf</strong>
+            <dd>
+              <ol>
+                <li>
+                  <strong>Purpose:</strong> Finds the position of a substring in a string
+                <li>
+                  <strong>Arguments:</strong> Takes a string (not a regex)
+                <li>
+                  <stribg>Return value:</stribg> The index (0-based) of the first occurrence, or -1 if not found
+              </ol>
+            <dt><strong>search</strong>
+            <dd>
+              <ol>
+                <li>
+                  <strong>Purpose:</strong> Finds the position of a regular expression match in a string
+                <li>
+                  <strong>Arguments:</strong> Takes a RegExp (regex), not a plain substring (although you can pass a
+                  string, it's converted to a regex)
+                <li>
+                  <strong>Return value:</strong>The index (0-based) of the first match, or -1 if not found
+              </ol>
+            <dt><strong>summary</strong>
+            <dd>
+              <ol>
+                <li>
+                  <code>indexOf():</code> great for literal substring search; can start searching from a given index
+                <li>
+                  <code>search():</code> great for pattern matching; uses regex and flags but no start offset
+                <li>
+                  Both return -1 if no match is found
+                <li>
+                  Both return the index of the first match
+                <li>
+                  Both are case-sensitive
+                <li>
+                  Both return 0 for the empty SEARCH
+              </ol>
+            </dd>
+          </dl>
+
+        </article>
+
+        <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
@@ -320,8 +362,7 @@ position = str.indexOf('e')
 position = str.indexOf('e',position + 1)
 position = str.indexOf('e',position + 1)
 position = str.indexOf('e',position + 1)
-position = str.indexOf('e',position + 1)
-  </pre><!-- code-content -->
+position = str.indexOf('e',position + 1) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -386,8 +427,10 @@ console.log(count) </pre><!-- code-content -->
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE TWO
-  </pre><!-- code-content -->
+let str ="Hello World"
+
+str.indexOf('World')
+str.search(/World/) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -398,11 +441,11 @@ INSERT CODE TWO
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT TWO (small view) 
-</pre><!-- small-view -->
+6
+6 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT TWO (wide view) 
-</pre><!-- wide-view -->
+6
+6 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
@@ -412,8 +455,11 @@ INSERT CONSOLE OUTPUT TWO (wide view)
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE THREE
-  </pre><!-- code-content -->
+let str ="Hello World"
+  
+str.indexOf('world')
+str.search(/world/)
+str.search(/world/i) </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -424,14 +470,182 @@ INSERT CODE THREE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT THREE (small view) 
-</pre><!-- small-view -->
+-1
+-1
+6 </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT THREE (wide view) 
-</pre><!-- wide-view -->
+-1
+-1
+6 </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
+        
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+let str ="Hello World"
+str.indexOf('l')
+str.search(/l/)
+str.search(/l/g) </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+2
+2
+2 (!!only first match) </pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+2
+2
+2 (!!only first match) </pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+let str ="Hello World"
+str.indexOf("")
+str.search("")
+0
+0 </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+0
+0 </pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+0
+0 </pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE ONE
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT ONE(small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT ONE(wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE TWO
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT TWO (small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT TWO (wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
+
+<article>
+    <h1 class="count">Code Example</h1>
+    <details open><!--details CODE-->
+        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+    </details><!--details CODE-->
+
+    <br class="small-view">
+    <br class="wide-view">
+
+    <details open><!--Details CONSOLE -->
+        <summary class="details-console-summary">
+            [JavaScript Inserts]
+        </summary>
+        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+    </details><!--details CONSOLE -->
+
+</article>
         <!--here-->
 
         <article>
