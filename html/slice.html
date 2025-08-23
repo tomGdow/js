@@ -113,6 +113,9 @@
 slice()
 slice(start)
 slice(start, end)
+
+// Negative index counts back from the end of the array
+// slice() extracts up to but not including end
               </pre><!-- code-content -->
             <dt><strong>array</strong>
             <dd>
@@ -125,14 +128,36 @@ slice(indexStart, indexEnd)
               </pre><!-- code-content -->
           </dl>
         </article>
+        <article>
+          <h1 class="count">Chat GPT</h1>
+          <p>Compare the <code>array</code> and <code>string</code> <code>slice</code> methods</p>
+          <pre class="details-code-aclass">
+str.slice(beginIndex, endIndex);
+arr.slice(beginIndex, endIndex); </pre><!-- code-content -->
+          <ol>
+            <li>
+              Both accept
+              <code>beginIndex (start position, inclusive)</code>
+            <li>
+              Both accept <code>endIndex (end position, exclusive; optional)</code>
+            <li>
+            <li>
+              Both <strong>allow negative indices</strong>, counting from the end
+            <li>
+              Non-mutating:
+              Both return a new value without modifying the original
+            <li>If both parameters are omitted, both return a copy of the entire original value
+              <ol>
+                <li>
+                  <code>String</code>: returns the whole string
+                <li>
+                  <code>Array</code>: returns a shallow copy of the entire array
+              </ol>
+          </ol>
+        </article>
 
         <article>
           <h1 class="count">Code Example</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-            iusto
-            totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-          </p>
 
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
@@ -443,6 +468,77 @@ str.substring(2,4) </pre><!-- code-content -->
 'om' </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
 'om' </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+"mystring".slice(0,-1)
+  </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+"mystrin"</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+"mystrin"</pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+"mystring".find(x = >x > "m") </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+Uncaught TypeError: "mystring".find is not a function </pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+Uncaught TypeError: "mystring".find is not a function </pre><!-- wide-view -->
+          </details><!--details CONSOLE -->
+
+        </article>
+
+
+        <article>
+          <h1 class="count">Code Example</h1>
+          <details open><!--details CODE-->
+            <summary class="details-code-summary">[JavaScript Inserts]</summary>
+            <pre class="details-code-aclass">
+"mystring".split("").find(x => x > "m") </pre><!-- code-content -->
+          </details><!--details CODE-->
+
+          <br class="small-view">
+          <br class="wide-view">
+
+          <details open><!--Details CONSOLE -->
+            <summary class="details-console-summary">
+              [JavaScript Inserts]
+            </summary>
+            <pre class="details-console-aclass small-view">
+'y'</pre><!-- small-view -->
+            <pre class="details-console-aclass wide-view">
+'y'</pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
         </article>
