@@ -80,8 +80,9 @@ WEBVTT
 <b>negative argument</b>
 
 01:26.100 --> 01:30.000
-<b>TEMP</b>
-<b>END</b>
+<b>let myvar =1</b>
+<b>mywar =2</b>
+<b>REF error in strict</b>
 
 01:31.100 --> 01:35.000
 <b>TEMP</b>
