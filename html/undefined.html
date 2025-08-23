@@ -25,6 +25,25 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+
+        dd {
+            padding-bottom: 0.5em;
+        }
+    </style>
+
+
 
 </head>
 
@@ -63,54 +82,121 @@
                 <article>
                     <noscript><span>This Web Site requires JavaScript!</span></noscript>
                     <h1 class="count">Introduction</h1>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, suscipit odio? Obcaecati
-                        repellendus nesciunt adipisci ratione ducimus dolorem ipsa dolores?
-                    </p>
+                    <ol>
+                        <li>
+                            <code>undefined</code> is a special primitive value that represents the absence of a defined
+                            value
+                        <li>
+                            It is one of
+                            JavaScripts primitive types
+                    </ol>
+                </article>
+                <article>
+                    <h1 class="count">Summary</h1>
+                    <dl>
+                        <dt><strong>Type</strong>
+                        <dd>The type of <code>undefined</code> is <code>"undefined"</code>
+                        <dt><strong>Default value</strong>
+                        <dd>A variable declared but not assigned a value is automatically <code>undefined</code>
+                        <dt><strong>Missing Function Arguments</strong>
+                        <dd>If a function is called with fewer arguments than declared, the missing parameters are
+                            <code>undefined</code>
+                        <dt><strong>Non-Existent Object Properties</strong>
+                        <dd>Accessing a property that doesn't exist on an object returns <code>undefined</code>
+                        <dt><strong>Return Value of Functions Without return</strong>
+                        <dd>A function without an explicit <code>return</code> statement returns <code>undefined</code>
+                    </dl>
                 </article>
 
                 <article>
+                    <h1 class="count">Comment</h1>
+                    <ol>
+                        <li>
+                            <code>undefined</code> happens automatically when something is missing/uninitialized
+                        <li>
+                            <code>null</code> must be explicitly assigned (by the developer)
+                        <li>
+                            <code>NaN</code> indicates an invalid numeric operation
+                    </ol>
+                </article>
+                <article>
                     <h1 class="count">Code Example</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa quasi doloremque, ab
-                        iusto
-                        totam cupiditate. Mollitia voluptatem assumenda voluptatibus?
-                    </p>
-
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-
-#include &lt;stdio.h&gt;
-        
-int main()
-  {
-    printf("Hello world\n");
-  }</pre><!-- code-content -->
+let myobj = {};
+myobj.x </pre><!-- code-content -->
                     </details><!--details CODE-->
 
                     <br class="small-view">
                     <br class="wide-view">
+
                     <details open><!--Details CONSOLE -->
-                        <summary class="details-console-summary">[JavaScript Inserts]</summary>
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
                         <pre class="details-console-aclass small-view">
-
-clang helloworld.c -o 
-    zhelloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- small-view -->
+undefined</pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-
-clang helloworld.c -o helloworld.o
-
-./helloworld.o
-
-// Hello world
-                            </pre><!-- wide-view -->
+undefined</pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let myobj = {};
+let myresult = myobj.x;
+myresult.x </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+Uncaught TypeError: 
+    Cannot read properties of undefined (reading 'x') </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+Uncaught TypeError: 
+    Cannot read properties of undefined (reading 'x')</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+function myfn (x,y) {
+  let result = x + y;
+}
+
+console.log(2,3) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+undefined </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+undefined </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
                 </article>
 
                 <article>
@@ -118,7 +204,60 @@ clang helloworld.c -o helloworld.o
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
-INSERT CODE
+function myfn(a,b) {
+    return [a,b];
+}
+
+console.log(myfn(2)) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+[ 2, undefined ] </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+[ 2, undefined ] </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let a
+let b = null
+a == b </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE TWO
   </pre><!-- code-content -->
                     </details><!--details CODE-->
 
@@ -130,14 +269,41 @@ INSERT CODE
                             [JavaScript Inserts]
                         </summary>
                         <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
+INSERT CONSOLE OUTPUT TWO (small view) 
 </pre><!-- small-view -->
                         <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+INSERT CONSOLE OUTPUT TWO (wide view) 
 </pre><!-- wide-view -->
                     </details><!--details CONSOLE -->
 
                 </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE THREE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT THREE (small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT THREE (wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+                <!--here-->
 
                 <article>
                     <h1 class="count">Notes</h1>
