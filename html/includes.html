@@ -25,6 +25,20 @@
     <noscript>
         <link rel="stylesheet" href="../css/nojs.css">
     </noscript>
+    <style>
+        ol {
+            padding-left: 10%;
+        }
+
+        ol ol {
+            padding-left: 5%;
+        }
+
+        ol>li {
+            padding-bottom: 0.2em;
+        }
+    </style>
+
 
 </head>
 
@@ -65,9 +79,21 @@
                     <h1 class="count">Introduction</h1>
                     <ol>
                         <li>
-                            The <code>includes()</code> method of <code>Array</code> instances determines whether an
-                            array includes a certain value among its entries,
-                            returning <strong>true</strong> or <strong>false</strong> as appropriate
+                            The <code>includes</code> method is used to check whether a given value exists inside
+                            <ol>
+                                <li><code>string</code>
+                                <li><code>array</code>
+                            </ol>
+                        <li>
+                            It returns a boolean (true or false), unlike methods such as indexOf which return an index
+                        <li>
+                            It is case-sensitive for both strings and arrays
+                        <li>
+                            Works on arrays and strings, but not objects
+                        <li>
+                            For arrays, negative <code>fromIndex</code> values count from end
+                        <li>
+                            For strings, negative <code>fromIndex</code> values seemingly interpreted as zero
                     </ol>
                 </article>
                 <article>
@@ -160,6 +186,154 @@ true </pre><!-- wide-view -->
                     <details open><!--details CODE-->
                         <summary class="details-code-summary">[JavaScript Inserts]</summary>
                         <pre class="details-code-aclass">
+let str = "to be or not to be, that is the question"
+str.includes("question") </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let str = "to be or not to be, that is the question"
+str.includes("question",str.indexOf("question")) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let str = "to be or not to be, that is the question"
+str.includes("question", str.indexOf("question")+1) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+false </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+false </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let str = "to be or not to be, that is the question"
+str.includes("question", -1) </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true (!!) </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true (!!) </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+let str = "to be or not to be, that is the question"
+str.split(" ").includes("question", -1)
+  </pre><!-- code-content --> </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+true </pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+true </pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
+INSERT CODE ONE
+  </pre><!-- code-content -->
+                    </details><!--details CODE-->
+
+                    <br class="small-view">
+                    <br class="wide-view">
+
+                    <details open><!--Details CONSOLE -->
+                        <summary class="details-console-summary">
+                            [JavaScript Inserts]
+                        </summary>
+                        <pre class="details-console-aclass small-view">
+INSERT CONSOLE OUTPUT ONE(small view) 
+</pre><!-- small-view -->
+                        <pre class="details-console-aclass wide-view">
+INSERT CONSOLE OUTPUT ONE(wide view) 
+</pre><!-- wide-view -->
+                    </details><!--details CONSOLE -->
+
+                </article>
+
+
+                <article>
+                    <h1 class="count">Code Example</h1>
+                    <details open><!--details CODE-->
+                        <summary class="details-code-summary">[JavaScript Inserts]</summary>
+                        <pre class="details-code-aclass">
 INSERT CODE TWO
   </pre><!-- code-content -->
                     </details><!--details CODE-->
@@ -207,7 +381,6 @@ INSERT CONSOLE OUTPUT THREE (wide view)
 
                 </article>
                 <!--here-->
-
 
                 <article>
                     <h1 class="count refs-heading">References</h1>
