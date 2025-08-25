@@ -95,7 +95,8 @@
 
               </ol>
             <li>
-              <code>click</code> fires after both the code{mousedown} and code{mouseup} events have fired, in that order
+              <code>click</code> fires after both the <code>mousedown</code> and <code>mouseup</code> events have fired,
+              in that order
             <li>
               The event is a device-independent event — meaning it can be activated by touch, keyboard, mouse, and any
               other mechanism
@@ -511,26 +512,26 @@ INSERT CONSOLE OUTPUT THREE (small view)
     const myimg = document.getElementById('myimg')
 
 
-      function switchImg() {
-        this.src = "../images/confirm.png";
-      }
+    function switchImg() {
+      this.src = "../images/confirm.png";
+    }
 
-      myimg.addEventListener('click', switchImg)
+    myimg.addEventListener('click', switchImg)
 
-      // Example 3
+    // Example 3
 
-      const myimg2 = document.getElementById('myimg2')
+    const myimg2 = document.getElementById('myimg2')
 
 
-        function switchImg2() {
-          myimg2.src = "../images/confirm.png";
-        }
+    function switchImg2() {
+      myimg2.src = "../images/confirm.png";
+    }
 
-        myimg2.addEventListener('click', switchImg2)
+    myimg2.addEventListener('click', switchImg2)
 
-  // Example 4
+    // Example 4
 
-  const myimg3 = document.getElementById('myimg3')
+    const myimg3 = document.getElementById('myimg3')
 
 
     function switchImg3(event) {
