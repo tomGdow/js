@@ -149,8 +149,19 @@ my div content"
           <details open><!--details CODE-->
             <summary class="details-code-summary">[JavaScript Inserts]</summary>
             <pre class="details-code-aclass">
-INSERT CODE
-              </pre><!-- code-content -->
+
+const myspan = document.createElement('span')
+const mytxt = "&lt;p&gt;&lt;b&gt; Hello \n&lt;/b&gt; World&lt;br&gt; and universe &lt;span style='display:none'&gt;Beam me up Scottie&lt;/span&gt;&lt;/p&gt;"
+myspan.innerHTML = mytxt;
+
+document.getElementById('mydiv').appendChild(myspan)
+
+console.log(document.getElementById('mydiv').textContent)
+console.log(document.getElementById('mydiv').innerText)
+console.log(document.getElementById('mydiv').innerHTML)
+
+---
+&lt;div id="mydiv"&gt;&lt;/div&gt; </pre><!-- code-content -->
           </details><!--details CODE-->
 
           <br class="small-view">
@@ -161,10 +172,33 @@ INSERT CODE
               [JavaScript Inserts]
             </summary>
             <pre class="details-console-aclass small-view">
-INSERT CONSOLE OUTPUT (small view) 
-              </pre><!-- small-view -->
+// TextContent
+      Hello
+      World and universe Beam me up Scottie
+
+// innerText
+Hello World
+and universe
+
+// innerHTML
+&lt;span&gt;
+  &lt;p&gt;&lt;b&gt; Hello
+    &lt;/b&gt; World&lt;br&gt; and universe &lt;span style="display:none"&gt;Beam me up Scottie&lt;/span&gt;&lt;/p&gt;
+&lt;/span&gt; </pre><!-- small-view -->
             <pre class="details-console-aclass wide-view">
-INSERT CONSOLE OUTPUT (wide view) 
+// TextContent
+      Hello
+      World and universe Beam me up Scottie
+
+// innerText
+Hello World
+and universe
+
+// innerHTML
+&lt;span&gt;
+  &lt;p&gt;&lt;b&gt; Hello
+    &lt;/b&gt; World&lt;br&gt; and universe &lt;span style="display:none"&gt;Beam me up Scottie&lt;/span&gt;&lt;/p&gt;
+&lt;/span&gt;
               </pre><!-- wide-view -->
           </details><!--details CONSOLE -->
 
